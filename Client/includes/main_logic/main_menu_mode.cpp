@@ -77,9 +77,9 @@ bool Main_menu_mode::handle_input()
             case SDLK_r:
                 break;
             case SDLK_ESCAPE:
+                return false;
                 break;
             case SDLK_q:
-                return false;
                 break;
             default:
                 break;

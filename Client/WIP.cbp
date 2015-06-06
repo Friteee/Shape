@@ -13,7 +13,7 @@
 				<Option compiler="gcc" />
 				<Option use_console_runner="0" />
 				<Option projectCompilerOptionsRelation="0" />
-				<Option projectLinkerOptionsRelation="0" />
+				<Option projectLinkerOptionsRelation="2" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -22,6 +22,12 @@
 					<Add library="SDL2lib\libSDL2.dll.a" />
 					<Add library="SDL2lib\libSDL2_test.a" />
 					<Add library="SDL2lib\libSDL2main.a" />
+					<Add library="boost_1_58_0\bin.v2\libs\system\build\gcc-mingw-4.8.1\debug\link-static\threading-multi\libboost_system-mgw48-mt-d-1_58.a" />
+					<Add library="boost_1_58_0\bin.v2\libs\regex\build\gcc-mingw-4.8.1\debug\link-static\threading-multi\libboost_regex-mgw48-mt-d-1_58.a" />
+					<Add library="boost_1_58_0\bin.v2\libs\thread\build\gcc-mingw-4.8.1\debug\link-static\threading-multi\libboost_thread-mgw48-mt-d-1_58.a" />
+					<Add directory="boost_1_58_0/bin.v2/libs/regex/build/gcc-mingw-4.8.1/debug/link-static/threading-multi" />
+					<Add directory="boost_1_58_0/bin.v2/libs/system/build/gcc-mingw-4.8.1/debug/link-static/threading-multi" />
+					<Add directory="boost_1_58_0/bin.v2/libs/thread/build/gcc-mingw-4.8.1/debug/link-static/threading-multi" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -42,10 +48,11 @@
 			<Add option="-std=c++11" />
 			<Add option="-Wall" />
 			<Add directory="SDL2" />
+			<Add directory="boost_1_58_0" />
 		</Compiler>
 		<Linker>
 			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_mixer" />
-			<Add option="-static-libgcc -static-libstdc++" />
+			<Add option="-static-libgcc -static-libstdc++ -lws2_32" />
 			<Add library="SDL2lib\libSDL2.a" />
 			<Add library="SDL2lib\libSDL2.dll.a" />
 			<Add library="SDL2lib\libSDL2_test.a" />
@@ -54,6 +61,9 @@
 			<Add library="SDL2_ttf_lib\libSDL2_ttf.dll.a" />
 			<Add library="SDL2_mix\libSDL2_mixer.a" />
 			<Add library="SDL2_mix\libSDL2_mixer.dll.a" />
+			<Add library="boost_1_58_0\bin.v2\libs\thread\build\gcc-mingw-4.8.1\debug\link-static\threading-multi\libboost_thread-mgw48-mt-d-1_58.a" />
+			<Add library="boost_1_58_0\bin.v2\libs\system\build\gcc-mingw-4.8.1\debug\link-static\threading-multi\libboost_system-mgw48-mt-d-1_58.a" />
+			<Add library="boost_1_58_0\bin.v2\libs\regex\build\gcc-mingw-4.8.1\debug\link-static\threading-multi\libboost_regex-mgw48-mt-d-1_58.a" />
 			<Add directory="SDL2lib" />
 			<Add directory="SDL2_ttf_lib" />
 			<Add directory="SDL2_mix" />
@@ -89,6 +99,8 @@
 		<Unit filename="includes/main_logic/main_menu_mode.cpp" />
 		<Unit filename="includes/main_logic/main_menu_mode.h" />
 		<Unit filename="includes/main_logic/program_mode.h" />
+		<Unit filename="includes/network/client.h" />
+		<Unit filename="includes/network/network.cpp" />
 		<Unit filename="includes/utility/configuration.cpp" />
 		<Unit filename="includes/utility/configuration.h" />
 		<Unit filename="includes/utility/functions.cpp" />

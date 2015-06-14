@@ -11,7 +11,7 @@ namespace video
 
 
 /**
- * SDL_Texture and SDL_Surface wrapper
+ * \brief SDL_Texture and SDL_Surface wrapper
  */
 class Texture
 {

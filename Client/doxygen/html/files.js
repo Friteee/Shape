@@ -1,9 +1,5 @@
 var files =
 [
-    [ "animation.cpp", "animation_8cpp.html", null ],
-    [ "animation.h", "animation_8h.html", [
-      [ "Animation", "classgame_1_1_animation.html", "classgame_1_1_animation" ]
-    ] ],
     [ "audio.cpp", "audio_8cpp.html", null ],
     [ "audio.h", "audio_8h.html", [
       [ "Audio_subsystem", "classaudio_1_1_audio__subsystem.html", null ]

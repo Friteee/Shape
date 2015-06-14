@@ -8,6 +8,10 @@
 namespace audio
 {
 
+/** \brief Music class to play large sound files
+ *
+ */
+
 class Music
 {
 

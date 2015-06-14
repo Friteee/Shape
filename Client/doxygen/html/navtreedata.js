@@ -31,8 +31,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"animation_8cpp.html",
-"namespaceaudio.html"
+"annotated.html",
+"namespacemain__logic.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

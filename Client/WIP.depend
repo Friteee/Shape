@@ -2086,7 +2086,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431717017 d:\github\shape\client\includes\audio\audio.h
+1434283573 d:\github\shape\client\includes\audio\audio.h
 
 1432464771 source:d:\github\shape\client\includes\audio\music.cpp
 	"music.h"
@@ -2432,10 +2432,9 @@
 	<vector>
 	<cstdio>
 
-1430156048 d:\github\shape\client\includes\gui\text_button.h
+1434283610 d:\github\shape\client\includes\gui\text_button.h
 	"gui_element.h"
 	<functional>
-	"../game/animation.h"
 	"../utility/configuration.h"
 
 1433338293 source:d:\github\shape\client\includes\main.cpp
@@ -2478,7 +2477,7 @@
 	"../gui/button.h"
 	"../audio/music.h"
 
-1430752612 source:d:\github\shape\client\includes\main_logic\game_logic.cpp
+1434281440 source:d:\github\shape\client\includes\main_logic\game_logic.cpp
 	<SDL.h>
 	<stdio.h>
 	"game_logic.h"
@@ -2534,7 +2533,7 @@
 	<assert.h>
 	<cstdio>
 
-1427709895 source:d:\github\shape\client\includes\video\window.cpp
+1434282842 source:d:\github\shape\client\includes\video\window.cpp
 	<SDL.h>
 	<stdio.h>
 	"window.h"
@@ -8354,7 +8353,7 @@
 1434280515 source:d:\github\shape\client\includes\physics\physics_engine.cpp
 	"physics_engine.h"
 
-1434280349 d:\github\shape\client\includes\physics\physics_engine.h
+1434282214 d:\github\shape\client\includes\physics\physics_engine.h
 	"geometry.h"
 	<vector>
 	<mutex>

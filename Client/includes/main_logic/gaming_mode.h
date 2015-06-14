@@ -12,6 +12,12 @@
 namespace main_logic
 {
 
+/** \brief Main mode for game itself
+ * Here is the game itself
+ */
+
+
+
 class Gaming_mode : public Program_mode
 {
 public :

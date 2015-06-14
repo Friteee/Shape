@@ -7,6 +7,13 @@
 namespace game
 {
 
+/** \brief Tile object
+ *
+ *  Can be invincible
+ *  Made to be held by Map object
+ */
+
+
 class Tile : public Static_object
 {
 public:

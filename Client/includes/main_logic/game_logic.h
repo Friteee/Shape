@@ -15,8 +15,10 @@ namespace main_logic
 
 
 /**
- * Game_logic class
+ * \brief Game_logic class
  * First thing to be created
+ * Handles physics, used to initialize the game,
+ * audio, video and other subsystems
  */
 
 class Game_logic

@@ -6,7 +6,10 @@
 namespace network
 {
 /**
- * This ser
+ * \brief Server
+ *
+ *  Server, into which player connects to play the game
+ *
  */
 class GameServer
 {

@@ -123,49 +123,49 @@ $(document).ready(function(){initNavTree('main__menu__mode_8h_source.html','');}
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacemain__logic.html">main_logic</a></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classmain__logic_1_1_main__menu__mode.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmain__logic_1_1_main__menu__mode.html">Main_menu_mode</a> : <span class="keyword">public</span> <a class="code" href="classmain__logic_1_1_program__mode.html">Program_mode</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span> :</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classmain__logic_1_1_main__menu__mode.html#a88a36e994302142feec37a71b69c9d36">Main_menu_mode</a>(<a class="code" href="classutility_1_1_configuration.html">utility::Configuration</a> * init_config);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">bool</span>       <a class="code" href="classmain__logic_1_1_main__menu__mode.html#aa65dd52144517c0c8a2f39d0e8611bd0">run</a> ()<span class="keyword">override</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span>       <a class="code" href="classmain__logic_1_1_main__menu__mode.html#aae1804b8d4b2b1ed8577221afcf8ecbc">handle_input</a>()<span class="keyword">override</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classmain__logic_1_1_main__menu__mode.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmain__logic_1_1_main__menu__mode.html">Main_menu_mode</a> : <span class="keyword">public</span> <a class="code" href="classmain__logic_1_1_program__mode.html">Program_mode</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span> :</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classmain__logic_1_1_main__menu__mode.html#a88a36e994302142feec37a71b69c9d36">Main_menu_mode</a>(<a class="code" href="classutility_1_1_configuration.html">utility::Configuration</a> * init_config);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">bool</span>       <a class="code" href="classmain__logic_1_1_main__menu__mode.html#aa65dd52144517c0c8a2f39d0e8611bd0">run</a> ()<span class="keyword">override</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span>       <a class="code" href="classmain__logic_1_1_main__menu__mode.html#aae1804b8d4b2b1ed8577221afcf8ecbc">handle_input</a>()<span class="keyword">override</span>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// main configuration</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classutility_1_1_configuration.html">utility::Configuration</a> * main_config;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// event</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    SDL_Event                event;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// gui manager</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classgui_1_1_gui__manager.html">gui::Gui_manager</a>         main_gui;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">//background</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classgui_1_1_background.html">gui::Background</a>          background;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//music</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classaudio_1_1_music.html">audio::Music</a>             music;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} <span class="comment">// end of main_logic namespace</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// main configuration</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classutility_1_1_configuration.html">utility::Configuration</a> * main_config;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// event</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    SDL_Event                event;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// gui manager</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classgui_1_1_gui__manager.html">gui::Gui_manager</a>         main_gui;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//background</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classgui_1_1_background.html">gui::Background</a>          background;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">//music</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classaudio_1_1_music.html">audio::Music</a>             music;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif // EDITOR_MODE_H_INCLUDED</span></div>
-<div class="ttc" id="classmain__logic_1_1_program__mode_html"><div class="ttname"><a href="classmain__logic_1_1_program__mode.html">main_logic::Program_mode</a></div><div class="ttdef"><b>Definition:</b> program_mode.h:15</div></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <span class="comment">// end of main_logic namespace</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif // EDITOR_MODE_H_INCLUDED</span></div>
+<div class="ttc" id="classmain__logic_1_1_program__mode_html"><div class="ttname"><a href="classmain__logic_1_1_program__mode.html">main_logic::Program_mode</a></div><div class="ttdoc">Base interface class for program modes. </div><div class="ttdef"><b>Definition:</b> program_mode.h:16</div></div>
 <div class="ttc" id="classmain__logic_1_1_main__menu__mode_html_a88a36e994302142feec37a71b69c9d36"><div class="ttname"><a href="classmain__logic_1_1_main__menu__mode.html#a88a36e994302142feec37a71b69c9d36">main_logic::Main_menu_mode::Main_menu_mode</a></div><div class="ttdeci">Main_menu_mode(utility::Configuration *init_config)</div><div class="ttdef"><b>Definition:</b> main_menu_mode.cpp:107</div></div>
 <div class="ttc" id="namespacemain__logic_html"><div class="ttname"><a href="namespacemain__logic.html">main_logic</a></div><div class="ttdef"><b>Definition:</b> game_logic.cpp:12</div></div>
-<div class="ttc" id="classutility_1_1_configuration_html"><div class="ttname"><a href="classutility_1_1_configuration.html">utility::Configuration</a></div><div class="ttdef"><b>Definition:</b> configuration.h:10</div></div>
-<div class="ttc" id="classmain__logic_1_1_main__menu__mode_html"><div class="ttname"><a href="classmain__logic_1_1_main__menu__mode.html">main_logic::Main_menu_mode</a></div><div class="ttdef"><b>Definition:</b> main_menu_mode.h:20</div></div>
+<div class="ttc" id="classutility_1_1_configuration_html"><div class="ttname"><a href="classutility_1_1_configuration.html">utility::Configuration</a></div><div class="ttdoc">Configuration file. </div><div class="ttdef"><b>Definition:</b> configuration.h:17</div></div>
+<div class="ttc" id="classmain__logic_1_1_main__menu__mode_html"><div class="ttname"><a href="classmain__logic_1_1_main__menu__mode.html">main_logic::Main_menu_mode</a></div><div class="ttdoc">Main menu. </div><div class="ttdef"><b>Definition:</b> main_menu_mode.h:22</div></div>
 <div class="ttc" id="classmain__logic_1_1_main__menu__mode_html_aae1804b8d4b2b1ed8577221afcf8ecbc"><div class="ttname"><a href="classmain__logic_1_1_main__menu__mode.html#aae1804b8d4b2b1ed8577221afcf8ecbc">main_logic::Main_menu_mode::handle_input</a></div><div class="ttdeci">bool handle_input() override</div><div class="ttdef"><b>Definition:</b> main_menu_mode.cpp:48</div></div>
 <div class="ttc" id="classmain__logic_1_1_main__menu__mode_html_aa65dd52144517c0c8a2f39d0e8611bd0"><div class="ttname"><a href="classmain__logic_1_1_main__menu__mode.html#aa65dd52144517c0c8a2f39d0e8611bd0">main_logic::Main_menu_mode::run</a></div><div class="ttdeci">bool run() override</div><div class="ttdef"><b>Definition:</b> main_menu_mode.cpp:20</div></div>
 <div class="ttc" id="program__mode_8h_html"><div class="ttname"><a href="program__mode_8h.html">program_mode.h</a></div></div>
-<div class="ttc" id="classaudio_1_1_music_html"><div class="ttname"><a href="classaudio_1_1_music.html">audio::Music</a></div><div class="ttdef"><b>Definition:</b> music.h:11</div></div>
-<div class="ttc" id="classgui_1_1_background_html"><div class="ttname"><a href="classgui_1_1_background.html">gui::Background</a></div><div class="ttdef"><b>Definition:</b> background.h:24</div></div>
-<div class="ttc" id="classgui_1_1_gui__manager_html"><div class="ttname"><a href="classgui_1_1_gui__manager.html">gui::Gui_manager</a></div><div class="ttdef"><b>Definition:</b> gui_manager.h:10</div></div>
+<div class="ttc" id="classaudio_1_1_music_html"><div class="ttname"><a href="classaudio_1_1_music.html">audio::Music</a></div><div class="ttdoc">Music class to play large sound files. </div><div class="ttdef"><b>Definition:</b> music.h:15</div></div>
+<div class="ttc" id="classgui_1_1_background_html"><div class="ttname"><a href="classgui_1_1_background.html">gui::Background</a></div><div class="ttdoc">Background class. </div><div class="ttdef"><b>Definition:</b> background.h:23</div></div>
+<div class="ttc" id="classgui_1_1_gui__manager_html"><div class="ttname"><a href="classgui_1_1_gui__manager.html">gui::Gui_manager</a></div><div class="ttdoc">Class to lay down most of the work on. </div><div class="ttdef"><b>Definition:</b> gui_manager.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_ee189692e58dc756b6b4ffecb1179821.html">main_logic</a></li><li class="navelem"><a class="el" href="main__menu__mode_8h.html">main_menu_mode.h</a></li>
-    <li class="footer">Generated on Sun Jun 14 2015 13:43:44 for Shape by
+    <li class="footer">Generated on Sun Jun 14 2015 14:39:25 for Shape by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

@@ -9,6 +9,13 @@
 namespace gui
 {
 
+/** \brief Progress bar
+ *
+ *  Automatically updates its' timer to show current percentage of time spent.
+ *
+ */
+
+
 class Progress_bar : public Gui_element
 {
 

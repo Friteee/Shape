@@ -14,7 +14,9 @@ namespace main_logic
 {
 
 /**
- * Editor mode for main game logic
+ * \brief Main menu
+ *
+ * Handles clicks, has play and options buttons and etc.
  */
 
 class Main_menu_mode : public Program_mode

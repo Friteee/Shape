@@ -8,7 +8,8 @@ namespace main_logic
 {
 
 /**
- * Base interface class for program modes
+ * \brief Base interface class for program modes
+ *
  * May include editor mode, game mode, main menu mode etc...
  */
 

@@ -15,10 +15,9 @@ namespace gui
 {
 
 /**
- * Background class
- * Probably will use it only once
- * Multiple background usage is available
- * Use background_pool for declaring
+ * \brief Background class
+ *
+ * Background of the map \ main_screen
  */
 
 class Background

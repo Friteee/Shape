@@ -7,7 +7,7 @@
 namespace video
 {
 
-/**
+/** \brief Video handling class
  * Singleton pattern used here
  * Class to create video subsystem, which is used to
  * blit stuff to screen

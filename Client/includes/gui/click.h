@@ -7,8 +7,9 @@ namespace gui
 {
 
 /**
- * Class for click handling
+ * \brief Class for click handling
  *
+ *  Initialize this in event handling of a program mode
  */
 
 class Click

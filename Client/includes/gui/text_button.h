@@ -3,11 +3,16 @@
 
 #include "gui_element.h"
 #include <functional>
-#include "../game/animation.h"
 #include "../utility/configuration.h"
 
 namespace gui
 {
+
+/** \brief Button, consisting of text, which can be clicked on
+ *
+ *
+ */
+
 
 class Text_button : public Gui_element
 {

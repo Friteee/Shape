@@ -115,28 +115,28 @@ $(document).ready(function(){initNavTree('game__server_8h_source.html','');});
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespacenetwork.html">    6</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacenetwork.html">network</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classnetwork_1_1_game_server.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnetwork_1_1_game_server.html">GameServer</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="comment">// initialize the client - server connection</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classnetwork_1_1_game_server.html#a5c1c5aebe7582903f4203e50325a77cf">init</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> init_port, boost::asio::ip::address init_IP);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classnetwork_1_1_game_server.html#a907337a3d807d330d4b99dafa2f9c95c">send_packet</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> port;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    boost::asio::ip::adress IP;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    boost::asio::io_service service;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    boost::asio::ip::udp::resolver resolver;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    boost::asio::ip::udp::resolver::query query;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classnetwork_1_1_game_server.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classnetwork_1_1_game_server.html">GameServer</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// initialize the client - server connection</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classnetwork_1_1_game_server.html#a5c1c5aebe7582903f4203e50325a77cf">init</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> init_port, boost::asio::ip::address init_IP);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classnetwork_1_1_game_server.html#a907337a3d807d330d4b99dafa2f9c95c">send_packet</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> port;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    boost::asio::ip::adress IP;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    boost::asio::io_service service;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    boost::asio::ip::udp::resolver resolver;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    boost::asio::ip::udp::resolver::query query;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif // CLIENT_H_INCLUDED</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif // CLIENT_H_INCLUDED</span></div>
 <div class="ttc" id="namespacenetwork_html"><div class="ttname"><a href="namespacenetwork.html">network</a></div><div class="ttdef"><b>Definition:</b> game_server.h:6</div></div>
-<div class="ttc" id="classnetwork_1_1_game_server_html"><div class="ttname"><a href="classnetwork_1_1_game_server.html">network::GameServer</a></div><div class="ttdef"><b>Definition:</b> game_server.h:11</div></div>
+<div class="ttc" id="classnetwork_1_1_game_server_html"><div class="ttname"><a href="classnetwork_1_1_game_server.html">network::GameServer</a></div><div class="ttdoc">Server. </div><div class="ttdef"><b>Definition:</b> game_server.h:14</div></div>
 <div class="ttc" id="classnetwork_1_1_game_server_html_a5c1c5aebe7582903f4203e50325a77cf"><div class="ttname"><a href="classnetwork_1_1_game_server.html#a5c1c5aebe7582903f4203e50325a77cf">network::GameServer::init</a></div><div class="ttdeci">bool init(unsigned int init_port, boost::asio::ip::address init_IP)</div></div>
 <div class="ttc" id="classnetwork_1_1_game_server_html_a907337a3d807d330d4b99dafa2f9c95c"><div class="ttname"><a href="classnetwork_1_1_game_server.html#a907337a3d807d330d4b99dafa2f9c95c">network::GameServer::send_packet</a></div><div class="ttdeci">void send_packet()</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('game__server_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_f9d1d7c84a2265286938adb432e18d07.html">network</a></li><li class="navelem"><a class="el" href="game__server_8h.html">game_server.h</a></li>
-    <li class="footer">Generated on Sun Jun 14 2015 13:43:44 for Shape by
+    <li class="footer">Generated on Sun Jun 14 2015 14:39:25 for Shape by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

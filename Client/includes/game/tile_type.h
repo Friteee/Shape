@@ -8,6 +8,12 @@
 namespace game
 {
 
+/** \brief Basic information a bout tile
+ *
+ *  Kinda similar to flyweight pattern
+ */
+
+
 class Tile_type
 {
 public:

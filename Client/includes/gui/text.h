@@ -9,6 +9,12 @@
 namespace gui
 {
 
+
+/** \brief Text element
+ *
+ *  Just pure text
+ */
+
 class Text : public Gui_element
 {
 public:

@@ -7,6 +7,13 @@
 namespace gui
 {
 
+/** \brief Button
+ *
+ *  It is clickable. I swear.
+ *  Don't forget to initialize gui::click in event handling of a program mode if you want this to work.
+ */
+
+
 class Button : public Gui_element
 {
 public:

@@ -4,6 +4,12 @@
 namespace utility
 {
 
+/** \brief Stopwatch
+ *
+ *  Utilizes SDL_GetTicks() function
+ *
+ */
+
 class Stopwatch
 {
 public:

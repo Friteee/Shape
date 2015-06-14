@@ -118,26 +118,26 @@ $(document).ready(function(){initNavTree('music_8h_source.html','');});
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceaudio.html">audio</a></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classaudio_1_1_music.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classaudio_1_1_music.html">Music</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_music.html#a4d40b1422865cdd7ec1d31299e5a10d0">init</a>(std::string init_sound);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_music.html#a66813dbc5db9ea6f2a8eafef5111ef05">play</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_music.html#acf5803e5a7fc7d2f50a8b4654ab0e8b0">stop</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_music.html#aecfc068be75b85c0ccd4b31df9dfa7e4">pause</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classaudio_1_1_music.html#a2e63118d52a0288b1ee34e104c5876b6">~Music</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_music.html#a1ccf9b9cd9526a2b9158960a2401e04e">set_volume</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> volume);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_music.html#a985cd9c577a6844441595da9c72d5f29">change_volume</a>(<span class="keywordtype">int</span> amount);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    std::shared_ptr&lt;Mix_Music *&gt; sound;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> volume ;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classaudio_1_1_music.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classaudio_1_1_music.html">Music</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_music.html#a4d40b1422865cdd7ec1d31299e5a10d0">init</a>(std::string init_sound);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_music.html#a66813dbc5db9ea6f2a8eafef5111ef05">play</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_music.html#acf5803e5a7fc7d2f50a8b4654ab0e8b0">stop</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_music.html#aecfc068be75b85c0ccd4b31df9dfa7e4">pause</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classaudio_1_1_music.html#a2e63118d52a0288b1ee34e104c5876b6">~Music</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_music.html#a1ccf9b9cd9526a2b9158960a2401e04e">set_volume</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> volume);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_music.html#a985cd9c577a6844441595da9c72d5f29">change_volume</a>(<span class="keywordtype">int</span> amount);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::shared_ptr&lt;Mix_Music *&gt; sound;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> volume ;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif // MUSIC_H_INCLUDED</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif // MUSIC_H_INCLUDED</span></div>
 <div class="ttc" id="classaudio_1_1_music_html_a1ccf9b9cd9526a2b9158960a2401e04e"><div class="ttname"><a href="classaudio_1_1_music.html#a1ccf9b9cd9526a2b9158960a2401e04e">audio::Music::set_volume</a></div><div class="ttdeci">static void set_volume(unsigned int volume)</div><div class="ttdef"><b>Definition:</b> music.cpp:61</div></div>
 <div class="ttc" id="classaudio_1_1_music_html_a985cd9c577a6844441595da9c72d5f29"><div class="ttname"><a href="classaudio_1_1_music.html#a985cd9c577a6844441595da9c72d5f29">audio::Music::change_volume</a></div><div class="ttdeci">static void change_volume(int amount)</div><div class="ttdef"><b>Definition:</b> music.cpp:50</div></div>
 <div class="ttc" id="classaudio_1_1_music_html_a66813dbc5db9ea6f2a8eafef5111ef05"><div class="ttname"><a href="classaudio_1_1_music.html#a66813dbc5db9ea6f2a8eafef5111ef05">audio::Music::play</a></div><div class="ttdeci">void play()</div><div class="ttdef"><b>Definition:</b> music.cpp:19</div></div>
@@ -146,14 +146,14 @@ $(document).ready(function(){initNavTree('music_8h_source.html','');});
 <div class="ttc" id="namespaceaudio_html"><div class="ttname"><a href="namespaceaudio.html">audio</a></div><div class="ttdef"><b>Definition:</b> audio.cpp:6</div></div>
 <div class="ttc" id="classaudio_1_1_music_html_aecfc068be75b85c0ccd4b31df9dfa7e4"><div class="ttname"><a href="classaudio_1_1_music.html#aecfc068be75b85c0ccd4b31df9dfa7e4">audio::Music::pause</a></div><div class="ttdeci">void pause()</div><div class="ttdef"><b>Definition:</b> music.cpp:29</div></div>
 <div class="ttc" id="classaudio_1_1_music_html_a4d40b1422865cdd7ec1d31299e5a10d0"><div class="ttname"><a href="classaudio_1_1_music.html#a4d40b1422865cdd7ec1d31299e5a10d0">audio::Music::init</a></div><div class="ttdeci">void init(std::string init_sound)</div><div class="ttdef"><b>Definition:</b> music.cpp:8</div></div>
-<div class="ttc" id="classaudio_1_1_music_html"><div class="ttname"><a href="classaudio_1_1_music.html">audio::Music</a></div><div class="ttdef"><b>Definition:</b> music.h:11</div></div>
+<div class="ttc" id="classaudio_1_1_music_html"><div class="ttname"><a href="classaudio_1_1_music.html">audio::Music</a></div><div class="ttdoc">Music class to play large sound files. </div><div class="ttdef"><b>Definition:</b> music.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_23bc981e6e852cc7fac7b73c3dab15ae.html">audio</a></li><li class="navelem"><a class="el" href="music_8h.html">music.h</a></li>
-    <li class="footer">Generated on Sun Jun 14 2015 13:43:44 for Shape by
+    <li class="footer">Generated on Sun Jun 14 2015 14:39:25 for Shape by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

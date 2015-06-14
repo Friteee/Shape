@@ -1,6 +1,5 @@
 var hierarchy =
 [
-    [ "game::Animation", "classgame_1_1_animation.html", null ],
     [ "audio::Audio_subsystem", "classaudio_1_1_audio__subsystem.html", null ],
     [ "gui::Background", "classgui_1_1_background.html", null ],
     [ "video::Camera", "classvideo_1_1_camera.html", null ],

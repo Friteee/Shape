@@ -119,40 +119,41 @@ $(document).ready(function(){initNavTree('text_8h_source.html','');});
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacegui.html">gui</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classgui_1_1_text.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classgui_1_1_text.html">Text</a> : <span class="keyword">public</span> <a class="code" href="classgui_1_1_gui__element.html">Gui_element</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classgui_1_1_text.html#ac31c34a25fef906deb3bb72ff7a22a89">Text</a>(<a class="code" href="classutility_1_1_configuration.html">utility::Configuration</a> * config, std::string init_text , <span class="keywordtype">int</span> x , <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> init_text_size, SDL_Color init_color_key);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classgui_1_1_text.html#a887fec816efcf2ed6ed475d1b09cb55a">~Text</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span>         <a class="code" href="classgui_1_1_text.html#a79a6ee36d25dfd52efa146c7cafcd872">show</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span>         <a class="code" href="classgui_1_1_text.html#af507d4b413a134ee63dcacdaee7b5c2c">update</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span>         <a class="code" href="classgui_1_1_text.html#a912a9e8627af11d655f8853d0dd4df87">change_text</a>(std::string init_text);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span>         <a class="code" href="classgui_1_1_text.html#a0cc7caa27266df2468a5dd410c01ae71">handle_click</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)<span class="keyword">override</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classgui_1_1_text.html#a1c13413c56a8eb47cb3f31884ccfe884">get_length</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::string text;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span>         text_size;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    TTF_Font *  font;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    SDL_Color   color_key;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif // TEXT_H_INCLUDED</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classgui_1_1_text.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classgui_1_1_text.html">Text</a> : <span class="keyword">public</span> <a class="code" href="classgui_1_1_gui__element.html">Gui_element</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classgui_1_1_text.html#ac31c34a25fef906deb3bb72ff7a22a89">Text</a>(<a class="code" href="classutility_1_1_configuration.html">utility::Configuration</a> * config, std::string init_text , <span class="keywordtype">int</span> x , <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> init_text_size, SDL_Color init_color_key);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classgui_1_1_text.html#a887fec816efcf2ed6ed475d1b09cb55a">~Text</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span>         <a class="code" href="classgui_1_1_text.html#a79a6ee36d25dfd52efa146c7cafcd872">show</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span>         <a class="code" href="classgui_1_1_text.html#af507d4b413a134ee63dcacdaee7b5c2c">update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span>         <a class="code" href="classgui_1_1_text.html#a912a9e8627af11d655f8853d0dd4df87">change_text</a>(std::string init_text);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span>         <a class="code" href="classgui_1_1_text.html#a0cc7caa27266df2468a5dd410c01ae71">handle_click</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)<span class="keyword">override</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classgui_1_1_text.html#a1c13413c56a8eb47cb3f31884ccfe884">get_length</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::string text;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">int</span>         text_size;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    TTF_Font *  font;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    SDL_Color   color_key;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif // TEXT_H_INCLUDED</span></div>
 <div class="ttc" id="text_8h_html"><div class="ttname"><a href="text_8h.html">text.h</a></div></div>
 <div class="ttc" id="namespacegui_html"><div class="ttname"><a href="namespacegui.html">gui</a></div><div class="ttdef"><b>Definition:</b> background.cpp:8</div></div>
 <div class="ttc" id="classgui_1_1_text_html_af507d4b413a134ee63dcacdaee7b5c2c"><div class="ttname"><a href="classgui_1_1_text.html#af507d4b413a134ee63dcacdaee7b5c2c">gui::Text::update</a></div><div class="ttdeci">void update() override</div><div class="ttdef"><b>Definition:</b> text.cpp:47</div></div>
 <div class="ttc" id="classgui_1_1_text_html_a912a9e8627af11d655f8853d0dd4df87"><div class="ttname"><a href="classgui_1_1_text.html#a912a9e8627af11d655f8853d0dd4df87">gui::Text::change_text</a></div><div class="ttdeci">void change_text(std::string init_text)</div><div class="ttdef"><b>Definition:</b> text.cpp:57</div></div>
 <div class="ttc" id="classgui_1_1_text_html_a0cc7caa27266df2468a5dd410c01ae71"><div class="ttname"><a href="classgui_1_1_text.html#a0cc7caa27266df2468a5dd410c01ae71">gui::Text::handle_click</a></div><div class="ttdeci">void handle_click(int x, int y) override</div><div class="ttdef"><b>Definition:</b> text.cpp:70</div></div>
-<div class="ttc" id="classutility_1_1_configuration_html"><div class="ttname"><a href="classutility_1_1_configuration.html">utility::Configuration</a></div><div class="ttdef"><b>Definition:</b> configuration.h:10</div></div>
+<div class="ttc" id="classutility_1_1_configuration_html"><div class="ttname"><a href="classutility_1_1_configuration.html">utility::Configuration</a></div><div class="ttdoc">Configuration file. </div><div class="ttdef"><b>Definition:</b> configuration.h:17</div></div>
 <div class="ttc" id="gui__element_8h_html"><div class="ttname"><a href="gui__element_8h.html">gui_element.h</a></div></div>
-<div class="ttc" id="classgui_1_1_text_html"><div class="ttname"><a href="classgui_1_1_text.html">gui::Text</a></div><div class="ttdef"><b>Definition:</b> text.h:12</div></div>
+<div class="ttc" id="classgui_1_1_text_html"><div class="ttname"><a href="classgui_1_1_text.html">gui::Text</a></div><div class="ttdoc">Text element. </div><div class="ttdef"><b>Definition:</b> text.h:18</div></div>
 <div class="ttc" id="classgui_1_1_text_html_ac31c34a25fef906deb3bb72ff7a22a89"><div class="ttname"><a href="classgui_1_1_text.html#ac31c34a25fef906deb3bb72ff7a22a89">gui::Text::Text</a></div><div class="ttdeci">Text(utility::Configuration *config, std::string init_text, int x, int y, int init_text_size, SDL_Color init_color_key)</div><div class="ttdef"><b>Definition:</b> text.cpp:11</div></div>
-<div class="ttc" id="classgui_1_1_gui__element_html"><div class="ttname"><a href="classgui_1_1_gui__element.html">gui::Gui_element</a></div><div class="ttdef"><b>Definition:</b> gui_element.h:16</div></div>
+<div class="ttc" id="classgui_1_1_gui__element_html"><div class="ttname"><a href="classgui_1_1_gui__element.html">gui::Gui_element</a></div><div class="ttdoc">Gui element base class. </div><div class="ttdef"><b>Definition:</b> gui_element.h:17</div></div>
 <div class="ttc" id="classgui_1_1_text_html_a79a6ee36d25dfd52efa146c7cafcd872"><div class="ttname"><a href="classgui_1_1_text.html#a79a6ee36d25dfd52efa146c7cafcd872">gui::Text::show</a></div><div class="ttdeci">void show() override</div><div class="ttdef"><b>Definition:</b> text.cpp:38</div></div>
 <div class="ttc" id="classgui_1_1_text_html_a887fec816efcf2ed6ed475d1b09cb55a"><div class="ttname"><a href="classgui_1_1_text.html#a887fec816efcf2ed6ed475d1b09cb55a">gui::Text::~Text</a></div><div class="ttdeci">~Text()</div><div class="ttdef"><b>Definition:</b> text.cpp:52</div></div>
 <div class="ttc" id="classgui_1_1_text_html_a1c13413c56a8eb47cb3f31884ccfe884"><div class="ttname"><a href="classgui_1_1_text.html#a1c13413c56a8eb47cb3f31884ccfe884">gui::Text::get_length</a></div><div class="ttdeci">unsigned int get_length()</div><div class="ttdef"><b>Definition:</b> text.cpp:75</div></div>
@@ -162,7 +163,7 @@ $(document).ready(function(){initNavTree('text_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_d71258d121b57578e859b7f031eeca9e.html">gui</a></li><li class="navelem"><a class="el" href="text_8h.html">text.h</a></li>
-    <li class="footer">Generated on Sun Jun 14 2015 13:43:44 for Shape by
+    <li class="footer">Generated on Sun Jun 14 2015 14:39:25 for Shape by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

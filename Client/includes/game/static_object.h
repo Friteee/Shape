@@ -7,6 +7,12 @@
 namespace game
 {
 
+/** \brief Static_object base class
+ *
+ *  Consists of a location and geometrical polygon
+ *  Has a base function show
+ */
+
 
 class Static_object
 {

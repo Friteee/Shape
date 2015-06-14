@@ -115,28 +115,28 @@ $(document).ready(function(){initNavTree('sound_8h_source.html','');});
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceaudio.html">audio</a></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classaudio_1_1_sound.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classaudio_1_1_sound.html">Sound</a></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_sound.html#a20d420744b05be89486c430e33f1bbb0">init</a>(std::string init_sound);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_sound.html#a0f8dc1366e1f7310bc3e50a3eba96cbf">play</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classaudio_1_1_sound.html#a047bffc4cefdef935162b4ba2780d2eb">~Sound</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_sound.html#ad54567401edcb112255c96b9ecd8cd43">set_volume</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> volume);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_sound.html#a08524f8d0307436d24ad58e6dcf79670">change_volume</a>(<span class="keywordtype">int</span> amount);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::shared_ptr&lt;Mix_Chunk *&gt; sound;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> volume;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classaudio_1_1_sound.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classaudio_1_1_sound.html">Sound</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_sound.html#a20d420744b05be89486c430e33f1bbb0">init</a>(std::string init_sound);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_sound.html#a0f8dc1366e1f7310bc3e50a3eba96cbf">play</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classaudio_1_1_sound.html#a047bffc4cefdef935162b4ba2780d2eb">~Sound</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_sound.html#ad54567401edcb112255c96b9ecd8cd43">set_volume</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> volume);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classaudio_1_1_sound.html#a08524f8d0307436d24ad58e6dcf79670">change_volume</a>(<span class="keywordtype">int</span> amount);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    std::shared_ptr&lt;Mix_Chunk *&gt; sound;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> volume;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="ttc" id="classaudio_1_1_sound_html_a08524f8d0307436d24ad58e6dcf79670"><div class="ttname"><a href="classaudio_1_1_sound.html#a08524f8d0307436d24ad58e6dcf79670">audio::Sound::change_volume</a></div><div class="ttdeci">static void change_volume(int amount)</div><div class="ttdef"><b>Definition:</b> sound.cpp:28</div></div>
 <div class="ttc" id="classaudio_1_1_sound_html_a0f8dc1366e1f7310bc3e50a3eba96cbf"><div class="ttname"><a href="classaudio_1_1_sound.html#a0f8dc1366e1f7310bc3e50a3eba96cbf">audio::Sound::play</a></div><div class="ttdeci">void play()</div><div class="ttdef"><b>Definition:</b> sound.cpp:18</div></div>
 <div class="ttc" id="classaudio_1_1_sound_html_ad54567401edcb112255c96b9ecd8cd43"><div class="ttname"><a href="classaudio_1_1_sound.html#ad54567401edcb112255c96b9ecd8cd43">audio::Sound::set_volume</a></div><div class="ttdeci">static void set_volume(unsigned int volume)</div><div class="ttdef"><b>Definition:</b> sound.cpp:41</div></div>
 <div class="ttc" id="classaudio_1_1_sound_html_a20d420744b05be89486c430e33f1bbb0"><div class="ttname"><a href="classaudio_1_1_sound.html#a20d420744b05be89486c430e33f1bbb0">audio::Sound::init</a></div><div class="ttdeci">void init(std::string init_sound)</div><div class="ttdef"><b>Definition:</b> sound.cpp:8</div></div>
 <div class="ttc" id="namespaceaudio_html"><div class="ttname"><a href="namespaceaudio.html">audio</a></div><div class="ttdef"><b>Definition:</b> audio.cpp:6</div></div>
-<div class="ttc" id="classaudio_1_1_sound_html"><div class="ttname"><a href="classaudio_1_1_sound.html">audio::Sound</a></div><div class="ttdef"><b>Definition:</b> sound.h:8</div></div>
+<div class="ttc" id="classaudio_1_1_sound_html"><div class="ttname"><a href="classaudio_1_1_sound.html">audio::Sound</a></div><div class="ttdoc">Sound class to play small audio files. </div><div class="ttdef"><b>Definition:</b> sound.h:13</div></div>
 <div class="ttc" id="classaudio_1_1_sound_html_a047bffc4cefdef935162b4ba2780d2eb"><div class="ttname"><a href="classaudio_1_1_sound.html#a047bffc4cefdef935162b4ba2780d2eb">audio::Sound::~Sound</a></div><div class="ttdeci">~Sound()</div><div class="ttdef"><b>Definition:</b> sound.cpp:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('sound_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_23bc981e6e852cc7fac7b73c3dab15ae.html">audio</a></li><li class="navelem"><a class="el" href="sound_8h.html">sound.h</a></li>
-    <li class="footer">Generated on Sun Jun 14 2015 13:43:44 for Shape by
+    <li class="footer">Generated on Sun Jun 14 2015 14:39:25 for Shape by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

@@ -7,6 +7,13 @@
 namespace utility
 {
 
+/** \brief Configuration file
+ *
+ *  Used to parse pairs of "string = string"
+ *  Additional functions may parse the second string to numbers or other strings, separated by commas
+ */
+
+
 class Configuration
 {
 public:

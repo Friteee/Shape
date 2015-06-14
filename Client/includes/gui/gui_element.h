@@ -8,9 +8,10 @@ namespace gui
 {
 
 /**
- * Gui element base class
- * Almost the same thing as object, but no collision with this one
- * And objects are used only with camera, while gui elements are drawn straight to screen
+ * \brief Gui element base class
+ *
+ * Gui element base class.
+ * Its' derived classes could range from buttons to health bar
  */
 
 class Gui_element

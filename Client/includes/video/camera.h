@@ -6,7 +6,7 @@
 namespace video
 {
 
-/**
+/** \brief World camera
  * Singleton class to handle players camera and all that stuff
  */
 

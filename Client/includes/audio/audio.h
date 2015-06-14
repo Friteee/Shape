@@ -2,6 +2,13 @@
 namespace audio
 {
 
+/** \class audio::Audio_subsystem
+ *
+ * \brief class to initialize audio in a program
+ *
+ */
+
+
 class Audio_subsystem
 {
 

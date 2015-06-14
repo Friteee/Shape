@@ -7,6 +7,11 @@
 namespace utility
 {
 
+/** \brief Timer
+ *
+ *  Executes function on finish
+ */
+
 class Timer
 {
 public:

@@ -2,6 +2,14 @@
 
 namespace physics
 {
+
+
+/** \brief add static object for collision detection
+ *
+ * \param Geometry * added - geometrical polygon to get added
+ *
+ */
+
 void Physics_engine::add_static_polygon(Geometry * added)
 {
     objects_change.lock();
@@ -13,6 +21,11 @@ void Physics_engine::add_static_polygon(Geometry * added)
     objects_change.unlock();
 }
 
+/** \brief add moving objects for collision detection and detected collision handling
+ *
+ * \param Geometry * added - geometrical polygon to get added
+ *
+ */
 
 void Physics_engine::add_moving_polygon(Geometry * added)
 {
@@ -25,6 +38,14 @@ void Physics_engine::add_moving_polygon(Geometry * added)
     objects_change.unlock();
 }
 
+/** \brief deletion of a static object
+ *
+ * \param Geometry * deleted - geometrical polygon to get deleted
+ *
+ *  WARNING - performance cost of O(n)
+ */
+
+
 void Physics_engine::delete_static_polygon(Geometry * deleted)
 {
     objects_change.lock();
@@ -36,6 +57,13 @@ void Physics_engine::delete_static_polygon(Geometry * deleted)
     objects_change.unlock();
 }
 
+
+/** \brief deletion of a moving object
+ *
+ * \param Geometry * deleted - geometrical polygon to get deleted
+ *
+ *  WARNING - performance cost of O(n)
+ */
 void Physics_engine::delete_moving_polygon(Geometry * deleted)
 {
     objects_change.lock();
@@ -46,7 +74,12 @@ void Physics_engine::delete_moving_polygon(Geometry * deleted)
 
     objects_change.unlock();
 }
-
+/** \brief Physics run function to detect collisions, apply speed, change position and etc.
+ *
+ *
+ *  Call it only once
+ *  Potentially thread-safe
+ */
 void Physics_engine::run()
 {
     objects_change.lock();
@@ -95,11 +128,18 @@ void Physics_engine::run()
     //todo
 }
 
+
+/** \brief Reset all objects
+ *
+ *
+ */
+
 void Physics_engine::reset()
 {
     moving_objects.clear();
     static_objects.clear();
 }
+
 
 Geometry * Physics_engine::Static_command::get()
 {

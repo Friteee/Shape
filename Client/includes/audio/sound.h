@@ -5,6 +5,11 @@
 namespace audio
 {
 
+/** \brief Sound class to play small audio files
+ *
+ */
+
+
 class Sound
 {
 

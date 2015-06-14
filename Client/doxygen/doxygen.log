@@ -1,3 +1,23 @@
+warning: source ..\includes\game\animation.cpp is not a readable file or directory... skipping.
+warning: source ..\includes\game\animation.h is not a readable file or directory... skipping.
 D:/Github/Shape/Client/includes/physics/geometry.cpp:31: warning: argument 'SDL_Point' of command @param is not found in the argument list of physics::Geometry::is_inside(SDL_Point searched)
 D:/Github/Shape/Client/includes/physics/geometry.cpp:31: warning: The following parameters of physics::Geometry::is_inside(SDL_Point searched) are not documented:
   parameter 'searched'
+D:/Github/Shape/Client/includes/physics/physics_engine.cpp:24: warning: argument 'Geometry' of command @param is not found in the argument list of physics::Physics_engine::add_moving_polygon(Geometry *added)
+D:/Github/Shape/Client/includes/physics/physics_engine.cpp:24: warning: The following parameters of physics::Physics_engine::add_moving_polygon(Geometry *added) are not documented:
+  parameter 'added'
+D:/Github/Shape/Client/includes/physics/physics_engine.cpp:7: warning: argument 'Geometry' of command @param is not found in the argument list of physics::Physics_engine::add_static_polygon(Geometry *added)
+D:/Github/Shape/Client/includes/physics/physics_engine.cpp:7: warning: The following parameters of physics::Physics_engine::add_static_polygon(Geometry *added) are not documented:
+  parameter 'added'
+D:/Github/Shape/Client/includes/physics/physics_engine.cpp:61: warning: argument 'Geometry' of command @param is not found in the argument list of physics::Physics_engine::delete_moving_polygon(Geometry *deleted)
+D:/Github/Shape/Client/includes/physics/physics_engine.cpp:61: warning: The following parameters of physics::Physics_engine::delete_moving_polygon(Geometry *deleted) are not documented:
+  parameter 'deleted'
+D:/Github/Shape/Client/includes/physics/physics_engine.cpp:41: warning: argument 'Geometry' of command @param is not found in the argument list of physics::Physics_engine::delete_static_polygon(Geometry *deleted)
+D:/Github/Shape/Client/includes/physics/physics_engine.cpp:41: warning: The following parameters of physics::Physics_engine::delete_static_polygon(Geometry *deleted) are not documented:
+  parameter 'deleted'
+D:/Github/Shape/Client/includes/video/window.cpp:195: warning: argument 'SDL_Rect' of command @param is not found in the argument list of video::Video_subsystem::fill_rect(SDL_Rect filling, uint8_t r, uint8_t g, uint8_t b)
+D:/Github/Shape/Client/includes/video/window.cpp:195: warning: The following parameters of video::Video_subsystem::fill_rect(SDL_Rect filling, uint8_t r, uint8_t g, uint8_t b) are not documented:
+  parameter 'filling'
+  parameter 'r'
+  parameter 'g'
+  parameter 'b'

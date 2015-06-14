@@ -170,6 +170,9 @@ void Video_subsystem::draw_line(int x_1 , int y_1 , int x_2 , int y_2,
     return;
 }
 
+/**
+ * Height of the screen getter function
+ */
 int Video_subsystem::get_height()
 {
     int height,width;
@@ -177,6 +180,9 @@ int Video_subsystem::get_height()
     return height;
 }
 
+/**
+ * Width of the screen getter function
+ */
 int Video_subsystem::get_width()
 {
     int height,width;
@@ -184,6 +190,11 @@ int Video_subsystem::get_width()
     return width;
 }
 
+
+/**
+ * \brief Fill rectangle set in SDL_Rect with color r,g,b
+ * \param SDL_Rect filling - rect where to blit
+ */
 void Video_subsystem::fill_rect(SDL_Rect filling, uint8_t r , uint8_t g, uint8_t b)
 {
     SDL_SetRenderDrawColor(instance->main_renderer , r , g , b , 255);

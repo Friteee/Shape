@@ -7,6 +7,13 @@
 namespace gui
 {
 
+/** \brief Class to lay down most of the work on
+ *
+ *  Used to hold gui elements and notifying them, if they are clicked
+ *  Don't forget to use gui::Click, as otherwise this class is almost useless.
+ */
+
+
 class Gui_manager
 {
 public:

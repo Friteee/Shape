@@ -2092,7 +2092,7 @@
 	"music.h"
 	<cstdio>
 
-1431782123 d:\github\shape\client\includes\audio\music.h
+1434283664 d:\github\shape\client\includes\audio\music.h
 	<SDl_mixer.h>
 	<string>
 	<memory>
@@ -2101,7 +2101,7 @@
 	"sound.h"
 	<cstdio>
 
-1431764363 d:\github\shape\client\includes\audio\sound.h
+1434283688 d:\github\shape\client\includes\audio\sound.h
 	<SDl_mixer.h>
 	<string>
 	<memory>
@@ -2113,7 +2113,7 @@
 	<functional>
 	"../utility/stopwatch.h"
 
-1427024304 d:\github\shape\client\includes\utility\stopwatch.h
+1434285439 d:\github\shape\client\includes\utility\stopwatch.h
 
 1432142328 source:d:\github\shape\client\includes\gui\background.cpp
 	<stdio.h>
@@ -2336,11 +2336,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1427709895 d:\github\shape\client\includes\video\window.h
+1434285557 d:\github\shape\client\includes\video\window.h
 	<SDL.h>
 	"window.h"
 
-1425587907 d:\github\shape\client\includes\gui\background.h
+1434283961 d:\github\shape\client\includes\gui\background.h
 	<stdio.h>
 	<SDL.h>
 	"../video/window.h"
@@ -2349,7 +2349,7 @@
 	<memory>
 	<deque>
 
-1431715522 d:\github\shape\client\includes\video\texture.h
+1434285542 d:\github\shape\client\includes\video\texture.h
 	<string>
 	<memory>
 	<SDL.h>
@@ -2365,18 +2365,18 @@
 	"../video/window.h"
 	<cstdio>
 
-1431768096 d:\github\shape\client\includes\gui\button.h
+1434284059 d:\github\shape\client\includes\gui\button.h
 	"../video/texture.h"
 	"gui_element.h"
 
-1431713609 d:\github\shape\client\includes\gui\gui_element.h
+1434284164 d:\github\shape\client\includes\gui\gui_element.h
 	<SDL.h>
 	"../video/texture.h"
 
 1426072026 source:d:\github\shape\client\includes\gui\click.cpp
 	"click.h"
 
-1426072026 d:\github\shape\client\includes\gui\click.h
+1434284088 d:\github\shape\client\includes\gui\click.h
 	<SDL.h>
 
 1432464998 source:d:\github\shape\client\includes\gui\gui_manager.cpp
@@ -2384,7 +2384,7 @@
 	"click.h"
 	<cstdio>
 
-1426071225 d:\github\shape\client\includes\gui\gui_manager.h
+1434284923 d:\github\shape\client\includes\gui\gui_manager.h
 	"gui_element.h"
 	<vector>
 
@@ -2395,7 +2395,7 @@
 	<cstdio>
 	<assert.h>
 
-1427711507 d:\github\shape\client\includes\gui\progress_bar.h
+1434285012 d:\github\shape\client\includes\gui\progress_bar.h
 	<functional>
 	"../utility/stopwatch.h"
 	"gui_element.h"
@@ -2406,13 +2406,13 @@
 	"../video/window.h"
 	<cstdio>
 
-1427713912 d:\github\shape\client\includes\gui\text.h
+1434285037 d:\github\shape\client\includes\gui\text.h
 	"text.h"
 	"gui_element.h"
 	"../utility/configuration.h"
 	<string>
 
-1425229681 d:\github\shape\client\includes\utility\configuration.h
+1434285394 d:\github\shape\client\includes\utility\configuration.h
 	<string>
 	<vector>
 
@@ -2443,7 +2443,7 @@
 	"main_logic/game_logic.h"
 	<stdio.h>
 
-1434281246 d:\github\shape\client\includes\main_logic\game_logic.h
+1434285106 d:\github\shape\client\includes\main_logic\game_logic.h
 	"../video/window.h"
 	"../gui/background.h"
 	"../video/camera.h"
@@ -2453,10 +2453,10 @@
 	"gaming_mode.h"
 	"main_menu_mode.h"
 
-1419571578 d:\github\shape\client\includes\video\camera.h
+1434285542 d:\github\shape\client\includes\video\camera.h
 	<SDL.h>
 
-1434280608 d:\github\shape\client\includes\main_logic\gaming_mode.h
+1434285165 d:\github\shape\client\includes\main_logic\gaming_mode.h
 	"program_mode.h"
 	"../gui/background.h"
 	"../gui/gui_manager.h"
@@ -2465,11 +2465,11 @@
 	"../audio/music.h"
 	<string>
 
-1425588000 d:\github\shape\client\includes\main_logic\program_mode.h
+1434285219 d:\github\shape\client\includes\main_logic\program_mode.h
 	"../utility/configuration.h"
 	<SDL.h>
 
-1434280592 d:\github\shape\client\includes\main_logic\main_menu_mode.h
+1434285204 d:\github\shape\client\includes\main_logic\main_menu_mode.h
 	"program_mode.h"
 	"../gui/text_button.h"
 	"../gui/gui_manager.h"
@@ -2516,7 +2516,7 @@
 	"timer.h"
 	<cstdio>
 
-1427024486 d:\github\shape\client\includes\utility\timer.h
+1434285513 d:\github\shape\client\includes\utility\timer.h
 	<functional>
 	"stopwatch.h"
 
@@ -2538,13 +2538,14 @@
 	<stdio.h>
 	"window.h"
 
-1434209063 source:d:\github\shape\client\includes\main_logic\gaming_mode.cpp
+1434314574 source:d:\github\shape\client\includes\main_logic\gaming_mode.cpp
 	"gaming_mode.h"
 	"main_menu_mode.h"
 	"game_logic.h"
 	"../gui/progress_bar.h"
 	"../gui/click.h"
 	"../audio/music.h"
+	"../game/moving_object.h"
 	<cstdlib>
 	<sstream>
 
@@ -8322,22 +8323,22 @@
 
 1433348396 source:d:\github\shape\client\includes\network\network.cpp
 
-1434281260 source:d:\github\shape\client\includes\physics\geometry.cpp
+1434315704 source:d:\github\shape\client\includes\physics\geometry.cpp
 	"geometry.h"
 
-1434281134 d:\github\shape\client\includes\physics\geometry.h
+1434315704 d:\github\shape\client\includes\physics\geometry.h
 	<SDL.h>
 	<vector>
 
-1434281384 source:d:\github\shape\client\includes\game\tile.cpp
+1434315006 source:d:\github\shape\client\includes\game\tile.cpp
 	"tile.h"
 	"../main_logic/game_logic.h"
 
-1434281365 d:\github\shape\client\includes\game\tile.h
+1434283873 d:\github\shape\client\includes\game\tile.h
 	"static_object.h"
 	"tile_type.h"
 
-1434281319 d:\github\shape\client\includes\game\static_object.h
+1434283745 d:\github\shape\client\includes\game\static_object.h
 	<SDL.h>
 	"../physics/geometry.h"
 
@@ -8345,17 +8346,39 @@
 	"tile_type.h"
 	"../video/camera.h"
 
-1433853335 d:\github\shape\client\includes\game\tile_type.h
+1434283908 d:\github\shape\client\includes\game\tile_type.h
 	<string>
 	<SDL.h>
 	"../video/texture.h"
 
-1434280515 source:d:\github\shape\client\includes\physics\physics_engine.cpp
+1434284827 source:d:\github\shape\client\includes\physics\physics_engine.cpp
 	"physics_engine.h"
 
-1434282214 d:\github\shape\client\includes\physics\physics_engine.h
+1434315145 d:\github\shape\client\includes\physics\physics_engine.h
 	"geometry.h"
+	"physics_component.h"
 	<vector>
 	<mutex>
 	<list>
+
+1434314990 d:\github\shape\client\includes\game\moving_object.h
+	"object_command.h"
+	"../physics/physics_component.h"
+	"../ai/ai_component.h"
+	"../video/render_component.h"
+
+1434314469 d:\github\shape\client\includes\game\object_command.h
+	"moving_object.h"
+
+1434314543 d:\github\shape\client\includes\physics\physics_component.h
+	<SDL.h>
+	"geometry.h"
+	"../game/moving_object.h"
+
+1434313984 d:\github\shape\client\includes\ai\ai_component.h
+
+1434314646 d:\github\shape\client\includes\video\render_component.h
+
+1434314711 source:d:\github\shape\client\includes\game\moving_object.cpp
+	"moving_object.h"
 

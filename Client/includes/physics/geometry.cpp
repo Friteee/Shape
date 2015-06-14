@@ -8,11 +8,6 @@ void Geometry::add_point(SDL_Point added)
     points.push_back(added);
 }
 
-unsigned int Geometry::get_point_quantity()
-{
-    return points.size();
-}
-
 SDL_Point Geometry::get_next_point( unsigned int iterator)
 {
     iterator++;
@@ -77,6 +72,11 @@ void Geometry::move(int x , int y)
         a.x+=x;
         a.y+=y;
     }
+}
+
+std::vector<SDL_Point>& Geometry::get_points()
+{
+    return points;
 }
 
 }

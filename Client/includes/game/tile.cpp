@@ -7,12 +7,12 @@ namespace game
 
 Tile::Tile()
 {
-    main_logic::Game_logic::get_engine().add_static_polygon(&polygon);
+    main_logic::Game_logic::get_engine().add_static_object(&polygon);
 }
 
 Tile::~Tile()
 {
-    main_logic::Game_logic::get_engine().delete_static_polygon(&polygon);
+    main_logic::Game_logic::get_engine().delete_static_object(&polygon);
 }
 
 void Tile::show()

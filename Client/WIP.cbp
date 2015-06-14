@@ -66,14 +66,16 @@
 			<Add directory="SDL2_ttf_lib" />
 			<Add directory="SDL2_mix" />
 		</Linker>
+		<Unit filename="includes/ai/ai_component.h" />
 		<Unit filename="includes/audio/audio.cpp" />
 		<Unit filename="includes/audio/audio.h" />
 		<Unit filename="includes/audio/music.cpp" />
 		<Unit filename="includes/audio/music.h" />
 		<Unit filename="includes/audio/sound.cpp" />
 		<Unit filename="includes/audio/sound.h" />
-		<Unit filename="includes/game/animation.cpp" />
-		<Unit filename="includes/game/animation.h" />
+		<Unit filename="includes/game/moving_object.cpp" />
+		<Unit filename="includes/game/moving_object.h" />
+		<Unit filename="includes/game/object_command.h" />
 		<Unit filename="includes/game/static_object.h" />
 		<Unit filename="includes/game/tile.cpp" />
 		<Unit filename="includes/game/tile.h" />
@@ -105,6 +107,7 @@
 		<Unit filename="includes/network/game_server.h" />
 		<Unit filename="includes/physics/geometry.cpp" />
 		<Unit filename="includes/physics/geometry.h" />
+		<Unit filename="includes/physics/physics_component.h" />
 		<Unit filename="includes/physics/physics_engine.cpp" />
 		<Unit filename="includes/physics/physics_engine.h" />
 		<Unit filename="includes/utility/configuration.cpp" />
@@ -117,6 +120,7 @@
 		<Unit filename="includes/utility/timer.h" />
 		<Unit filename="includes/video/camera.cpp" />
 		<Unit filename="includes/video/camera.h" />
+		<Unit filename="includes/video/render_component.h" />
 		<Unit filename="includes/video/texture.cpp" />
 		<Unit filename="includes/video/texture.h" />
 		<Unit filename="includes/video/window.cpp" />

@@ -5,6 +5,7 @@
 #include "../gui/progress_bar.h"
 #include "../gui/click.h"
 #include "../audio/music.h"
+#include "../game/moving_object.h"
 
 #include <cstdlib>
 #include <sstream>

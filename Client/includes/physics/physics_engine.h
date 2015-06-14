@@ -2,6 +2,7 @@
 #define PHYSICS_ENGINE_H_INCLUDED
 
 #include "geometry.h"
+#include "physics_component.h"
 #include <vector>
 #include <mutex>
 #include <list>
@@ -26,13 +27,14 @@ class Physics_engine
 {
 
 public:
-    void add_static_polygon(Geometry * added);
-    void add_moving_polygon(Geometry * added);
-    void delete_static_polygon(Geometry * deleted);
-    void delete_moving_polygon(Geometry * deleted);
+    void add_static_object(Geometry * added);
+    void add_moving_object(Physics_component * added);
+    void delete_static_object(Geometry * deleted);
+    void delete_moving_object(Physics_component * deleted);
     void run();
     void reset();
 private:
+    void check_addition();
 
     class Static_command
     {
@@ -46,14 +48,14 @@ private:
     class Moving_command
     {
     public:
-        Geometry * get();
-        void set(Geometry * added);
+        Physics_component * get();
+        void set(Physics_component * added);
     private:
-        Geometry * object;
+        Physics_component * object;
     };
 
     std::vector<Geometry *> static_objects;
-    std::vector<Geometry *> moving_objects;
+    std::vector<Physics_component *> moving_objects;
     std::mutex objects_change;
     std::list <Static_command> static_addition;
     std::list <Moving_command> moving_addition;

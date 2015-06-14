@@ -1,0 +1,3 @@
+D:/Github/Shape/Client/includes/physics/geometry.cpp:31: warning: argument 'SDL_Point' of command @param is not found in the argument list of physics::Geometry::is_inside(SDL_Point searched)
+D:/Github/Shape/Client/includes/physics/geometry.cpp:31: warning: The following parameters of physics::Geometry::is_inside(SDL_Point searched) are not documented:
+  parameter 'searched'

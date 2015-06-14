@@ -6,6 +6,7 @@
 #include "../video/camera.h"
 #include "../utility/configuration.h"
 #include "../audio/audio.h"
+#include "../physics/physics_engine.h"
 #include "gaming_mode.h"
 #include "main_menu_mode.h"
 
@@ -31,6 +32,9 @@ public:
     static Game_logic& get_instance();
     // set the current mode
     static void set_current_mode(Program_mode * init_mode);
+    // get physics engine
+    static physics::Physics_engine & get_engine();
+    // destructor
     ~Game_logic();
 
 private:
@@ -57,6 +61,8 @@ private:
     Program_mode * current;
     // program mode marked for deletion
     Program_mode * previous;
+    // physics engine
+    physics::Physics_engine engine;
 
 };
 

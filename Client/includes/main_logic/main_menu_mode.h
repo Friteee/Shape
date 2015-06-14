@@ -6,8 +6,6 @@
 #include "../gui/gui_manager.h"
 #include "../gui/background.h"
 #include "../gui/button.h"
-#include "../utility/stopwatch.h"
-#include "../video/window.h"
 #include "../audio/music.h"
 
 
@@ -33,19 +31,10 @@ private:
     utility::Configuration * main_config;
     // event
     SDL_Event                event;
-    // timers to handle fps and grid movement
-    utility::Stopwatch       fps_stopwatch;
     // gui manager
     gui::Gui_manager         main_gui;
-    // speed of the grid
-    int                      grid_speed;
-    // buffers for speed movement
-    double                   grid_x,
-                             grid_y;
     //background
     gui::Background          background;
-    bool                     change_mode;
-    bool                     quit;
     //music
     audio::Music             music;
 };

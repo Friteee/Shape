@@ -6,15 +6,7 @@
 #include "../gui/gui_manager.h"
 #include "../video/texture.h"
 #include "../gui/text.h"
-#include "../audio/sound.h"
-#include "../utility/stopwatch.h"
 #include "../audio/music.h"
-
-namespace gui
-{
-class Progress_bar;
-}
-
 #include <string>
 
 namespace main_logic
@@ -25,11 +17,11 @@ class Gaming_mode : public Program_mode
 public :
 
     Gaming_mode(utility::Configuration * init_config );
-    bool run ()override;
-    bool handle_input()override;
+    bool       run ()override;
+    bool       handle_input()override;
 
 private:
-    gui::Background        * main_background;
+    gui::Background          main_background;
     // event
     SDL_Event                event;
     // configuration

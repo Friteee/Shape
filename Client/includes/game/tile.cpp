@@ -1,30 +1,33 @@
 
 #include "tile.h"
+#include "../main_logic/game_logic.h"
 
 namespace game
 {
 
 Tile::Tile()
 {
-    polygon = nullptr;
+    main_logic::Game_logic::get_engine().add_static_polygon(&polygon);
+}
+
+Tile::~Tile()
+{
+    main_logic::Game_logic::get_engine().delete_static_polygon(&polygon);
 }
 
 void Tile::show()
 {
-
+    type->blit(location);
 }
 
 void Tile::init_geometry(physics::Geometry init_polygon)
 {
-    if(polygon != nullptr)
-        delete polygon;
-    polygon = new physics::Geometry;
-    *polygon = init_polygon;
+    polygon = init_polygon;
 }
 
-void Tile::init_tile_type()
+void Tile::init_tile_type(Tile_type * init_type)
 {
-
+    type = init_type;
 }
 
 void Tile::set_x(int x)

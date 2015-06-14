@@ -115,7 +115,7 @@ bool Gaming_mode::run()
     gui_manager.update();
 
     // main logic here
-    main_background->show();
+    main_background.show();
 
     gui_manager.show();
 
@@ -131,7 +131,8 @@ bool Gaming_mode::run()
 Gaming_mode::Gaming_mode(utility::Configuration * init_config ):
     main_config(init_config)
 {
-
+    // background
+    main_background.change_image(main_config->find_string("main_background").c_str());
 }
 
 

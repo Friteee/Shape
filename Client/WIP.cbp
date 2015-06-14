@@ -77,6 +77,7 @@
 		<Unit filename="includes/game/static_object.h" />
 		<Unit filename="includes/game/tile.cpp" />
 		<Unit filename="includes/game/tile.h" />
+		<Unit filename="includes/game/tile_type.cpp" />
 		<Unit filename="includes/game/tile_type.h" />
 		<Unit filename="includes/gui/background.cpp" />
 		<Unit filename="includes/gui/background.h" />
@@ -102,9 +103,10 @@
 		<Unit filename="includes/main_logic/main_menu_mode.h" />
 		<Unit filename="includes/main_logic/program_mode.h" />
 		<Unit filename="includes/network/game_server.h" />
-		<Unit filename="includes/network/network.cpp" />
 		<Unit filename="includes/physics/geometry.cpp" />
 		<Unit filename="includes/physics/geometry.h" />
+		<Unit filename="includes/physics/physics_engine.cpp" />
+		<Unit filename="includes/physics/physics_engine.h" />
 		<Unit filename="includes/utility/configuration.cpp" />
 		<Unit filename="includes/utility/configuration.h" />
 		<Unit filename="includes/utility/functions.cpp" />
@@ -127,6 +129,15 @@
 			<wxsmith version="1">
 				<gui name="wxWidgets" src="" main="" init_handlers="necessary" language="CPP" />
 			</wxsmith>
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

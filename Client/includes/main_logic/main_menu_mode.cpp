@@ -20,7 +20,7 @@ namespace main_logic
 bool Main_menu_mode::run()
 {
 
-    if(handle_input()==false || quit == true)
+    if(handle_input()==false )
     {
         return false;
     }
@@ -105,12 +105,7 @@ bool Main_menu_mode::handle_input()
  */
 
 Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
-    main_config(init_config),
-    grid_speed(atoi(main_config->find_string("grid_speed").c_str())),
-    grid_x(0),
-    grid_y(0),
-    change_mode(false),
-    quit(false)
+    main_config(init_config)
 {
 
     // background

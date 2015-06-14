@@ -70,4 +70,13 @@ Geometry get_rectangle(int x, int y, int w, int h)
     return buffer;
 }
 
+void Geometry::move(int x , int y)
+{
+    for (auto a : points)
+    {
+        a.x+=x;
+        a.y+=y;
+    }
+}
+
 }

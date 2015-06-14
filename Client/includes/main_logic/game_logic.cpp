@@ -142,5 +142,10 @@ void Game_logic::set_current_mode(Program_mode * init_mode)
     instance->current = init_mode;
 }
 
+physics::Physics_engine & Game_logic::get_engine()
+{
+    return instance->engine;
+}
+
 }// end of namespace main_logic
 

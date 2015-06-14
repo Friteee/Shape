@@ -20,6 +20,7 @@ public:
     unsigned int get_point_quantity();
     void         add_point(SDL_Point added);
     bool         is_inside(SDL_Point searched);
+    void         move     (int x, int y);
 private:
     SDL_Point    get_next_point(unsigned int iterator);
     std::vector<SDL_Point> points;

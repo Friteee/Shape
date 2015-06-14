@@ -7,13 +7,14 @@
 namespace game
 {
 
+
 class Static_object
 {
 public:
     virtual void show(){};
 protected:
     SDL_Point           location;
-    physics::Geometry * polygon;
+    physics::Geometry   polygon;
 };
 
 }

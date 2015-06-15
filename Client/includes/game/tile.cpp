@@ -7,7 +7,7 @@ namespace game
 
 Tile::Tile()
 {
-    main_logic::Game_logic::get_engine().add_static_object(&polygon);
+    type = nullptr;
 }
 
 Tile::~Tile()
@@ -28,6 +28,10 @@ void Tile::init_geometry(physics::Geometry init_polygon)
 void Tile::init_tile_type(Tile_type * init_type)
 {
     type = init_type;
+    if(type->get_invincibility())
+    {
+
+    }
 }
 
 void Tile::set_x(int x)

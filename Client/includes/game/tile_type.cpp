@@ -35,4 +35,9 @@ void Tile_type::blit             ( SDL_Point location  )
     video::Camera::blit(texture.get_texture() , &src , &dest);
 }
 
+void Tile_type::set_id(unsigned int init_id)
+{
+    id=init_id;
+}
+
 }

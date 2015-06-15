@@ -1,4 +1,6 @@
 #include "physics_engine.h"
+#include "../utility/stopwatch.h"
+#include <chrono>
 
 namespace physics
 {
@@ -81,32 +83,12 @@ void Physics_engine::delete_moving_object(Physics_component * deleted)
  *  Potentially thread-safe.
  *  Potential algorithm complexity - O(m*n*l + m^2) , where m - moving objects, n - static objects, l - points in moving objects geometry
  */
-void Physics_engine::run()
+void Physics_engine::run(unsigned int ticks)
 {
-    check_addition();
+    ticks_per_second = ticks;
+    stop = false;
+    engine = new std::thread (&Physics_engine::thread , this);
 
-    //update
-    for(unsigned int a = 0; a < moving_objects.size() ; a++)
-    {
-        moving_objects[a]->update();
-    }
-
-    //check and notify collisions
-    for(unsigned int a = 0 , a_size = moving_objects.size() ; a < a_size ; a++)
-    {
-        Geometry * buffer = moving_objects[a]->get_polygon();
-        std::vector<SDL_Point>& points = buffer->get_points();
-        for(unsigned int b = 0 , b_size = points.size() ; b < b_size ; b++)
-        {
-            for(unsigned int c = 0 , c_size = static_objects.size() ; c < c_size; c++)
-            {
-                if(static_objects[c]->is_inside(points[b]))
-                {
-                    moving_objects[a]->notify(points[b]);
-                }
-            }
-        }
-    }
 }
 
 /** \brief Check for object addition to physics
@@ -166,13 +148,96 @@ void Physics_engine::check_addition()
 
 /** \brief Reset all objects
  *
- *
+ *  Could block caller for 1 to 16 milliseconds
  */
 
 void Physics_engine::reset()
 {
+    stop = true;
+    engine->join();
+    delete engine;
+
+    moving_addition.clear();
+    moving_deletion.clear();
+    static_addition.clear();
+    static_deletion.clear();
     moving_objects.clear();
     static_objects.clear();
+}
+
+
+void Physics_engine::update_moving()
+{
+    //update
+    for(unsigned int a = 0; a < moving_objects.size() ; a++)
+    {
+        moving_objects[a]->update();
+    }
+}
+
+void Physics_engine::check_collision()
+{
+    //check and notify collisions for moving - static objects
+    for(unsigned int a = 0 , a_size = moving_objects.size() ; a < a_size ; a++)
+    {
+        Geometry * buffer = moving_objects[a]->get_polygon();
+        std::vector<SDL_Point>& points = buffer->get_points();
+        for(unsigned int b = 0 , b_size = points.size() ; b < b_size ; b++)
+        {
+            for(unsigned int c = 0 , c_size = static_objects.size() ; c < c_size; c++)
+            {
+                if(static_objects[c]->is_inside(points[b]))
+                {
+                    moving_objects[a]->notify_static(points[b]);
+                }
+            }
+        }
+    }
+    //check and notify collisions for moving - moving objects
+    for(unsigned int a = 0 , a_size = moving_objects.size() ; a < a_size ; a++)
+    {
+        Geometry * buffer = moving_objects[a]->get_polygon();
+        std::vector<SDL_Point>& points = buffer->get_points();
+        for(unsigned int b = 0 , b_size = points.size() ; b < b_size ; b++)
+        {
+            for(unsigned int c = 0 , c_size = moving_objects.size() ; c < c_size; c++)
+            {
+                if(a==c)
+                    continue;
+                else if(moving_objects[c]->get_polygon()->is_inside(points[b]))
+                {
+                    moving_objects[a]->notify_moving(moving_objects[b]);
+                    moving_objects[b]->notify_moving(moving_objects[a]);
+                }
+            }
+        }
+    }
+}
+
+void Physics_engine::thread()
+{
+    utility::Stopwatch ticks;
+    ticks.start();
+
+    while(!stop)
+    {
+
+        check_addition();
+
+        update_moving();
+
+        check_collision();
+
+        if(ticks.get_ticks() < 1000.f / ticks_per_second && !stop)
+        {
+            std::chrono::milliseconds duration = std::chrono::milliseconds(1000 / ticks_per_second - ticks.get_ticks());
+            std::this_thread::sleep_for(duration);
+        }
+
+        ticks.reload();
+
+    }
+
 }
 
 

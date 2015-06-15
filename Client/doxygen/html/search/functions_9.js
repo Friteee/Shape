@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['operator_3d',['operator=',['../classgui_1_1_background.html#ae5aeb2b940819e803987855a940301b1',1,'gui::Background::operator=(const Background &amp;copied_object)'],['../classgui_1_1_background.html#a01ebb310a7c9b2d5dc187cd88229e76f',1,'gui::Background::operator=(Background &amp;&amp;copied_object)'],['../classgui_1_1_gui__manager.html#adec67d86af9fd89dcecd58f0f93d6fc8',1,'gui::Gui_manager::operator=(const Gui_manager &amp;copied_object)=delete'],['../classgui_1_1_gui__manager.html#ae182136d5c253ffb40cccbef0df65d8a',1,'gui::Gui_manager::operator=(Gui_manager &amp;&amp;moved_object)=delete'],['../classvideo_1_1_texture.html#a3157a7c473b67669479abe89d8424d45',1,'video::Texture::operator=(const Texture &amp;copied)'],['../classvideo_1_1_texture.html#a7444031e76c7b4f73918274a6000e4c8',1,'video::Texture::operator=(Texture &amp;&amp;moved)']]]
+  ['main',['main',['../main_8cpp.html#a700a0caa5b70a06d1064e576f9f3cf65',1,'main.cpp']]],
+  ['main_5fmenu_5fmode',['Main_menu_mode',['../classmain__logic_1_1_main__menu__mode.html#a88a36e994302142feec37a71b69c9d36',1,'main_logic::Main_menu_mode']]],
+  ['minimize',['minimize',['../classvideo_1_1_video__subsystem.html#aae9f1f9512c08472454a67b44f683b2a',1,'video::Video_subsystem']]],
+  ['move',['move',['../classphysics_1_1_geometry.html#a68fb1a3142bd1c84ee99f53e16151e3e',1,'physics::Geometry::move()'],['../classvideo_1_1_camera.html#ac09f4ac8dbdcbb6ad2a3c1d641279682',1,'video::Camera::move()']]],
+  ['moving_5fobject',['Moving_object',['../classgame_1_1_moving__object.html#a0b93040355ab8fd474f50a045fb9b5f3',1,'game::Moving_object']]]
 ];

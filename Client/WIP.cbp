@@ -73,6 +73,8 @@
 		<Unit filename="includes/audio/music.h" />
 		<Unit filename="includes/audio/sound.cpp" />
 		<Unit filename="includes/audio/sound.h" />
+		<Unit filename="includes/game/map.cpp" />
+		<Unit filename="includes/game/map.h" />
 		<Unit filename="includes/game/moving_object.cpp" />
 		<Unit filename="includes/game/moving_object.h" />
 		<Unit filename="includes/game/object_command.h" />

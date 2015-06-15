@@ -6,6 +6,8 @@
 #include <vector>
 #include <mutex>
 #include <list>
+#include <thread>
+#include <atomic>
 
 namespace physics
 {
@@ -27,14 +29,19 @@ class Physics_engine
 {
 
 public:
+
     void add_static_object(Geometry * added);
     void add_moving_object(Physics_component * added);
     void delete_static_object(Geometry * deleted);
     void delete_moving_object(Physics_component * deleted);
-    void run();
+    void run(unsigned int ticks_per_s);
     void reset();
+
 private:
     void check_addition();
+    void update_moving();
+    void check_collision();
+    void thread();
 
     class Static_command
     {
@@ -54,13 +61,16 @@ private:
         Physics_component * object;
     };
 
-    std::vector<Geometry *> static_objects;
+    std::vector<Geometry *>          static_objects;
     std::vector<Physics_component *> moving_objects;
-    std::mutex objects_change;
-    std::list <Static_command> static_addition;
-    std::list <Moving_command> moving_addition;
-    std::list <Static_command> static_deletion;
-    std::list <Moving_command> moving_deletion;
+    std::mutex                       objects_change;
+    std::list <Static_command>       static_addition;
+    std::list <Moving_command>       moving_addition;
+    std::list <Static_command>       static_deletion;
+    std::list <Moving_command>       moving_deletion;
+    std::thread                    * engine;
+    std::atomic_bool                 stop ;
+    unsigned int                     ticks_per_second;
 
 
 

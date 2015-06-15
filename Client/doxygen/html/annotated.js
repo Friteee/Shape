@@ -1,5 +1,6 @@
 var annotated =
 [
+    [ "ai", "namespaceai.html", "namespaceai" ],
     [ "audio", "namespaceaudio.html", "namespaceaudio" ],
     [ "game", "namespacegame.html", "namespacegame" ],
     [ "gui", "namespacegui.html", "namespacegui" ],

@@ -39,6 +39,8 @@ private:
     gui::Background          background;
     //music
     audio::Music             music;
+    // quit
+    bool                     quit;
 };
 
 } // end of main_logic namespace

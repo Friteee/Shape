@@ -20,19 +20,23 @@ Text_button::Text_button(utility::Configuration * config , std::string init_text
 
     text = init_text;
 
+    size = 64;
+
     std::vector<int> colors = utility::get_numbers_from_string(config->find_string("button_color"));
     color.r = colors[0];
     color.g = colors[1];
     color.b = colors[2];
     color.a = 255;
 
-    font = TTF_OpenFont(config->find_string("font").c_str(),64);
+    font_file = config->find_string("font");
+    TTF_Font * font = TTF_OpenFont(font_file.c_str(),size);
     if(font == nullptr)
     {
         printf("No font found at %s \n",config->find_string("font").c_str());
     }
-
     texture.init(text,color,font);
+
+    TTF_CloseFont(font);
 
 
     location.x = x;
@@ -77,12 +81,22 @@ void Text_button::update()
 
 Text_button::~Text_button()
 {
-    TTF_CloseFont(font);
+
+}
+
+void Text_button::change_size(unsigned int init_size)
+{
+    size = init_size;
+    TTF_Font * font = TTF_OpenFont(font_file.c_str(),size);
+    texture.init(text,color,font);
+    location.w = texture.get_width();
+    location.h = texture.get_height();
 }
 
 void Text_button::change_text(std::string init_text)
 {
     text = init_text;
+    TTF_Font * font = TTF_OpenFont(font_file.c_str(),size);
     texture.init(text,color,font);
     location.w = texture.get_width();
     location.h = texture.get_height();

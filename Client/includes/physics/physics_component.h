@@ -19,7 +19,9 @@ public:
 
     virtual void update() = 0;
 
-    virtual void notify(SDL_Point collision) = 0;
+    virtual void notify_static(SDL_Point collision) = 0;
+
+    virtual void notify_moving(Physics_component* moving) = 0;
 
     virtual SDL_Point get_interpolated_location(unsigned int time) = 0;
 

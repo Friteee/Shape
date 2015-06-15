@@ -112,36 +112,36 @@ $(document).ready(function(){initNavTree('physics__engine_8h_source.html','');})
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PHYSICS_ENGINE_H_INCLUDED</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="geometry_8h.html">geometry.h</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacephysics.html">physics</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="physics__component_8h.html">physics_component.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;atomic&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classphysics_1_1_physics__engine.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classphysics_1_1_physics__engine.html">Physics_engine</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classphysics_1_1_physics__engine.html#a484f2d688691af892586bb031b241098">add_static_polygon</a>(<a class="code" href="classphysics_1_1_geometry.html">Geometry</a> * added);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classphysics_1_1_physics__engine.html#af5c2deb640d8ddc95c9431986af8d2d0">add_moving_polygon</a>(<a class="code" href="classphysics_1_1_geometry.html">Geometry</a> * added);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classphysics_1_1_physics__engine.html#a80a44978f769afd653f18ee503a81255">delete_static_polygon</a>(<a class="code" href="classphysics_1_1_geometry.html">Geometry</a> * deleted);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classphysics_1_1_physics__engine.html#a0caac3174e9ceefa18e8603284c46094">delete_moving_polygon</a>(<a class="code" href="classphysics_1_1_geometry.html">Geometry</a> * deleted);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classphysics_1_1_physics__engine.html#a7eca9197e535fb8cc66d860c1f941fb1">run</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classphysics_1_1_physics__engine.html#a8d4085850cab090da582dc95d7d09f21">reset</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">class </span>Static_command</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classphysics_1_1_geometry.html">Geometry</a> * <span class="keyword">get</span>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> set(<a class="code" href="classphysics_1_1_geometry.html">Geometry</a> * added);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classphysics_1_1_geometry.html">Geometry</a> * object;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    };</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacephysics.html">physics</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classphysics_1_1_physics__engine.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classphysics_1_1_physics__engine.html">Physics_engine</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classphysics_1_1_physics__engine.html#a1aaa74b815f1cc527e2e219a0efede46">add_static_object</a>(<a class="code" href="classphysics_1_1_geometry.html">Geometry</a> * added);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classphysics_1_1_physics__engine.html#a1d07f6d656d4f77f513562968326d161">add_moving_object</a>(<a class="code" href="classphysics_1_1_physics__component.html">Physics_component</a> * added);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classphysics_1_1_physics__engine.html#ac1e95f36ac4f4dd4cbf8f134a8665878">delete_static_object</a>(<a class="code" href="classphysics_1_1_geometry.html">Geometry</a> * deleted);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classphysics_1_1_physics__engine.html#a50bef52a797e252288c9d4cc707138c1">delete_moving_object</a>(<a class="code" href="classphysics_1_1_physics__component.html">Physics_component</a> * deleted);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classphysics_1_1_physics__engine.html#a8985f93506c104d75640c9146b6d0ab9">run</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ticks_per_s);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classphysics_1_1_physics__engine.html#a8d4085850cab090da582dc95d7d09f21">reset</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> check_addition();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> update_moving();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> check_collision();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> thread();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">class </span>Moving_command</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">class </span>Static_command</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classphysics_1_1_geometry.html">Geometry</a> * <span class="keyword">get</span>();</div>
@@ -150,42 +150,56 @@ $(document).ready(function(){initNavTree('physics__engine_8h_source.html','');})
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classphysics_1_1_geometry.html">Geometry</a> * object;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    };</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    std::vector&lt;Geometry *&gt; static_objects;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::vector&lt;Geometry *&gt; moving_objects;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::mutex objects_change;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::list &lt;Static_command&gt; static_addition;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::list &lt;Moving_command&gt; moving_addition;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::list &lt;Static_command&gt; static_deletion;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::list &lt;Moving_command&gt; moving_deletion;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">class </span>Moving_command</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classphysics_1_1_physics__component.html">Physics_component</a> * <span class="keyword">get</span>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">void</span> set(<a class="code" href="classphysics_1_1_physics__component.html">Physics_component</a> * added);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classphysics_1_1_physics__component.html">Physics_component</a> * object;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    };</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif // PHYSICS_ENGINE_H_INCLUDED</span></div>
-<div class="ttc" id="classphysics_1_1_physics__engine_html_af5c2deb640d8ddc95c9431986af8d2d0"><div class="ttname"><a href="classphysics_1_1_physics__engine.html#af5c2deb640d8ddc95c9431986af8d2d0">physics::Physics_engine::add_moving_polygon</a></div><div class="ttdeci">void add_moving_polygon(Geometry *added)</div><div class="ttdoc">add moving objects for collision detection and detected collision handling </div><div class="ttdef"><b>Definition:</b> physics_engine.cpp:30</div></div>
-<div class="ttc" id="classphysics_1_1_physics__engine_html_a0caac3174e9ceefa18e8603284c46094"><div class="ttname"><a href="classphysics_1_1_physics__engine.html#a0caac3174e9ceefa18e8603284c46094">physics::Physics_engine::delete_moving_polygon</a></div><div class="ttdeci">void delete_moving_polygon(Geometry *deleted)</div><div class="ttdoc">deletion of a moving object </div><div class="ttdef"><b>Definition:</b> physics_engine.cpp:67</div></div>
-<div class="ttc" id="classphysics_1_1_physics__engine_html_a484f2d688691af892586bb031b241098"><div class="ttname"><a href="classphysics_1_1_physics__engine.html#a484f2d688691af892586bb031b241098">physics::Physics_engine::add_static_polygon</a></div><div class="ttdeci">void add_static_polygon(Geometry *added)</div><div class="ttdoc">add static object for collision detection </div><div class="ttdef"><b>Definition:</b> physics_engine.cpp:13</div></div>
-<div class="ttc" id="namespacephysics_html"><div class="ttname"><a href="namespacephysics.html">physics</a></div><div class="ttdef"><b>Definition:</b> geometry.cpp:3</div></div>
-<div class="ttc" id="classphysics_1_1_physics__engine_html_a7eca9197e535fb8cc66d860c1f941fb1"><div class="ttname"><a href="classphysics_1_1_physics__engine.html#a7eca9197e535fb8cc66d860c1f941fb1">physics::Physics_engine::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Physics run function to detect collisions, apply speed, change position and etc. </div><div class="ttdef"><b>Definition:</b> physics_engine.cpp:83</div></div>
-<div class="ttc" id="classphysics_1_1_physics__engine_html_a8d4085850cab090da582dc95d7d09f21"><div class="ttname"><a href="classphysics_1_1_physics__engine.html#a8d4085850cab090da582dc95d7d09f21">physics::Physics_engine::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Reset all objects. </div><div class="ttdef"><b>Definition:</b> physics_engine.cpp:137</div></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::vector&lt;Geometry *&gt;          static_objects;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::vector&lt;Physics_component *&gt; moving_objects;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::mutex                       objects_change;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::list &lt;Static_command&gt;       static_addition;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::list &lt;Moving_command&gt;       moving_addition;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::list &lt;Static_command&gt;       static_deletion;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::list &lt;Moving_command&gt;       moving_deletion;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    std::thread                    * engine;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::atomic_bool                 stop ;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>                     ticks_per_second;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif // PHYSICS_ENGINE_H_INCLUDED</span></div>
+<div class="ttc" id="classphysics_1_1_physics__engine_html_ac1e95f36ac4f4dd4cbf8f134a8665878"><div class="ttname"><a href="classphysics_1_1_physics__engine.html#ac1e95f36ac4f4dd4cbf8f134a8665878">physics::Physics_engine::delete_static_object</a></div><div class="ttdeci">void delete_static_object(Geometry *deleted)</div><div class="ttdoc">deletion of a static object </div><div class="ttdef"><b>Definition:</b> physics_engine.cpp:51</div></div>
+<div class="ttc" id="classphysics_1_1_physics__engine_html_a1d07f6d656d4f77f513562968326d161"><div class="ttname"><a href="classphysics_1_1_physics__engine.html#a1d07f6d656d4f77f513562968326d161">physics::Physics_engine::add_moving_object</a></div><div class="ttdeci">void add_moving_object(Physics_component *added)</div><div class="ttdoc">add moving objects for collision detection and detected collision handling </div><div class="ttdef"><b>Definition:</b> physics_engine.cpp:32</div></div>
+<div class="ttc" id="classphysics_1_1_physics__engine_html_a8985f93506c104d75640c9146b6d0ab9"><div class="ttname"><a href="classphysics_1_1_physics__engine.html#a8985f93506c104d75640c9146b6d0ab9">physics::Physics_engine::run</a></div><div class="ttdeci">void run(unsigned int ticks_per_s)</div><div class="ttdoc">Physics run function to detect collisions, apply speed, change position and etc. </div><div class="ttdef"><b>Definition:</b> physics_engine.cpp:86</div></div>
+<div class="ttc" id="classphysics_1_1_physics__engine_html_a1aaa74b815f1cc527e2e219a0efede46"><div class="ttname"><a href="classphysics_1_1_physics__engine.html#a1aaa74b815f1cc527e2e219a0efede46">physics::Physics_engine::add_static_object</a></div><div class="ttdeci">void add_static_object(Geometry *added)</div><div class="ttdoc">add static object for collision detection </div><div class="ttdef"><b>Definition:</b> physics_engine.cpp:15</div></div>
+<div class="ttc" id="namespacephysics_html"><div class="ttname"><a href="namespacephysics.html">physics</a></div><div class="ttdef"><b>Definition:</b> moving_object.h:8</div></div>
+<div class="ttc" id="classphysics_1_1_physics__engine_html_a50bef52a797e252288c9d4cc707138c1"><div class="ttname"><a href="classphysics_1_1_physics__engine.html#a50bef52a797e252288c9d4cc707138c1">physics::Physics_engine::delete_moving_object</a></div><div class="ttdeci">void delete_moving_object(Physics_component *deleted)</div><div class="ttdoc">deletion of a moving object </div><div class="ttdef"><b>Definition:</b> physics_engine.cpp:69</div></div>
+<div class="ttc" id="classphysics_1_1_physics__engine_html_a8d4085850cab090da582dc95d7d09f21"><div class="ttname"><a href="classphysics_1_1_physics__engine.html#a8d4085850cab090da582dc95d7d09f21">physics::Physics_engine::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Reset all objects. </div><div class="ttdef"><b>Definition:</b> physics_engine.cpp:154</div></div>
+<div class="ttc" id="classphysics_1_1_physics__component_html"><div class="ttname"><a href="classphysics_1_1_physics__component.html">physics::Physics_component</a></div><div class="ttdoc">Base class for physics components of moving objects. </div><div class="ttdef"><b>Definition:</b> physics_component.h:16</div></div>
 <div class="ttc" id="classphysics_1_1_geometry_html"><div class="ttname"><a href="classphysics_1_1_geometry.html">physics::Geometry</a></div><div class="ttdoc">Geometry of a figure, consisting of points. </div><div class="ttdef"><b>Definition:</b> geometry.h:17</div></div>
-<div class="ttc" id="classphysics_1_1_physics__engine_html_a80a44978f769afd653f18ee503a81255"><div class="ttname"><a href="classphysics_1_1_physics__engine.html#a80a44978f769afd653f18ee503a81255">physics::Physics_engine::delete_static_polygon</a></div><div class="ttdeci">void delete_static_polygon(Geometry *deleted)</div><div class="ttdoc">deletion of a static object </div><div class="ttdef"><b>Definition:</b> physics_engine.cpp:49</div></div>
 <div class="ttc" id="geometry_8h_html"><div class="ttname"><a href="geometry_8h.html">geometry.h</a></div></div>
-<div class="ttc" id="classphysics_1_1_physics__engine_html"><div class="ttname"><a href="classphysics_1_1_physics__engine.html">physics::Physics_engine</a></div><div class="ttdoc">Class used for collision detection and physical objects updates. </div><div class="ttdef"><b>Definition:</b> physics_engine.h:25</div></div>
+<div class="ttc" id="physics__component_8h_html"><div class="ttname"><a href="physics__component_8h.html">physics_component.h</a></div></div>
+<div class="ttc" id="classphysics_1_1_physics__engine_html"><div class="ttname"><a href="classphysics_1_1_physics__engine.html">physics::Physics_engine</a></div><div class="ttdoc">Class used for collision detection and physical objects updates. </div><div class="ttdef"><b>Definition:</b> physics_engine.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="dir_12e868e3b818536148b5664f11c3d8f9.html">physics</a></li><li class="navelem"><a class="el" href="physics__engine_8h.html">physics_engine.h</a></li>
-    <li class="footer">Generated on Sun Jun 14 2015 14:39:25 for Shape by
+    <li class="footer">Generated on Mon Jun 15 2015 20:28:12 for Shape by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

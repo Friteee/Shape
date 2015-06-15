@@ -13,6 +13,7 @@ namespace utility
  */
 Configuration::Configuration(std::string filename)
 {
+    file = filename;
     std::string buffer;
     std::pair<std::string,std::string> string_pair;
     std::ifstream cfg;
@@ -86,6 +87,35 @@ std::vector<std::string> Configuration::find_strings(std::string searched)
         }
     }
     return returned_values;
+}
+
+void Configuration::save()
+{
+    std::ofstream out(file);
+    for(auto value : config)
+    {
+        out<<value.first<<" = "<<value.second<<std::endl<<std::endl;
+    }
+    out.close();
+}
+
+void Configuration::change_value(std::string searched, std::string changed)
+{
+    for(auto & found : config)
+    {
+        if(found.first == searched)
+        {
+            found.second = changed;
+        }
+    }
+}
+
+void Configuration::save_value(std::string first, std::string second)
+{
+    std::pair<std::string,std::string> buffer;
+    buffer.first = first;
+    buffer.second = second;
+    config.push_back(buffer);
 }
 
 }//end of utility namespace

@@ -24,6 +24,10 @@ public:
     void init_tile_type(Tile_type * init_type);
     void set_x(int x);
     void set_y(int y);
+    inline Tile_type * get_tile_type()
+    {
+        return type;
+    }
 private:
     Tile_type * type;
 };

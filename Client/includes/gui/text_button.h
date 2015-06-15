@@ -18,13 +18,14 @@ class Text_button : public Gui_element
 {
 public:
 
-    Text_button(utility::Configuration * config, std::string init_text , int x , int y);
-    void show()override;
-    void update()override;
+    Text_button       (utility::Configuration * config, std::string init_text , int x , int y);
+    void show         ()override;
+    void update       ()override;
     void init_function(std::function<void()> init_on_click);
-    void change_text(std::string init_text);
-    void handle_click(int x, int y)override;
-    ~Text_button();
+    void change_text  (std::string init_text);
+    void handle_click (int x, int y)override;
+    void change_size  (unsigned int init_size);
+    ~Text_button      ();
 
 private:
 
@@ -33,11 +34,12 @@ private:
     // boolean to know if the button is being clicked
     bool                  is_clicked;
     // text to be blended
-    std::string text;
+    std::string           text;
     // font
-    TTF_Font * font;
+    std::string           font_file;
     // text color
-    SDL_Color color;
+    SDL_Color             color;
+    unsigned int          size;
 
 
 };

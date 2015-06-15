@@ -1,5 +1,6 @@
 var namespaces =
 [
+    [ "ai", "namespaceai.html", null ],
     [ "audio", "namespaceaudio.html", null ],
     [ "game", "namespacegame.html", null ],
     [ "gui", "namespacegui.html", null ],

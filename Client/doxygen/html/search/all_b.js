@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['operator_3d',['operator=',['../classgui_1_1_background.html#ae5aeb2b940819e803987855a940301b1',1,'gui::Background::operator=(const Background &amp;copied_object)'],['../classgui_1_1_background.html#a01ebb310a7c9b2d5dc187cd88229e76f',1,'gui::Background::operator=(Background &amp;&amp;copied_object)'],['../classgui_1_1_gui__manager.html#adec67d86af9fd89dcecd58f0f93d6fc8',1,'gui::Gui_manager::operator=(const Gui_manager &amp;copied_object)=delete'],['../classgui_1_1_gui__manager.html#ae182136d5c253ffb40cccbef0df65d8a',1,'gui::Gui_manager::operator=(Gui_manager &amp;&amp;moved_object)=delete'],['../classvideo_1_1_texture.html#a3157a7c473b67669479abe89d8424d45',1,'video::Texture::operator=(const Texture &amp;copied)'],['../classvideo_1_1_texture.html#a7444031e76c7b4f73918274a6000e4c8',1,'video::Texture::operator=(Texture &amp;&amp;moved)']]]
+  ['network',['network',['../namespacenetwork.html',1,'']]],
+  ['network_2ecpp',['network.cpp',['../network_8cpp.html',1,'']]],
+  ['notify',['notify',['../classgame_1_1_moving__object.html#a4565470e77ac96da9b49b9e9e047aeb5',1,'game::Moving_object::notify()'],['../classphysics_1_1_physics__component.html#acd8e8ce68f2f1c87f3ab5abd6e75a460',1,'physics::Physics_component::notify()']]]
 ];

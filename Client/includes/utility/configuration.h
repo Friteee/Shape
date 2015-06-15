@@ -24,11 +24,19 @@ public:
     std::string find_string(std::string searched);
     // find some variables
     std::vector<std::string> find_strings(std::string searched);
+    // save config
+    void save();
+    // change value
+    void change_value(std::string searched, std::string changed);
+    // save new value
+    void save_value(std::string first, std::string second);
 
 private:
 
     // vector of pairs to hold the config
     std::vector<std::pair<std::string,std::string>>config;
+    // filename
+    std::string file;
 
 };
 

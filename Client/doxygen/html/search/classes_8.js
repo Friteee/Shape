@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['video_5fsubsystem',['Video_subsystem',['../classvideo_1_1_video__subsystem.html',1,'video']]]
+  ['sound',['Sound',['../classaudio_1_1_sound.html',1,'audio']]],
+  ['static_5fobject',['Static_object',['../classgame_1_1_static__object.html',1,'game']]],
+  ['stopwatch',['Stopwatch',['../classutility_1_1_stopwatch.html',1,'utility']]]
 ];

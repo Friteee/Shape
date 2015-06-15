@@ -102,6 +102,8 @@ void Game_logic::run()
     // integer for fps, overflow is unlikely :)
     unsigned int fps=0;
 
+    instance->engine.run(atoi(instance->main_config.find_string("physics_update_rate").c_str()));
+
     while(instance->current->run())
     {
         fps++;

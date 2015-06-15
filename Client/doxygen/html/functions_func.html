@@ -89,11 +89,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
+      <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
+      <li><a href="#index_n"><span>n</span></a></li>
       <li><a href="#index_o"><span>o</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_r"><span>r</span></a></li>
@@ -139,14 +141,14 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>add_element()
 : <a class="el" href="classgui_1_1_gui__manager.html#a19e050855cf9589ce177042ebaf0f293">gui::Gui_manager</a>
 </li>
-<li>add_moving_polygon()
-: <a class="el" href="classphysics_1_1_physics__engine.html#af5c2deb640d8ddc95c9431986af8d2d0">physics::Physics_engine</a>
+<li>add_moving_object()
+: <a class="el" href="classphysics_1_1_physics__engine.html#a1d07f6d656d4f77f513562968326d161">physics::Physics_engine</a>
 </li>
 <li>add_point()
 : <a class="el" href="classphysics_1_1_geometry.html#a331b64ee55efd98295d5cf98bb5f0e85">physics::Geometry</a>
 </li>
-<li>add_static_polygon()
-: <a class="el" href="classphysics_1_1_physics__engine.html#a484f2d688691af892586bb031b241098">physics::Physics_engine</a>
+<li>add_static_object()
+: <a class="el" href="classphysics_1_1_physics__engine.html#a1aaa74b815f1cc527e2e219a0efede46">physics::Physics_engine</a>
 </li>
 </ul>
 
@@ -191,14 +193,21 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
-<li>delete_moving_polygon()
-: <a class="el" href="classphysics_1_1_physics__engine.html#a0caac3174e9ceefa18e8603284c46094">physics::Physics_engine</a>
+<li>delete_moving_object()
+: <a class="el" href="classphysics_1_1_physics__engine.html#a50bef52a797e252288c9d4cc707138c1">physics::Physics_engine</a>
 </li>
-<li>delete_static_polygon()
-: <a class="el" href="classphysics_1_1_physics__engine.html#a80a44978f769afd653f18ee503a81255">physics::Physics_engine</a>
+<li>delete_static_object()
+: <a class="el" href="classphysics_1_1_physics__engine.html#ac1e95f36ac4f4dd4cbf8f134a8665878">physics::Physics_engine</a>
 </li>
 <li>draw_line()
 : <a class="el" href="classvideo_1_1_video__subsystem.html#ad694ce514fc12611aaaa2ddb392d0598">video::Video_subsystem</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
+<li>execute()
+: <a class="el" href="classgame_1_1_object__command.html#a5a3c7b5899bdf6e66af3e7df89ae6a36">game::Object_command</a>
 </li>
 </ul>
 
@@ -236,6 +245,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="classvideo_1_1_camera.html#a110dbfd21d7d6feeb85408ad9dafdba5">video::Camera</a>
 , <a class="el" href="classvideo_1_1_video__subsystem.html#a267f91440b8575f49f4df7d16ebaf06f">video::Video_subsystem</a>
 </li>
+<li>get_interpolated_location()
+: <a class="el" href="classphysics_1_1_physics__component.html#a1d30b1d5c993766365fd25403a34d637">physics::Physics_component</a>
+</li>
 <li>get_invincibility()
 : <a class="el" href="classgame_1_1_tile__type.html#a89850dba51109406faecc318cd9265d0">game::Tile_type</a>
 </li>
@@ -245,11 +257,20 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>get_location()
 : <a class="el" href="classgui_1_1_click.html#acd1945dd54fa8f54c7908b93ba1681e5">gui::Click</a>
 </li>
-<li>get_point_quantity()
-: <a class="el" href="classphysics_1_1_geometry.html#a9c17f11f4f972f8ce7d2ae9724bc8ebe">physics::Geometry</a>
+<li>get_next()
+: <a class="el" href="classgame_1_1_object__command.html#a4a77786744d7ac078fd1b630d0c8d57e">game::Object_command</a>
+</li>
+<li>get_points()
+: <a class="el" href="classphysics_1_1_geometry.html#a3f67374e4ef98bcde62189979a673ec0">physics::Geometry</a>
+</li>
+<li>get_polygon()
+: <a class="el" href="classphysics_1_1_physics__component.html#a05679e11f802c7c0ec76dbb6c50ba98f">physics::Physics_component</a>
 </li>
 <li>get_position()
 : <a class="el" href="classvideo_1_1_camera.html#a2a605f54d6728d851a0c0f7931423c1a">video::Camera</a>
+</li>
+<li>get_previous()
+: <a class="el" href="classgame_1_1_object__command.html#ab218d5a6b46150363ab80a9d0afa6b71">game::Object_command</a>
 </li>
 <li>get_renderer()
 : <a class="el" href="classvideo_1_1_video__subsystem.html#a55bfd1cd6fbb4cfdea16247f61ea9168">video::Video_subsystem</a>
@@ -263,6 +284,15 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>get_ticks()
 : <a class="el" href="classutility_1_1_stopwatch.html#a673ad14de99d07e95e3fba1e120e84ea">utility::Stopwatch</a>
+</li>
+<li>get_tile_types()
+: <a class="el" href="classgame_1_1_map.html#a33d8579a7c2e49a6806f9ebf9fe9b000">game::Map</a>
+</li>
+<li>get_tiles()
+: <a class="el" href="classgame_1_1_map.html#a48d6d9bfc89a45fca879d660f3aa29a6">game::Map</a>
+</li>
+<li>get_time()
+: <a class="el" href="classgame_1_1_object__command.html#a03a87983ceed69efd55103027b12325c">game::Object_command</a>
 </li>
 <li>get_visibility()
 : <a class="el" href="classgui_1_1_gui__element.html#ac619bf82152fa31a911e78222a2bd937">gui::Gui_element</a>
@@ -306,10 +336,15 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>init()
-: <a class="el" href="classaudio_1_1_music.html#a4d40b1422865cdd7ec1d31299e5a10d0">audio::Music</a>
+: <a class="el" href="classai_1_1_a_i__component.html#adeb3c764e61bf991ec780d5291dfa4b2">ai::AI_component</a>
+, <a class="el" href="classaudio_1_1_music.html#a4d40b1422865cdd7ec1d31299e5a10d0">audio::Music</a>
 , <a class="el" href="classaudio_1_1_sound.html#a20d420744b05be89486c430e33f1bbb0">audio::Sound</a>
 , <a class="el" href="classnetwork_1_1_game_server.html#a5c1c5aebe7582903f4203e50325a77cf">network::GameServer</a>
+, <a class="el" href="classphysics_1_1_physics__component.html#a70a4f776f7cc912676b9e5f3fee0e9b0">physics::Physics_component</a>
 , <a class="el" href="classvideo_1_1_texture.html#addc7a05733ef996641993096b1f8ca9d">video::Texture</a>
+</li>
+<li>init_background()
+: <a class="el" href="classgame_1_1_map.html#ab67cffb2ed49db5afadaf2c2adf2f923">game::Map</a>
 </li>
 <li>init_function()
 : <a class="el" href="classgui_1_1_button.html#afeb45a1793913e23ba40421890a0c194">gui::Button</a>
@@ -320,6 +355,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>init_image()
 : <a class="el" href="classgui_1_1_button.html#a5e397ea1192214f9fcd47cf92ae4e36d">gui::Button</a>
+</li>
+<li>init_music()
+: <a class="el" href="classgame_1_1_map.html#aa6dc5c5a74f5c018807f392f7efbcb11">game::Map</a>
+</li>
+<li>init_object()
+: <a class="el" href="classvideo_1_1_render__component.html#acec0a1c2b6e553e3822b5bef9e17ffaf">video::Render_component</a>
 </li>
 <li>init_texture()
 : <a class="el" href="classgame_1_1_tile__type.html#a459a520aaaf26dcc4d9867a7ae182414">game::Tile_type</a>
@@ -355,6 +396,17 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classphysics_1_1_geometry.html#a68fb1a3142bd1c84ee99f53e16151e3e">physics::Geometry</a>
 , <a class="el" href="classvideo_1_1_camera.html#ac09f4ac8dbdcbb6ad2a3c1d641279682">video::Camera</a>
 </li>
+<li>Moving_object()
+: <a class="el" href="classgame_1_1_moving__object.html#a0b93040355ab8fd474f50a045fb9b5f3">game::Moving_object</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>notify()
+: <a class="el" href="classgame_1_1_moving__object.html#a4565470e77ac96da9b49b9e9e047aeb5">game::Moving_object</a>
+, <a class="el" href="classphysics_1_1_physics__component.html#acd8e8ce68f2f1c87f3ab5abd6e75a460">physics::Physics_component</a>
+</li>
 </ul>
 
 
@@ -383,6 +435,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>redo()
+: <a class="el" href="classgame_1_1_object__command.html#a9cbbd8ad78de95bc5916042c5b517a78">game::Object_command</a>
+</li>
 <li>reload()
 : <a class="el" href="classutility_1_1_stopwatch.html#a28c310dadf4441ece332ccd91892b1e8">utility::Stopwatch</a>
 , <a class="el" href="classvideo_1_1_video__subsystem.html#a171260b9cf4a5826ffed1fe074251951">video::Video_subsystem</a>
@@ -396,7 +451,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="classmain__logic_1_1_gaming__mode.html#a6842db15260f8b0ca0260ed94ae65628">main_logic::Gaming_mode</a>
 , <a class="el" href="classmain__logic_1_1_main__menu__mode.html#aa65dd52144517c0c8a2f39d0e8611bd0">main_logic::Main_menu_mode</a>
 , <a class="el" href="classmain__logic_1_1_program__mode.html#a13ed0a9c0749c6c83236fc92e0cfa5a0">main_logic::Program_mode</a>
-, <a class="el" href="classphysics_1_1_physics__engine.html#a7eca9197e535fb8cc66d860c1f941fb1">physics::Physics_engine</a>
+, <a class="el" href="classphysics_1_1_physics__engine.html#a8985f93506c104d75640c9146b6d0ab9">physics::Physics_engine</a>
 </li>
 </ul>
 
@@ -465,6 +520,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="classgui_1_1_progress__bar.html#a916191bb2779a0de7200dc85781f923c">gui::Progress_bar</a>
 , <a class="el" href="classgui_1_1_text.html#a79a6ee36d25dfd52efa146c7cafcd872">gui::Text</a>
 , <a class="el" href="classgui_1_1_text__button.html#a079404361c2630c999e30c3e80d9badb">gui::Text_button</a>
+, <a class="el" href="classvideo_1_1_render__component.html#a0e61905ee43583f27069352c8d16db3c">video::Render_component</a>
 </li>
 <li>start()
 : <a class="el" href="classgui_1_1_progress__bar.html#a6a7418685aad4c39cd9a707d9a23cf0c">gui::Progress_bar</a>
@@ -489,7 +545,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classgui_1_1_text__button.html#a3a720d119a0adf06bfbb3166ab75cacc">gui::Text_button</a>
 </li>
 <li>Texture()
-: <a class="el" href="classvideo_1_1_texture.html#a44b3e5f795ebdc9601abd0d8e07cd179">video::Texture</a>
+: <a class="el" href="classvideo_1_1_texture.html#a40a6be525e3098bea98b7cf683bc81d3">video::Texture</a>
 </li>
 <li>Tile()
 : <a class="el" href="classgame_1_1_tile.html#ad75afb2aa075d3a52ec3c49ec821746c">game::Tile</a>
@@ -505,12 +561,14 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="classgui_1_1_gui__element.html#a2a01f1d0ead01a9289c1c23a5a01379f">gui::Gui_element</a>
 </li>
 <li>update()
-: <a class="el" href="classgui_1_1_button.html#a9071fd2b9dd3fd16c84026b03182906d">gui::Button</a>
+: <a class="el" href="classai_1_1_a_i__component.html#a4aea6b7480604de7d64dc037a1a64244">ai::AI_component</a>
+, <a class="el" href="classgui_1_1_button.html#a9071fd2b9dd3fd16c84026b03182906d">gui::Button</a>
 , <a class="el" href="classgui_1_1_gui__element.html#aa3beef039176256d7ee7e1e4157735c4">gui::Gui_element</a>
 , <a class="el" href="classgui_1_1_gui__manager.html#a76980a460cdbf67b942a295842303578">gui::Gui_manager</a>
 , <a class="el" href="classgui_1_1_progress__bar.html#a1c4a218674e143b20add298f68d2cc49">gui::Progress_bar</a>
 , <a class="el" href="classgui_1_1_text.html#af507d4b413a134ee63dcacdaee7b5c2c">gui::Text</a>
 , <a class="el" href="classgui_1_1_text__button.html#ab50e454be960422c7a9b7a323584a6ee">gui::Text_button</a>
+, <a class="el" href="classphysics_1_1_physics__component.html#a3a731d40d74f754c0709a0a96dc1a211">physics::Physics_component</a>
 , <a class="el" href="classutility_1_1_timer.html#a865aa89b78a6a3cd65a804989364fce7">utility::Timer</a>
 </li>
 <li>update_screen()
@@ -562,7 +620,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Jun 14 2015 14:39:25 for Shape by
+    <li class="footer">Generated on Mon Jun 15 2015 20:28:12 for Shape by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

@@ -20,7 +20,7 @@ namespace main_logic
 bool Main_menu_mode::run()
 {
 
-    if(handle_input()==false )
+    if(handle_input()==false || quit==true)
     {
         return false;
     }
@@ -107,9 +107,40 @@ bool Main_menu_mode::handle_input()
 Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     main_config(init_config)
 {
+    quit = false;
+    //add play button
+    gui::Text_button * play_button = new gui::Text_button(init_config,"Play",800,400);
+    auto play_func = []()
+    {
 
+    };
+    play_button->init_function(play_func);
+    play_button->change_size(80);
+    play_button->change_position(video::Video_subsystem::get_width()/2-play_button->get_width()/2,400);
+    //add options
+    gui::Text_button * options_button = new gui::Text_button(init_config,"Options",800,500);
+    auto options_func = []()
+    {
+
+    };
+    options_button->init_function(options_func);
+    options_button->change_size(80);
+    options_button->change_position(video::Video_subsystem::get_width()/2-options_button->get_width()/2,500);
+    //add exit
+    gui::Text_button * exit_button = new gui::Text_button(init_config,"Exit",800,600);
+    auto exit_func = [this]()
+    {
+        quit = true;
+    };
+    exit_button->init_function(exit_func);
+    exit_button->change_size(80);
+    exit_button->change_position(video::Video_subsystem::get_width()/2-exit_button->get_width()/2,600);
     // background
     background.change_image(main_config->find_string("main_background").c_str());
+
+    main_gui.add_element(play_button);
+    main_gui.add_element(options_button);
+    main_gui.add_element(exit_button);
 
 }
 

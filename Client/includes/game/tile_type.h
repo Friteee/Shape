@@ -22,9 +22,15 @@ public:
     void set_invincibility( bool set_invincible );
     void init_texture     ( std::string filename);
     void blit             ( SDL_Point location  );
+    void set_id           (unsigned int init_id);
+    unsigned int get_id ()
+    {
+        return id;
+    }
 private:
     video::Texture texture;
     bool           invincible;
+    unsigned int   id;
 };
 
 }

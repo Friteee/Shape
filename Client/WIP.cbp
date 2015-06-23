@@ -107,6 +107,7 @@
 		<Unit filename="includes/main_logic/main_menu_mode.h" />
 		<Unit filename="includes/main_logic/program_mode.h" />
 		<Unit filename="includes/network/game_server.h" />
+		<Unit filename="includes/network/packet.h" />
 		<Unit filename="includes/physics/geometry.cpp" />
 		<Unit filename="includes/physics/geometry.h" />
 		<Unit filename="includes/physics/physics_component.h" />
@@ -120,6 +121,8 @@
 		<Unit filename="includes/utility/stopwatch.h" />
 		<Unit filename="includes/utility/timer.cpp" />
 		<Unit filename="includes/utility/timer.h" />
+		<Unit filename="includes/video/animation.cpp" />
+		<Unit filename="includes/video/animation.h" />
 		<Unit filename="includes/video/camera.cpp" />
 		<Unit filename="includes/video/camera.h" />
 		<Unit filename="includes/video/render_component.h" />

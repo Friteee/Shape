@@ -12,7 +12,8 @@ Tile::Tile()
 
 Tile::~Tile()
 {
-    main_logic::Game_logic::get_engine().delete_static_object(&polygon);
+    if(!type->get_invincibility())
+        main_logic::Game_logic::get_engine().delete_static_object(&polygon);
 }
 
 void Tile::show()
@@ -27,10 +28,14 @@ void Tile::init_geometry(physics::Geometry init_polygon)
 
 void Tile::init_tile_type(Tile_type * init_type)
 {
-    type = init_type;
-    if(type->get_invincibility())
+    if(type != nullptr && type->get_invincibility())
     {
-
+        main_logic::Game_logic::get_engine().delete_static_object(&polygon);
+    }
+    type = init_type;
+    if(!type->get_invincibility())
+    {
+        main_logic::Game_logic::get_engine().add_static_object(&polygon);
     }
 }
 

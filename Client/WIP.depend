@@ -8326,11 +8326,11 @@
 1434315704 source:d:\github\shape\client\includes\physics\geometry.cpp
 	"geometry.h"
 
-1434315704 d:\github\shape\client\includes\physics\geometry.h
+1434722859 d:\github\shape\client\includes\physics\geometry.h
 	<SDL.h>
 	<vector>
 
-1434394642 source:d:\github\shape\client\includes\game\tile.cpp
+1434722932 source:d:\github\shape\client\includes\game\tile.cpp
 	"tile.h"
 	"../main_logic/game_logic.h"
 
@@ -8342,11 +8342,11 @@
 	<SDL.h>
 	"../physics/geometry.h"
 
-1433853444 source:d:\github\shape\client\includes\game\tile_type.cpp
+1434400201 source:d:\github\shape\client\includes\game\tile_type.cpp
 	"tile_type.h"
 	"../video/camera.h"
 
-1434400168 d:\github\shape\client\includes\game\tile_type.h
+1434721444 d:\github\shape\client\includes\game\tile_type.h
 	<string>
 	<SDL.h>
 	"../video/texture.h"
@@ -8386,14 +8386,26 @@
 1434314711 source:d:\github\shape\client\includes\game\moving_object.cpp
 	"moving_object.h"
 
-1434397161 source:d:\github\shape\client\includes\game\map.cpp
+1434722917 source:d:\github\shape\client\includes\game\map.cpp
 	"map.h"
+	<fstream>
+	<map>
+	<vector>
 
-1434397207 d:\github\shape\client\includes\game\map.h
+1434400063 d:\github\shape\client\includes\game\map.h
 	<string>
 	<vector>
 	"tile.h"
 	"tile_type.h"
 	"../gui/background.h"
 	"../audio/music.h"
+
+1434723581 source:d:\github\shape\client\includes\video\animation.cpp
+	"animation.h"
+
+1434723581 d:\github\shape\client\includes\video\animation.h
+	<string>
+	<vector>
+	"texture.h"
+	"../utility/stopwatch.h"
 

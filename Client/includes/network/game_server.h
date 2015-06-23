@@ -15,8 +15,9 @@ class GameServer
 {
 public:
     // initialize the client - server connection
-    bool init(unsigned int init_port, boost::asio::ip::address init_IP);
-    void send_packet();
+    bool        init(unsigned int init_port, boost::asio::ip::address init_IP);
+    std::string get_maps_name();
+    game::Map   get_map();
 
 private:
     unsigned int port;

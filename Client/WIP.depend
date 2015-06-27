@@ -8330,17 +8330,17 @@
 	<SDL.h>
 	<vector>
 
-1434722932 source:d:\github\shape\client\includes\game\tile.cpp
+1435425193 source:d:\github\shape\client\includes\game\tile.cpp
 	"tile.h"
 	"../main_logic/game_logic.h"
 
-1434400104 d:\github\shape\client\includes\game\tile.h
+1435425141 d:\github\shape\client\includes\game\tile.h
 	"static_object.h"
 	"tile_type.h"
 
-1434283745 d:\github\shape\client\includes\game\static_object.h
+1435425132 d:\github\shape\client\includes\game\static_object.h
 	<SDL.h>
-	"../physics/geometry.h"
+	"../physics/polygon.h"
 
 1434400201 source:d:\github\shape\client\includes\game\tile_type.cpp
 	"tile_type.h"
@@ -8351,13 +8351,13 @@
 	<SDL.h>
 	"../video/texture.h"
 
-1434396950 source:d:\github\shape\client\includes\physics\physics_engine.cpp
+1435429501 source:d:\github\shape\client\includes\physics\physics_engine.cpp
 	"physics_engine.h"
 	"../utility/stopwatch.h"
 	<chrono>
 
-1434382710 d:\github\shape\client\includes\physics\physics_engine.h
-	"geometry.h"
+1435429486 d:\github\shape\client\includes\physics\physics_engine.h
+	"polygon.h"
 	"physics_component.h"
 	<vector>
 	<mutex>
@@ -8365,7 +8365,7 @@
 	<thread>
 	<atomic>
 
-1434314990 d:\github\shape\client\includes\game\moving_object.h
+1435424217 d:\github\shape\client\includes\game\moving_object.h
 	"object_command.h"
 	"../physics/physics_component.h"
 	"../ai/ai_component.h"
@@ -8374,12 +8374,14 @@
 1434314469 d:\github\shape\client\includes\game\object_command.h
 	"moving_object.h"
 
-1434394876 d:\github\shape\client\includes\physics\physics_component.h
+1435429859 d:\github\shape\client\includes\physics\physics_component.h
+	<memory>
 	<SDL.h>
-	"geometry.h"
+	"polygon.h"
 	"../game/moving_object.h"
 
-1434313984 d:\github\shape\client\includes\ai\ai_component.h
+1435427606 d:\github\shape\client\includes\ai\ai_component.h
+	"object_state.h"
 
 1434314646 d:\github\shape\client\includes\video\render_component.h
 
@@ -8400,12 +8402,28 @@
 	"../gui/background.h"
 	"../audio/music.h"
 
-1434723581 source:d:\github\shape\client\includes\video\animation.cpp
+1435422650 source:d:\github\shape\client\includes\video\animation.cpp
 	"animation.h"
 
-1434723581 d:\github\shape\client\includes\video\animation.h
+1435422569 d:\github\shape\client\includes\video\animation.h
 	<string>
 	<vector>
 	"texture.h"
 	"../utility/stopwatch.h"
+
+1435425491 d:\github\shape\client\includes\physics\polygon.h
+	<SDL.h>
+	<vector>
+
+1435425518 source:d:\github\shape\client\includes\physics\polygon.cpp
+	"polygon.h"
+
+1435425642 d:\github\shape\client\includes\ai\object_state.h
+
+1435429444 source:d:\github\shape\client\includes\physics\falling_object_physics.cpp
+	"falling_object_physics.h"
+
+1435429187 d:\github\shape\client\includes\physics\falling_object_physics.h
+	"physics_component.h"
+	<SDL.h>
 

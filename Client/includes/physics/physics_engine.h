@@ -1,7 +1,7 @@
 #ifndef PHYSICS_ENGINE_H_INCLUDED
 #define PHYSICS_ENGINE_H_INCLUDED
 
-#include "geometry.h"
+#include "polygon.h"
 #include "physics_component.h"
 #include <vector>
 #include <mutex>
@@ -30,9 +30,9 @@ class Physics_engine
 
 public:
 
-    void add_static_object(Geometry * added);
+    void add_static_object(Polygon * added);
     void add_moving_object(Physics_component * added);
-    void delete_static_object(Geometry * deleted);
+    void delete_static_object(Polygon * deleted);
     void delete_moving_object(Physics_component * deleted);
     void run(unsigned int ticks_per_s);
     void reset();
@@ -46,10 +46,10 @@ private:
     class Static_command
     {
     public:
-        Geometry * get();
-        void set(Geometry * added);
+        Polygon * get();
+        void set(Polygon * added);
     private:
-        Geometry * object;
+        Polygon * object;
     };
 
     class Moving_command
@@ -61,7 +61,7 @@ private:
         Physics_component * object;
     };
 
-    std::vector<Geometry *>          static_objects;
+    std::vector<Polygon *>           static_objects;
     std::vector<Physics_component *> moving_objects;
     std::mutex                       objects_change;
     std::list <Static_command>       static_addition;

@@ -8,11 +8,11 @@ namespace physics
 
 /** \brief add static object for collision detection
  *
- * \param Geometry * added - geometrical polygon to get added
+ * \param Polygon * added - geometrical polygon to get added
  *
  */
 
-void Physics_engine::add_static_object(Geometry * added)
+void Physics_engine::add_static_object(Polygon * added)
 {
     objects_change.lock();
 
@@ -25,7 +25,7 @@ void Physics_engine::add_static_object(Geometry * added)
 
 /** \brief add moving objects for collision detection and detected collision handling
  *
- * \param Geometry * added - geometrical polygon to get added
+ * \param Polygon * added - geometrical polygon to get added
  *
  */
 
@@ -42,13 +42,13 @@ void Physics_engine::add_moving_object(Physics_component * added)
 
 /** \brief deletion of a static object
  *
- * \param Geometry * deleted - geometrical polygon to get deleted
+ * \param Polygon * deleted - geometrical polygon to get deleted
  *
  *  WARNING - performance cost of O(n)
  */
 
 
-void Physics_engine::delete_static_object(Geometry * deleted)
+void Physics_engine::delete_static_object(Polygon * deleted)
 {
     objects_change.lock();
 
@@ -62,7 +62,7 @@ void Physics_engine::delete_static_object(Geometry * deleted)
 
 /** \brief deletion of a moving object
  *
- * \param Geometry * deleted - geometrical polygon to get deleted
+ * \param Polygon * deleted - geometrical polygon to get deleted
  *
  *  WARNING - performance cost of O(n)
  */
@@ -100,7 +100,7 @@ void Physics_engine::check_addition()
 {
     objects_change.lock();
 
-    Geometry * buffer;
+    Polygon * buffer;
     Physics_component * buffer_component;
     while(!moving_addition.empty())
     {
@@ -171,7 +171,7 @@ void Physics_engine::update_moving()
     //update
     for(unsigned int a = 0; a < moving_objects.size() ; a++)
     {
-        moving_objects[a]->update();
+        moving_objects[a]->update(ticks_per_second);
     }
 }
 
@@ -180,15 +180,15 @@ void Physics_engine::check_collision()
     //check and notify collisions for moving - static objects
     for(unsigned int a = 0 , a_size = moving_objects.size() ; a < a_size ; a++)
     {
-        Geometry * buffer = moving_objects[a]->get_polygon();
-        std::vector<SDL_Point>& points = buffer->get_points();
+        const Polygon & buffer = moving_objects[a]->get_polygon();
+        const std::vector<SDL_Point>& points = buffer.get_points();
         for(unsigned int b = 0 , b_size = points.size() ; b < b_size ; b++)
         {
             for(unsigned int c = 0 , c_size = static_objects.size() ; c < c_size; c++)
             {
                 if(static_objects[c]->is_inside(points[b]))
                 {
-                    moving_objects[a]->notify_static(points[b]);
+                    moving_objects[a]->notify_static(b);
                 }
             }
         }
@@ -196,15 +196,15 @@ void Physics_engine::check_collision()
     //check and notify collisions for moving - moving objects
     for(unsigned int a = 0 , a_size = moving_objects.size() ; a < a_size ; a++)
     {
-        Geometry * buffer = moving_objects[a]->get_polygon();
-        std::vector<SDL_Point>& points = buffer->get_points();
+        const Polygon & buffer = moving_objects[a]->get_polygon();
+        const std::vector<SDL_Point>& points = buffer.get_points();
         for(unsigned int b = 0 , b_size = points.size() ; b < b_size ; b++)
         {
             for(unsigned int c = 0 , c_size = moving_objects.size() ; c < c_size; c++)
             {
                 if(a==c)
                     continue;
-                else if(moving_objects[c]->get_polygon()->is_inside(points[b]))
+                else if(moving_objects[c]->get_polygon().is_inside(points[b]))
                 {
                     moving_objects[a]->notify_moving(moving_objects[b]);
                     moving_objects[b]->notify_moving(moving_objects[a]);
@@ -241,12 +241,12 @@ void Physics_engine::thread()
 }
 
 
-Geometry * Physics_engine::Static_command::get()
+Polygon * Physics_engine::Static_command::get()
 {
     return object;
 }
 
-void Physics_engine::Static_command::set(Geometry * added)
+void Physics_engine::Static_command::set(Polygon * added)
 {
     object = added;
 }

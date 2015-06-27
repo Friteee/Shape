@@ -50,7 +50,7 @@
 		</Compiler>
 		<Linker>
 			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -lSDL2_mixer" />
-			<Add option="-static-libgcc -static-libstdc++ -lboost_system-mgw48-mt-s-1_58" />
+			<Add option="-static-libgcc -static-libstdc++ -lboost_system-mgw51-mt-s-1_58" />
 			<Add option="-lws2_32" />
 			<Add option="-lwsock32" />
 			<Add library="SDL2lib\libSDL2.a" />
@@ -61,12 +61,13 @@
 			<Add library="SDL2_ttf_lib\libSDL2_ttf.dll.a" />
 			<Add library="SDL2_mix\libSDL2_mixer.a" />
 			<Add library="SDL2_mix\libSDL2_mixer.dll.a" />
-			<Add library="boost_1_58_0\bin.v2\libs\system\build\gcc-mingw-4.8.1\debug\link-static\threading-multi\libboost_system-mgw48-mt-d-1_58.a" />
+			<Add library="boost_1_58_0\stage\lib\libboost_system-mgw51-mt-s-1_58.a" />
 			<Add directory="SDL2lib" />
 			<Add directory="SDL2_ttf_lib" />
 			<Add directory="SDL2_mix" />
 		</Linker>
 		<Unit filename="includes/ai/ai_component.h" />
+		<Unit filename="includes/ai/object_state.h" />
 		<Unit filename="includes/audio/audio.cpp" />
 		<Unit filename="includes/audio/audio.h" />
 		<Unit filename="includes/audio/music.cpp" />
@@ -108,11 +109,13 @@
 		<Unit filename="includes/main_logic/program_mode.h" />
 		<Unit filename="includes/network/game_server.h" />
 		<Unit filename="includes/network/packet.h" />
-		<Unit filename="includes/physics/geometry.cpp" />
-		<Unit filename="includes/physics/geometry.h" />
+		<Unit filename="includes/physics/falling_object_physics.cpp" />
+		<Unit filename="includes/physics/falling_object_physics.h" />
 		<Unit filename="includes/physics/physics_component.h" />
 		<Unit filename="includes/physics/physics_engine.cpp" />
 		<Unit filename="includes/physics/physics_engine.h" />
+		<Unit filename="includes/physics/polygon.cpp" />
+		<Unit filename="includes/physics/polygon.h" />
 		<Unit filename="includes/utility/configuration.cpp" />
 		<Unit filename="includes/utility/configuration.h" />
 		<Unit filename="includes/utility/functions.cpp" />

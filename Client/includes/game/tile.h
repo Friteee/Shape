@@ -20,7 +20,7 @@ public:
     Tile();
     ~Tile();
     virtual void show()override;
-    void init_geometry(physics::Geometry init_polygon);
+    void init_geometry(physics::Polygon init_polygon);
     void init_tile_type(Tile_type * init_type);
     void set_x(int x);
     void set_y(int y);

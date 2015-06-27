@@ -21,6 +21,7 @@ public:
     void      reset();
     void      start();
     void      add_frame(std::string filename , int time);
+    void      add_frame(Texture & added, int time);
     void      delete_current();
     Texture & get_current();
 private:

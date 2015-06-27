@@ -1,6 +1,9 @@
 #ifndef AI_COMPONENT_H_INCLUDED
 #define AI_COMPONENT_H_INCLUDED
 
+
+#include "object_state.h"
+
 namespace ai
 {
 
@@ -20,9 +23,13 @@ public:
         init_object = object;
     }
 
+
+
 private:
     // associated moving object
     game::Moving_object * object;
+    // current object state
+    Object_state * current;
 
 };
 

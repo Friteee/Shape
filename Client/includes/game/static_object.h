@@ -2,7 +2,7 @@
 #define GAME_OBJECT_H_INCLUDED
 
 #include <SDL.h>
-#include "../physics/geometry.h"
+#include "../physics/polygon.h"
 
 namespace game
 {
@@ -19,8 +19,8 @@ class Static_object
 public:
     virtual void show(){};
 protected:
-    SDL_Point           location;
-    physics::Geometry   polygon;
+    SDL_Point        location;
+    physics::Polygon polygon;
 };
 
 }

@@ -21,7 +21,7 @@ void Tile::show()
     type->blit(location);
 }
 
-void Tile::init_geometry(physics::Geometry init_polygon)
+void Tile::init_geometry(physics::Polygon init_polygon)
 {
     polygon = init_polygon;
 }

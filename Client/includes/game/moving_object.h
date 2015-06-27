@@ -10,6 +10,11 @@ namespace physics
     class Physics_component;
 }
 
+enum Object_type
+{
+    PLAYER, BULLET
+};
+
 #include "object_command.h"
 #include "../physics/physics_component.h"
 #include "../ai/ai_component.h"
@@ -33,6 +38,7 @@ private:
     physics::Physics_component * physics_component;
     ai::AI_component           * AI;
     video::Render_component    * render;
+    Object_command             * first;
 };
 
 }// end of gamer namespace

@@ -18,7 +18,7 @@ void Falling_object_physics::update(unsigned int time)
 {
     previous_x = x;
     previous_y = y;
-    float seconds = float(time) / 1000;
+    float seconds = static_cast<float>(time) / 1000;
     x = x_speed * seconds + horizontal_acceleration * seconds * seconds / 2;
     y = y_speed * seconds + gravity * seconds * seconds / 2;
     x_speed += horizontal_acceleration * seconds;

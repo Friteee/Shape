@@ -17,7 +17,7 @@ class Object_command
 {
 public:
     virtual void execute(Moving_object * object) = 0;
-    virtual void redo(Moving_object * object) = 0;
+    virtual void redo   (Moving_object * object) = 0;
     Object_command * get_next()
     {
         return next;
@@ -29,6 +29,10 @@ public:
     unsigned int get_time()
     {
         return timestamp;
+    }
+    void set_timestamp( unsigned int set_time)
+    {
+        timestamp = set_time;
     }
 private:
     unsigned int timestamp;

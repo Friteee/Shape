@@ -66,8 +66,6 @@
 			<Add directory="SDL2_ttf_lib" />
 			<Add directory="SDL2_mix" />
 		</Linker>
-		<Unit filename="includes/ai/ai_component.h" />
-		<Unit filename="includes/ai/object_state.h" />
 		<Unit filename="includes/audio/audio.cpp" />
 		<Unit filename="includes/audio/audio.h" />
 		<Unit filename="includes/audio/music.cpp" />
@@ -76,9 +74,9 @@
 		<Unit filename="includes/audio/sound.h" />
 		<Unit filename="includes/game/map.cpp" />
 		<Unit filename="includes/game/map.h" />
-		<Unit filename="includes/game/moving_object.cpp" />
 		<Unit filename="includes/game/moving_object.h" />
 		<Unit filename="includes/game/object_command.h" />
+		<Unit filename="includes/game/object_state.h" />
 		<Unit filename="includes/game/static_object.h" />
 		<Unit filename="includes/game/tile.cpp" />
 		<Unit filename="includes/game/tile.h" />
@@ -111,6 +109,7 @@
 		<Unit filename="includes/network/packet.h" />
 		<Unit filename="includes/physics/falling_object_physics.cpp" />
 		<Unit filename="includes/physics/falling_object_physics.h" />
+		<Unit filename="includes/physics/movement_command.h" />
 		<Unit filename="includes/physics/physics_component.h" />
 		<Unit filename="includes/physics/physics_engine.cpp" />
 		<Unit filename="includes/physics/physics_engine.h" />

@@ -16,9 +16,10 @@ enum Object_type
 };
 
 #include "object_command.h"
+#include "object_state.h"
 #include "../physics/physics_component.h"
-#include "../ai/ai_component.h"
 #include "../video/render_component.h"
+#include "../physics/movement_command.h"
 
 namespace game
 {
@@ -32,13 +33,19 @@ namespace game
 class Moving_object
 {
 public:
-    virtual void notify(Object_command * command) = 0;
-    Moving_object(physics::Physics_component * init_physics, ai::AI_component * init_AI, video::Render_component * init_render);
+    virtual void           notify(Object_command * command) = 0;
+    virtual void           update() = 0;
+    virtual SDL_Point      get_position() = 0;
+    virtual Object_state * get_state() = 0;
 private:
+
+    virtual void set_position(int set_x, int set_y) = 0;
+
     physics::Physics_component * physics_component;
-    ai::AI_component           * AI;
-    video::Render_component    * render;
     Object_command             * first;
+    Object_type                type;
+
+    friend physics::Movement_command;
 };
 
 }// end of gamer namespace

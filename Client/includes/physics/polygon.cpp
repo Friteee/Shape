@@ -5,6 +5,7 @@ namespace physics
 
 void Polygon::add_point(SDL_Point added)
 {
+    starting_points.push_back(added);
     points.push_back(added);
 }
 
@@ -65,13 +66,21 @@ Polygon get_rectangle(int x, int y, int w, int h)
     return buffer;
 }
 
-void Polygon::move(int x , int y)
+void Polygon::set(int init_x , int init_y)
 {
-    for (auto a : points)
+    x=init_x;
+    y=init_y;
+    for(unsigned int a = 0; a < points.size() ; a++)
     {
-        a.x+=x;
-        a.y+=y;
+        points[a].x = starting_points[a].x + x;
+        points[a].y = starting_points[a].y + y;
     }
+}
+
+void Polygon::get(int * get_x , int * get_y)
+{
+    *get_x = x;
+    *get_y = y;
 }
 
 const std::vector<SDL_Point>& Polygon::get_points()const

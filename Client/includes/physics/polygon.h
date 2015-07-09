@@ -17,13 +17,16 @@ namespace physics
 class Polygon
 {
 public:
-    void                          add_point(SDL_Point added);
-    bool                          is_inside(SDL_Point searched) const;
-    void                          move     (int x, int y);
+    void                          add_point (SDL_Point added);
+    bool                          is_inside (SDL_Point searched) const;
+    void                          set       (int init_x, int init_y);
+    void                          get       (int * get_x , int * get_y);
     const std::vector<SDL_Point>& get_points() const;
 private:
+    int x,y;
     SDL_Point    get_next_point(unsigned int iterator) const;
     std::vector<SDL_Point> points;
+    std::vector<SDL_Point> starting_points;
 
 };
 

@@ -1,15 +1,13 @@
 #ifndef OBJECT_STATE_H_INCLUDED
 #define OBJECT_STATE_H_INCLUDED
 
-namespace ai
+namespace game
 {
 
 class Object_state
 {
 public:
-
-private:
-
+    void update();
 };
 
 }

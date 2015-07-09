@@ -8351,12 +8351,12 @@
 	<SDL.h>
 	"../video/texture.h"
 
-1435429501 source:d:\github\shape\client\includes\physics\physics_engine.cpp
+1435577410 source:d:\github\shape\client\includes\physics\physics_engine.cpp
 	"physics_engine.h"
 	"../utility/stopwatch.h"
 	<chrono>
 
-1435429486 d:\github\shape\client\includes\physics\physics_engine.h
+1436291176 d:\github\shape\client\includes\physics\physics_engine.h
 	"polygon.h"
 	"physics_component.h"
 	<vector>
@@ -8365,22 +8365,23 @@
 	<thread>
 	<atomic>
 
-1435424217 d:\github\shape\client\includes\game\moving_object.h
+1436294509 d:\github\shape\client\includes\game\moving_object.h
 	"object_command.h"
+	"object_state.h"
 	"../physics/physics_component.h"
-	"../ai/ai_component.h"
 	"../video/render_component.h"
+	"../physics/movement_command.h"
 
-1434314469 d:\github\shape\client\includes\game\object_command.h
+1436294667 d:\github\shape\client\includes\game\object_command.h
 	"moving_object.h"
 
-1435429859 d:\github\shape\client\includes\physics\physics_component.h
+1436290432 d:\github\shape\client\includes\physics\physics_component.h
 	<memory>
 	<SDL.h>
 	"polygon.h"
 	"../game/moving_object.h"
 
-1435427606 d:\github\shape\client\includes\ai\ai_component.h
+1436292868 d:\github\shape\client\includes\ai\ai_component.h
 	"object_state.h"
 
 1434314646 d:\github\shape\client\includes\video\render_component.h
@@ -8411,19 +8412,24 @@
 	"texture.h"
 	"../utility/stopwatch.h"
 
-1435425491 d:\github\shape\client\includes\physics\polygon.h
+1436291676 d:\github\shape\client\includes\physics\polygon.h
 	<SDL.h>
 	<vector>
 
-1435425518 source:d:\github\shape\client\includes\physics\polygon.cpp
+1436291730 source:d:\github\shape\client\includes\physics\polygon.cpp
 	"polygon.h"
 
-1435425642 d:\github\shape\client\includes\ai\object_state.h
+1436293043 d:\github\shape\client\includes\ai\object_state.h
 
-1435429444 source:d:\github\shape\client\includes\physics\falling_object_physics.cpp
+1436291186 source:d:\github\shape\client\includes\physics\falling_object_physics.cpp
 	"falling_object_physics.h"
 
 1435429187 d:\github\shape\client\includes\physics\falling_object_physics.h
 	"physics_component.h"
 	<SDL.h>
+
+1436294164 d:\github\shape\client\includes\game\object_state.h
+
+1436294584 d:\github\shape\client\includes\physics\movement_command.h
+	"../game/object_command.h"
 

@@ -19,8 +19,8 @@ class Static_object
 public:
     virtual void show(){};
 protected:
-    SDL_Point        location;
-    physics::Polygon polygon;
+    SDL_Point        location_;
+    physics::Polygon polygon_;
 };
 
 }

@@ -7,46 +7,46 @@ namespace game
 
 Tile::Tile()
 {
-    type = nullptr;
+    type_ = nullptr;
 }
 
 Tile::~Tile()
 {
-    if(!type->get_invincibility())
-        main_logic::Game_logic::get_engine().delete_static_object(&polygon);
+    if(!type_->get_invincibility())
+        main_logic::Game_logic::get_engine().delete_static_object(&polygon_);
 }
 
 void Tile::show()
 {
-    type->blit(location);
+    type_->blit(location_);
 }
 
 void Tile::init_geometry(physics::Polygon init_polygon)
 {
-    polygon = init_polygon;
+    polygon_ = init_polygon;
 }
 
 void Tile::init_tile_type(Tile_type * init_type)
 {
-    if(type != nullptr && type->get_invincibility())
+    if(type_ != nullptr && type_->get_invincibility())
     {
-        main_logic::Game_logic::get_engine().delete_static_object(&polygon);
+        main_logic::Game_logic::get_engine().delete_static_object(&polygon_);
     }
-    type = init_type;
-    if(!type->get_invincibility())
+    type_ = init_type;
+    if(!type_->get_invincibility())
     {
-        main_logic::Game_logic::get_engine().add_static_object(&polygon);
+        main_logic::Game_logic::get_engine().add_static_object(&polygon_);
     }
 }
 
 void Tile::set_x(int x)
 {
-    location.x = x;
+    location_.x = x;
 }
 
 void Tile::set_y(int y)
 {
-    location.y = y;
+    location_.y = y;
 }
 
 }

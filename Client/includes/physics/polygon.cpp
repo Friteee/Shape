@@ -5,16 +5,16 @@ namespace physics
 
 void Polygon::add_point(SDL_Point added)
 {
-    starting_points.push_back(added);
-    points.push_back(added);
+    starting_points_.push_back(added);
+    points_.push_back(added);
 }
 
 SDL_Point Polygon::get_next_point( unsigned int iterator) const
 {
     iterator++;
-    if(iterator>=points.size())
+    if(iterator>=points_.size())
         iterator = 0;
-    return points[iterator];
+    return points_[iterator];
 }
 
 inline int is_left(SDL_Point p0, SDL_Point p1, SDL_Point p2)
@@ -38,17 +38,17 @@ bool Polygon::is_inside(SDL_Point searched) const
     int winding = 0;    // the  winding number counter
 
     // loop through all edges of the polygon
-    for (unsigned int a = 0 ; a < points.size() ; a++) {   // edge from points[i] to  points[i+1]
+    for (unsigned int a = 0 ; a < points_.size() ; a++) {   // edge from points_[i] to  points_[i+1]
 
-        if (points[a].y <= searched.y)
+        if (points_[a].y <= searched.y)
         {                             // start y <= searched.y
             if (get_next_point(a).y  > searched.y)      // an upward crossing
-                 if (is_left( points[a], get_next_point(a), searched) > 0)  // searched left of  edge
+                 if (is_left( points_[a], get_next_point(a), searched) > 0)  // searched left of  edge
                      ++winding;            // have  a valid up intersect
         }
         else {                        // start y > searched.y (no test needed)
             if (get_next_point(a).y  <= searched.y)     // a downward crossing
-                 if (is_left( points[a], get_next_point(a), searched) < 0)  // searched right of  edge
+                 if (is_left( points_[a], get_next_point(a), searched) < 0)  // searched right of  edge
                      --winding;            // have  a valid down intersect
         }
     }
@@ -59,33 +59,34 @@ bool Polygon::is_inside(SDL_Point searched) const
 Polygon get_rectangle(int x, int y, int w, int h)
 {
     Polygon buffer;
-    buffer.add_point(SDL_Point{x   , y  });
-    buffer.add_point(SDL_Point{x+w , y  });
-    buffer.add_point(SDL_Point{x   , y+h});
-    buffer.add_point(SDL_Point{x+w , y+h});
+    buffer.add_point(SDL_Point{0   , 0  });
+    buffer.add_point(SDL_Point{w   , 0  });
+    buffer.add_point(SDL_Point{0   , h  });
+    buffer.add_point(SDL_Point{w   , h  });
+    buffer.set(x , y);
     return buffer;
 }
 
 void Polygon::set(int init_x , int init_y)
 {
-    x=init_x;
-    y=init_y;
-    for(unsigned int a = 0; a < points.size() ; a++)
+    x_=init_x;
+    y_=init_y;
+    for(unsigned int a = 0; a < points_.size() ; a++)
     {
-        points[a].x = starting_points[a].x + x;
-        points[a].y = starting_points[a].y + y;
+        points_[a].x = starting_points_[a].x + x_;
+        points_[a].y = starting_points_[a].y + y_;
     }
 }
 
 void Polygon::get(int * get_x , int * get_y)
 {
-    *get_x = x;
-    *get_y = y;
+    *get_x = x_;
+    *get_y = y_;
 }
 
 const std::vector<SDL_Point>& Polygon::get_points()const
 {
-    return points;
+    return points_;
 }
 
 }

@@ -34,9 +34,9 @@ public:
 private:
 
     // vector of pairs to hold the config
-    std::vector<std::pair<std::string,std::string>>config;
+    std::vector<std::pair<std::string,std::string>> config_;
     // filename
-    std::string file;
+    std::string file_;
 
 };
 

@@ -77,6 +77,8 @@
 		<Unit filename="includes/game/moving_object.h" />
 		<Unit filename="includes/game/object_command.h" />
 		<Unit filename="includes/game/object_state.h" />
+		<Unit filename="includes/game/player.cpp" />
+		<Unit filename="includes/game/player.h" />
 		<Unit filename="includes/game/static_object.h" />
 		<Unit filename="includes/game/tile.cpp" />
 		<Unit filename="includes/game/tile.h" />
@@ -127,7 +129,6 @@
 		<Unit filename="includes/video/animation.h" />
 		<Unit filename="includes/video/camera.cpp" />
 		<Unit filename="includes/video/camera.h" />
-		<Unit filename="includes/video/render_component.h" />
 		<Unit filename="includes/video/texture.cpp" />
 		<Unit filename="includes/video/texture.h" />
 		<Unit filename="includes/video/window.cpp" />

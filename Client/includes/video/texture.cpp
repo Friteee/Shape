@@ -12,7 +12,7 @@ namespace video
 
 Texture::Texture()
 {
-    angle = 0;
+    angle_ = 0;
 
 }
 
@@ -34,8 +34,8 @@ void Texture::init(std::string filename, SDL_Color color_key)
 {
     reset();
     create_surface(filename);
-    Uint32 key = SDL_MapRGB((*surface)->format,color_key.r,color_key.g,color_key.b);
-    SDL_SetColorKey( *surface , SDL_TRUE , key );
+    Uint32 key = SDL_MapRGB((*surface_)->format,color_key.r,color_key.g,color_key.b);
+    SDL_SetColorKey( *surface_ , SDL_TRUE , key );
     create_texture(filename);
 }
 
@@ -50,7 +50,7 @@ void Texture::init(SDL_Surface * init_surface)
         printf("Error : null pointer passed to texture");
         assert(0);
     }
-    surface = std::make_shared<SDL_Surface*>(init_surface);
+    surface_ = std::make_shared<SDL_Surface*>(init_surface);
     create_texture(std::string("(Surface has no filename)"));
 }
 
@@ -59,44 +59,44 @@ void Texture::init(SDL_Surface * init_surface)
  */
 void Texture::init(std::string text, SDL_Color text_color, TTF_Font * font)
 {
-    if(surface.unique())
+    if(surface_.unique())
     {
-        SDL_DestroyTexture(*texture);
-        SDL_FreeSurface(*surface);
+        SDL_DestroyTexture(*texture_);
+        SDL_FreeSurface(*surface_);
     }
-    texture.reset();
-    surface.reset();
-    surface = std::make_shared<SDL_Surface*>(TTF_RenderText_Blended( font, text.c_str(), text_color ));
+    texture_.reset();
+    surface_.reset();
+    surface_ = std::make_shared<SDL_Surface*>(TTF_RenderText_Blended( font, text.c_str(), text_color ));
     create_texture(std::string("Surface is text"));
 }
 
 Texture::Texture(Texture const & copied)
 {
-    surface = copied.surface;
-    texture = copied.texture;
+    surface_ = copied.surface_;
+    texture_ = copied.texture_;
 }
 
 Texture::Texture(Texture && moved)
 {
-    surface = moved.surface;
-    texture = moved.texture;
-    moved.surface.reset();
-    moved.texture.reset();
+    surface_ = moved.surface_;
+    texture_ = moved.texture_;
+    moved.surface_.reset();
+    moved.texture_.reset();
 }
 
 Texture& Texture::operator=(Texture const & copied)
 {
-    surface = copied.surface;
-    texture = copied.texture;
+    surface_ = copied.surface_;
+    texture_ = copied.texture_;
     return *this;
 }
 
 Texture& Texture::operator=(Texture && moved)
 {
-    surface = moved.surface;
-    texture = moved.texture;
-    moved.surface.reset();
-    moved.texture.reset();
+    surface_ = moved.surface_;
+    texture_ = moved.texture_;
+    moved.surface_.reset();
+    moved.texture_.reset();
 
     return *this;
 }
@@ -106,69 +106,69 @@ Texture& Texture::operator=(Texture && moved)
  */
 SDL_Texture * Texture::get_texture()
 {
-    if(!texture)
+    if(!texture_)
     {
         printf("Warning : nullptr texture is being passed\n");
         printf("Did you forget to initialize texture?\n");
     }
-    return *texture;
+    return *texture_;
 }
 
 SDL_Surface * Texture::get_surface()
 {
-    if(!surface)
+    if(!surface_)
     {
         printf("Warning : nullptr surface is being passed\n");
         printf("Did you forget to initialize texture?\n");
     }
-    return *surface;
+    return *surface_;
 }
 
 Texture::~Texture()
 {
-    if(surface.unique())
+    if(surface_.unique())
     {
-        SDL_FreeSurface(*surface);
+        SDL_FreeSurface(*surface_);
     }
-    if(texture.unique())
+    if(texture_.unique())
     {
-        SDL_DestroyTexture(*texture);
+        SDL_DestroyTexture(*texture_);
     }
-    surface.reset();
-    texture.reset();
+    surface_.reset();
+    texture_.reset();
 }
 
 unsigned int Texture::get_height()
 {
-    return (*surface)->h;
+    return (*surface_)->h;
 }
 
 unsigned int Texture::get_width()
 {
-    return (*surface)->w;
+    return (*surface_)->w;
 }
 
 int Texture::get_angle()
 {
-    return angle;
+    return angle_;
 }
 
 void Texture::set_angle(int init_angle)
 {
-    angle=init_angle;
+    angle_=init_angle;
 }
 
 void Texture::set_alpha(unsigned int alpha)
 {
     if(alpha>255)
         printf("Warning! Alpha passed to texture is more than 255");
-    SDL_SetTextureAlphaMod(*texture, alpha);
+    SDL_SetTextureAlphaMod(*texture_, alpha);
 }
 
 void Texture::create_surface(std::string filename)
 {
     SDL_Surface * init_surface = SDL_LoadBMP(filename.c_str());
-    surface = std::make_shared<SDL_Surface*>(init_surface);
+    surface_ = std::make_shared<SDL_Surface*>(init_surface);
     if(!init_surface)
     {
         printf("Error : Error creating surface from %s \n", filename.c_str());
@@ -179,8 +179,8 @@ void Texture::create_surface(std::string filename)
 
 void Texture::create_texture(std::string filename)
 {
-    SDL_Texture * init_texture = Video_subsystem::create_texture(*surface);
-    texture = std::make_shared<SDL_Texture*>(init_texture);
+    SDL_Texture * init_texture = Video_subsystem::create_texture(*surface_);
+    texture_ = std::make_shared<SDL_Texture*>(init_texture);
     if(init_texture == nullptr)
     {
         printf("Error : Error creating texture from %s \n", filename.c_str());
@@ -190,23 +190,23 @@ void Texture::create_texture(std::string filename)
     }
     else
     {
-        SDL_SetTextureBlendMode(*texture,SDL_BLENDMODE_BLEND);
+        SDL_SetTextureBlendMode(*texture_,SDL_BLENDMODE_BLEND);
     }
 }
 
 void Texture::reset()
 {
-    if(surface.unique() )
+    if(surface_.unique() )
     {
-        SDL_FreeSurface (*surface);
+        SDL_FreeSurface (*surface_);
     }
 
-    if(texture.unique() )
+    if(texture_.unique() )
     {
-        SDL_DestroyTexture (*texture);
+        SDL_DestroyTexture (*texture_);
     }
-    surface.reset();
-    texture.reset();
+    surface_.reset();
+    texture_.reset();
 }
 
 }// end of video namespace

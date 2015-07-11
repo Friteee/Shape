@@ -20,8 +20,8 @@ public:
     static void set_volume(unsigned int volume);
     static void change_volume(int amount);
 private:
-    std::shared_ptr<Mix_Chunk *> sound;
-    static unsigned int volume;
+    std::shared_ptr<Mix_Chunk *> sound_;
+    static unsigned int volume_;
 
 };
 

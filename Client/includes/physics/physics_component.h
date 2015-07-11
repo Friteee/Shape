@@ -1,11 +1,15 @@
-#ifndef PHYSICS_COMPONENT_H_INCLUDED
-#define PHYSICS_COMPONENT_H_INCLUDED
+#ifndef PHYSICS_COMPONENT_H_INCLUDE
+#define PHYSICS_COMPONENT_H_INCLUDE
 
 #include <memory>
-
 #include <SDL.h>
 #include "polygon.h"
 #include "../game/moving_object.h"
+
+namespace game
+{
+    class Moving_object;
+}
 
 namespace physics
 {
@@ -14,6 +18,8 @@ namespace physics
  *
  *
  */
+
+
 
 class Physics_component
 {
@@ -29,25 +35,26 @@ public:
 
     void init(game::Moving_object * init_object , std::shared_ptr<Polygon> init_polygon)
     {
-        object = init_object;
-        polygon = init_polygon;
+        object_ = init_object;
+        polygon_ = init_polygon;
     }
 
     const Polygon & get_polygon()
     {
-        return *polygon;
+       return *polygon_;
     }
 
     inline game::Moving_object * get_object()
     {
-        return object;
+        return object_;
     }
 
 protected:
     // associated moving object
-    game::Moving_object     * object;
+    game::Moving_object     * object_;
     // associated polygon
-    std::shared_ptr<Polygon>  polygon;
+    std::shared_ptr<Polygon>  polygon_;
+
 };
 
 }

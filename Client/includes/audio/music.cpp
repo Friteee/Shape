@@ -13,12 +13,12 @@ void Music::init(std::string init_sound)
     {
         printf( "Failed to load a sound effect from %s! SDL_mixer Error: %s\n", init_sound.c_str() , Mix_GetError() );
     }
-    sound = std::make_shared<Mix_Music*>( buffer );
+    sound_ = std::make_shared<Mix_Music*>( buffer );
 }
 
 void Music::play()
 {
-    Mix_PlayMusic( *sound.get(), -1 );
+    Mix_PlayMusic( *sound_.get(), -1 );
 }
 
 void Music::stop()
@@ -44,26 +44,26 @@ void Music::pause()
 
 Music::~Music()
 {
-    Mix_FreeMusic( *sound.get() );
+    Mix_FreeMusic( *sound_.get() );
 }
 
 void Music::change_volume(int amount)
 {
-    if(volume + amount> 128 && amount > 0)
-        volume = 128;
-    else if (volume + amount > 128 && amount < 0)
-        volume = 0;
+    if(volume_ + amount> 128 && amount > 0)
+        volume_ = 128;
+    else if (volume_ + amount > 128 && amount < 0)
+        volume_ = 0;
     else
-        volume += amount;
-    Mix_VolumeMusic(volume);
+        volume_ += amount;
+    Mix_VolumeMusic(volume_);
 }
 
 void Music::set_volume(unsigned int init_volume)
 {
-    volume = init_volume;
-    Mix_VolumeMusic(volume);
+    volume_ = init_volume;
+    Mix_VolumeMusic(volume_);
 }
 
-unsigned int Music::volume = 128;
+unsigned int Music::volume_ = 128;
 
 }

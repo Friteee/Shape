@@ -23,11 +23,11 @@ public:
     void set_horizontal_acceleration(float init_acceleration);
 
 private:
-    float horizontal_acceleration;
-    float gravity;
-    float x,y;
-    float previous_x , previous_y;
-    float x_speed, y_speed;
+    float horizontal_acceleration_;
+    float gravity_;
+    float x_ , y_;
+    float previous_x_ , previous_y_;
+    float x_speed_, y_speed_;
 
 };
 

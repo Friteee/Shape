@@ -58,13 +58,13 @@ private:
     Video_subsystem( Video_subsystem && x) = delete;
     Video_subsystem &operator=( Video_subsystem && x) = delete;
     // instance of video_subsystem
-    static Video_subsystem* instance;
+    static Video_subsystem* instance_;
     // main window to blit stuff into
-    SDL_Window* main_window = nullptr;
+    SDL_Window* main_window_ = nullptr;
     // renderer to help blit stuff
-    SDL_Renderer* main_renderer = nullptr;
+    SDL_Renderer* main_renderer_ = nullptr;
     // bool to know if the instance was created without errors
-    bool is_created;
+    bool is_created_;
 };
 
 

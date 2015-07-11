@@ -26,53 +26,53 @@ public:
 
     inline void hide()
     {
-        visible=false;
+        visible_ = false;
     }
     inline void unhide()
     {
-        visible=true;
+        visible_ = true;
     }
     inline bool get_visibility()
     {
-        return visible;
+        return visible_;
     }
     inline void set_for_deletion()
     {
-        marked_for_deletion=true;
+        marked_for_deletion_=true;
     }
     inline bool is_deleted()
     {
-        return marked_for_deletion;
+        return marked_for_deletion_;
     }
     inline void change_position(int x, int y)
     {
-        location.x=x;
-        location.y=y;
+        location_.x=x;
+        location_.y=y;
     }
     inline int get_width()
     {
-        return location.w;
+        return location_.w;
     }
     inline int get_height()
     {
-        return location.h;
+        return location_.h;
     }
     inline void set_width(int width)
     {
-        location.w = width;
+        location_.w = width;
     }
     inline void set_height(int height)
     {
-        location.h = height;
+        location_.h = height;
     }
     virtual ~Gui_element() {}
 
 protected :
 
-    SDL_Rect       location;
-    video::Texture texture;
-    bool           visible,
-                   marked_for_deletion = false;
+    SDL_Rect       location_;
+    video::Texture texture_;
+    bool           visible_,
+                   marked_for_deletion_ = false;
 
 };
 

@@ -14,13 +14,13 @@ namespace physics
 
 void Physics_engine::add_static_object(Polygon * added)
 {
-    objects_change.lock();
+    objects_change_.lock();
 
     Static_command buffer;
     buffer.set(added);
-    static_addition.push_back(buffer);
+    static_addition_.push_back(buffer);
 
-    objects_change.unlock();
+    objects_change_.unlock();
 }
 
 /** \brief add moving objects for collision detection and detected collision handling
@@ -31,13 +31,13 @@ void Physics_engine::add_static_object(Polygon * added)
 
 void Physics_engine::add_moving_object(Physics_component * added)
 {
-    objects_change.lock();
+    objects_change_.lock();
 
     Moving_command buffer;
     buffer.set(added);
-    moving_addition.push_back(buffer);
+    moving_addition_.push_back(buffer);
 
-    objects_change.unlock();
+    objects_change_.unlock();
 }
 
 /** \brief deletion of a static object
@@ -50,13 +50,13 @@ void Physics_engine::add_moving_object(Physics_component * added)
 
 void Physics_engine::delete_static_object(Polygon * deleted)
 {
-    objects_change.lock();
+    objects_change_.lock();
 
     Static_command buffer;
     buffer.set(deleted);
-    static_deletion.push_back(buffer);
+    static_deletion_.push_back(buffer);
 
-    objects_change.unlock();
+    objects_change_.unlock();
 }
 
 
@@ -68,13 +68,13 @@ void Physics_engine::delete_static_object(Polygon * deleted)
  */
 void Physics_engine::delete_moving_object(Physics_component * deleted)
 {
-    objects_change.lock();
+    objects_change_.lock();
 
     Moving_command buffer;
     buffer.set(deleted);
-    moving_deletion.push_back(buffer);
+    moving_deletion_.push_back(buffer);
 
-    objects_change.unlock();
+    objects_change_.unlock();
 }
 /** \brief Physics run function to detect collisions, apply speed, change position and etc.
  *
@@ -85,9 +85,9 @@ void Physics_engine::delete_moving_object(Physics_component * deleted)
  */
 void Physics_engine::run(unsigned int ticks)
 {
-    ticks_per_second = ticks;
-    stop = false;
-    engine = new std::thread (&Physics_engine::thread , this);
+    ticks_per_second_ = ticks;
+    stop_ = false;
+    engine_ = new std::thread (&Physics_engine::thread , this);
 
 }
 
@@ -98,49 +98,49 @@ void Physics_engine::run(unsigned int ticks)
 
 void Physics_engine::check_addition()
 {
-    objects_change.lock();
+    objects_change_.lock();
 
     Polygon * buffer;
     Physics_component * buffer_component;
-    while(!moving_addition.empty())
+    while(!moving_addition_.empty())
     {
-        buffer_component = moving_addition.front().get();
-        moving_addition.pop_front();
-        moving_objects.push_back(buffer_component);
+        buffer_component = moving_addition_.front().get();
+        moving_addition_.pop_front();
+        moving_objects_.push_back(buffer_component);
     }
-    while(!static_addition.empty())
+    while(!static_addition_.empty())
     {
-        buffer = static_addition.front().get();
-        static_addition.pop_front();
-        static_objects.push_back(buffer);
+        buffer = static_addition_.front().get();
+        static_addition_.pop_front();
+        static_objects_.push_back(buffer);
     }
-    while(!static_deletion.empty())
+    while(!static_deletion_.empty())
     {
-        buffer = static_deletion.front().get();
-        static_deletion.pop_front();
-        for(int a = 0, b = static_objects.size(); a<b; a++)
+        buffer = static_deletion_.front().get();
+        static_deletion_.pop_front();
+        for(int a = 0, b = static_objects_.size(); a<b; a++)
         {
-            if(static_objects[a] == buffer)
+            if(static_objects_[a] == buffer)
             {
-                static_objects.erase(static_objects.begin() + a);
+                static_objects_.erase(static_objects_.begin() + a);
                 break;
             }
         }
     }
-    while(!moving_deletion.empty())
+    while(!moving_deletion_.empty())
     {
-        buffer_component = moving_deletion.front().get();
-        moving_deletion.pop_front();
-        for(int a = 0, b = moving_objects.size(); a < b; a++)
+        buffer_component = moving_deletion_.front().get();
+        moving_deletion_.pop_front();
+        for(int a = 0, b = moving_objects_.size(); a < b; a++)
         {
-            if(moving_objects[a] == buffer_component)
+            if(moving_objects_[a] == buffer_component)
             {
-                moving_objects.erase(moving_objects.begin() + a);
+                moving_objects_.erase(moving_objects_.begin() + a);
                 break;
             }
         }
     }
-    objects_change.unlock();
+    objects_change_.unlock();
 
     //todo
 }
@@ -153,61 +153,61 @@ void Physics_engine::check_addition()
 
 void Physics_engine::reset()
 {
-    stop = true;
-    engine->join();
-    delete engine;
+    stop_ = true;
+    engine_->join();
+    delete engine_;
 
-    moving_addition.clear();
-    moving_deletion.clear();
-    static_addition.clear();
-    static_deletion.clear();
-    moving_objects.clear();
-    static_objects.clear();
+    moving_addition_.clear();
+    moving_deletion_.clear();
+    static_addition_.clear();
+    static_deletion_.clear();
+    moving_objects_.clear();
+    static_objects_.clear();
 }
 
 
 void Physics_engine::update_moving()
 {
     //update
-    for(unsigned int a = 0; a < moving_objects.size() ; a++)
+    for(unsigned int a = 0; a < moving_objects_.size() ; a++)
     {
-        moving_objects[a]->update(ticks_per_second);
+        moving_objects_[a]->update(ticks_per_second_);
     }
 }
 
 void Physics_engine::check_collision()
 {
     //check and notify collisions for moving - static objects
-    for(unsigned int a = 0 , a_size = moving_objects.size() ; a < a_size ; a++)
+    for(unsigned int a = 0 , a_size = moving_objects_.size() ; a < a_size ; a++)
     {
-        const Polygon & buffer = moving_objects[a]->get_polygon();
+        const Polygon & buffer = moving_objects_[a]->get_polygon();
         const std::vector<SDL_Point>& points = buffer.get_points();
         for(unsigned int b = 0 , b_size = points.size() ; b < b_size ; b++)
         {
-            for(unsigned int c = 0 , c_size = static_objects.size() ; c < c_size; c++)
+            for(unsigned int c = 0 , c_size = static_objects_.size() ; c < c_size; c++)
             {
-                if(static_objects[c]->is_inside(points[b]))
+                if(static_objects_[c]->is_inside(points[b]))
                 {
-                    moving_objects[a]->notify_static(b);
+                    moving_objects_[a]->notify_static(b);
                 }
             }
         }
     }
     //check and notify collisions for moving - moving objects
-    for(unsigned int a = 0 , a_size = moving_objects.size() ; a < a_size ; a++)
+    for(unsigned int a = 0 , a_size = moving_objects_.size() ; a < a_size ; a++)
     {
-        const Polygon & buffer = moving_objects[a]->get_polygon();
+        const Polygon & buffer = moving_objects_[a]->get_polygon();
         const std::vector<SDL_Point>& points = buffer.get_points();
         for(unsigned int b = 0 , b_size = points.size() ; b < b_size ; b++)
         {
-            for(unsigned int c = 0 , c_size = moving_objects.size() ; c < c_size; c++)
+            for(unsigned int c = 0 , c_size = moving_objects_.size() ; c < c_size; c++)
             {
                 if(a==c)
                     continue;
-                else if(moving_objects[c]->get_polygon().is_inside(points[b]))
+                else if(moving_objects_[c]->get_polygon().is_inside(points[b]))
                 {
-                    moving_objects[a]->notify_moving(moving_objects[b]);
-                    moving_objects[b]->notify_moving(moving_objects[a]);
+                    moving_objects_[a]->notify_moving(moving_objects_[b]);
+                    moving_objects_[b]->notify_moving(moving_objects_[a]);
                 }
             }
         }
@@ -219,7 +219,7 @@ void Physics_engine::thread()
     utility::Stopwatch ticks;
     ticks.start();
 
-    while(!stop)
+    while(!stop_)
     {
 
         check_addition();
@@ -228,9 +228,9 @@ void Physics_engine::thread()
 
         check_collision();
 
-        if(ticks.get_ticks() < 1000.f / ticks_per_second && !stop)
+        if(ticks.get_ticks() < 1000.f / ticks_per_second_ && !stop_)
         {
-            std::chrono::milliseconds duration = std::chrono::milliseconds(1000 / ticks_per_second - ticks.get_ticks());
+            std::chrono::milliseconds duration = std::chrono::milliseconds(1000 / ticks_per_second_ - ticks.get_ticks());
             std::this_thread::sleep_for(duration);
         }
 
@@ -243,22 +243,22 @@ void Physics_engine::thread()
 
 Polygon * Physics_engine::Static_command::get()
 {
-    return object;
+    return object_;
 }
 
 void Physics_engine::Static_command::set(Polygon * added)
 {
-    object = added;
+    object_ = added;
 }
 
 Physics_component * Physics_engine::Moving_command::get()
 {
-    return object;
+    return object_;
 }
 
 void Physics_engine::Moving_command::set(Physics_component * added)
 {
-    object = added;
+    object_ = added;
 }
 
 }

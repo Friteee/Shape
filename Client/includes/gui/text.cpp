@@ -10,38 +10,38 @@ namespace gui
 
 Text::Text(utility::Configuration * config, std::string init_text, int x , int y, int init_text_size, SDL_Color init_color_key)
 {
-    visible = true;
-    text = init_text;
-    text_size = init_text_size;
+    visible_ = true;
+    text_ = init_text;
+    text_size_ = init_text_size;
 
-    color_key=init_color_key;
-    color_key.a=255;
+    color_key_=init_color_key;
+    color_key_.a=255;
 
-    font = TTF_OpenFont(config->find_string("font").c_str(),text_size);
+    font_ = TTF_OpenFont(config->find_string("font").c_str(),text_size_);
 
-    if(!text.empty())
+    if(!text_.empty())
     {
-        texture.init(text,color_key,font);
+        texture_.init(text_,color_key_,font_);
 
-        location.w = texture.get_width();
-        location.h = texture.get_height();
+        location_.w = texture_.get_width();
+        location_.h = texture_.get_height();
     }
     else
     {
-        location.w = 0;
-        location.h = 0;
+        location_.w = 0;
+        location_.h = 0;
     }
-    location.x = x;
-    location.y = y;
+    location_.x = x;
+    location_.y = y;
 }
 
 void Text::show()
 {
-    if(!visible||text.length()==0)
+    if(!visible_||text_.length()==0)
     {
         return;
     }
-    video::Video_subsystem::blit(texture.get_texture(),nullptr,&location);
+    video::Video_subsystem::blit(texture_.get_texture(),nullptr,&location_);
 }
 
 void Text::update()
@@ -51,19 +51,19 @@ void Text::update()
 
 Text::~Text()
 {
-    TTF_CloseFont(font);
+    TTF_CloseFont(font_);
 }
 
 void Text::change_text(std::string init_text)
 {
-    if(text==init_text)
+    if(text_==init_text)
         return;
-    text = init_text;
-    if(text.length()!=0)
+    text_ = init_text;
+    if(text_.length()!=0)
     {
-        texture.init(init_text,color_key,font);
-        location.w = texture.get_width();
-        location.h = texture.get_height();
+        texture_.init(init_text,color_key_,font_);
+        location_.w = texture_.get_width();
+        location_.h = texture_.get_height();
     }
 }
 
@@ -74,7 +74,7 @@ void Text::handle_click(int x, int y)
 
 unsigned int Text::get_length()
 {
-    return text.length();
+    return text_.length();
 }
 
 }// end of namespace gui

@@ -30,9 +30,9 @@ public:
 private:
 
     //static to know last click location
-    static SDL_Point last_click_location;
+    static SDL_Point last_click_location_;
 
-    static bool clicked_last_frame ;
+    static bool clicked_last_frame_ ;
 };
 
 }

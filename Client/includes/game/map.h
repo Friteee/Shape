@@ -32,26 +32,26 @@ public:
 
     inline std::vector <Tile> &      get_tiles()
     {
-        return tiles;
+        return tiles_;
     }
     inline std::vector <Tile_type> & get_tile_types()
     {
-        return types;
+        return types_;
     }
     inline gui::Background &         get_background()
     {
-        return *background;
+        return *background_;
     }
     inline audio::Music &            get_music()
     {
-        return music;
+        return music_;
     }
 private:
-    std::vector<Tile>      tiles;
-    std::vector<Tile_type> types;
-    gui::Background     *  background;
-    audio::Music           music;
-    std::string            filename;
+    std::vector<Tile>      tiles_;
+    std::vector<Tile_type> types_;
+    gui::Background     *  background_;
+    audio::Music           music_;
+    std::string            filename_;
 };
 
 }

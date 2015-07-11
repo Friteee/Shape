@@ -1,11 +1,11 @@
 #ifndef MOVEMENT_COMMAND_H_INCLUDED
 #define MOVEMENT_COMMAND_H_INCLUDED
 
-namespace physics
-{
-
 #include "../game/object_command.h"
 #include "../game/moving_object.h"
+
+namespace physics
+{
 
 class Movement_command : public game::Object_command
 {
@@ -14,8 +14,8 @@ public:
     void redo       (game::Moving_object * object) override;
     void execute    (game::Moving_object * object) override;
 private:
-    int                   x , y;
-    int                   x_before , y_before;
+    int                   x_ , y_;
+    int                   x_before_ , y_before_;
 };
 
 }

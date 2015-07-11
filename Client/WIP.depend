@@ -1977,7 +1977,7 @@
 	"../gui/click.h"
 	"../game/highscore.h"
 
-1431717017 source:d:\github\shape\client\includes\audio\audio.cpp
+1436532135 source:d:\github\shape\client\includes\audio\audio.cpp
 	<SDL_mixer.h>
 	<cstdio>
 	"audio.h"
@@ -2086,22 +2086,22 @@
 	"begin_code.h"
 	"close_code.h"
 
-1434283573 d:\github\shape\client\includes\audio\audio.h
+1436532117 d:\github\shape\client\includes\audio\audio.h
 
-1432464771 source:d:\github\shape\client\includes\audio\music.cpp
+1436532179 source:d:\github\shape\client\includes\audio\music.cpp
 	"music.h"
 	<cstdio>
 
-1434283664 d:\github\shape\client\includes\audio\music.h
+1436532117 d:\github\shape\client\includes\audio\music.h
 	<SDl_mixer.h>
 	<string>
 	<memory>
 
-1431764011 source:d:\github\shape\client\includes\audio\sound.cpp
+1436532219 source:d:\github\shape\client\includes\audio\sound.cpp
 	"sound.h"
 	<cstdio>
 
-1434283688 d:\github\shape\client\includes\audio\sound.h
+1436532117 d:\github\shape\client\includes\audio\sound.h
 	<SDl_mixer.h>
 	<string>
 	<memory>
@@ -2113,9 +2113,9 @@
 	<functional>
 	"../utility/stopwatch.h"
 
-1434285439 d:\github\shape\client\includes\utility\stopwatch.h
+1436634152 d:\github\shape\client\includes\utility\stopwatch.h
 
-1432142328 source:d:\github\shape\client\includes\gui\background.cpp
+1436635082 source:d:\github\shape\client\includes\gui\background.cpp
 	<stdio.h>
 	<SDL.h>
 	"../video/window.h"
@@ -2336,11 +2336,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1434285557 d:\github\shape\client\includes\video\window.h
+1436635119 d:\github\shape\client\includes\video\window.h
 	<SDL.h>
 	"window.h"
 
-1434283961 d:\github\shape\client\includes\gui\background.h
+1436532881 d:\github\shape\client\includes\gui\background.h
 	<stdio.h>
 	<SDL.h>
 	"../video/window.h"
@@ -2349,7 +2349,7 @@
 	<memory>
 	<deque>
 
-1434285542 d:\github\shape\client\includes\video\texture.h
+1436635119 d:\github\shape\client\includes\video\texture.h
 	<string>
 	<memory>
 	<SDL.h>
@@ -2360,59 +2360,59 @@
 	"begin_code.h"
 	"close_code.h"
 
-1432465002 source:d:\github\shape\client\includes\gui\button.cpp
+1436533208 source:d:\github\shape\client\includes\gui\button.cpp
 	"button.h"
 	"../video/window.h"
 	<cstdio>
 
-1434284059 d:\github\shape\client\includes\gui\button.h
+1436532973 d:\github\shape\client\includes\gui\button.h
 	"../video/texture.h"
 	"gui_element.h"
 
-1434284164 d:\github\shape\client\includes\gui\gui_element.h
+1436533121 d:\github\shape\client\includes\gui\gui_element.h
 	<SDL.h>
 	"../video/texture.h"
 
-1426072026 source:d:\github\shape\client\includes\gui\click.cpp
+1436533045 source:d:\github\shape\client\includes\gui\click.cpp
 	"click.h"
 
-1434284088 d:\github\shape\client\includes\gui\click.h
+1436533008 d:\github\shape\client\includes\gui\click.h
 	<SDL.h>
 
-1432464998 source:d:\github\shape\client\includes\gui\gui_manager.cpp
+1436533468 source:d:\github\shape\client\includes\gui\gui_manager.cpp
 	"gui_manager.h"
 	"click.h"
 	<cstdio>
 
-1434284923 d:\github\shape\client\includes\gui\gui_manager.h
+1436533489 d:\github\shape\client\includes\gui\gui_manager.h
 	"gui_element.h"
 	<vector>
 
-1431781618 source:d:\github\shape\client\includes\gui\progress_bar.cpp
+1436635119 source:d:\github\shape\client\includes\gui\progress_bar.cpp
 	<cassert>
 	"progress_bar.h"
 	"../video/window.h"
 	<cstdio>
 	<assert.h>
 
-1434285012 d:\github\shape\client\includes\gui\progress_bar.h
+1436533518 d:\github\shape\client\includes\gui\progress_bar.h
 	<functional>
 	"../utility/stopwatch.h"
 	"gui_element.h"
 
-1430749966 source:d:\github\shape\client\includes\gui\text.cpp
+1436533828 source:d:\github\shape\client\includes\gui\text.cpp
 	"text.h"
 	"../utility/functions.h"
 	"../video/window.h"
 	<cstdio>
 
-1434285037 d:\github\shape\client\includes\gui\text.h
+1436533747 d:\github\shape\client\includes\gui\text.h
 	"text.h"
 	"gui_element.h"
 	"../utility/configuration.h"
 	<string>
 
-1434398764 d:\github\shape\client\includes\utility\configuration.h
+1436634111 d:\github\shape\client\includes\utility\configuration.h
 	<string>
 	<vector>
 
@@ -2422,7 +2422,7 @@
 	<vector>
 	<string>
 
-1434397812 source:d:\github\shape\client\includes\gui\text_button.cpp
+1436533906 source:d:\github\shape\client\includes\gui\text_button.cpp
 	"text_button.h"
 	<functional>
 	"../video/window.h"
@@ -2432,7 +2432,7 @@
 	<vector>
 	<cstdio>
 
-1434397758 d:\github\shape\client\includes\gui\text_button.h
+1436533732 d:\github\shape\client\includes\gui\text_button.h
 	"gui_element.h"
 	<functional>
 	"../utility/configuration.h"
@@ -2443,7 +2443,7 @@
 	"main_logic/game_logic.h"
 	<stdio.h>
 
-1434285106 d:\github\shape\client\includes\main_logic\game_logic.h
+1436534142 d:\github\shape\client\includes\main_logic\game_logic.h
 	"../video/window.h"
 	"../gui/background.h"
 	"../video/camera.h"
@@ -2453,10 +2453,10 @@
 	"gaming_mode.h"
 	"main_menu_mode.h"
 
-1434285542 d:\github\shape\client\includes\video\camera.h
+1436634385 d:\github\shape\client\includes\video\camera.h
 	<SDL.h>
 
-1434285165 d:\github\shape\client\includes\main_logic\gaming_mode.h
+1436534229 d:\github\shape\client\includes\main_logic\gaming_mode.h
 	"program_mode.h"
 	"../gui/background.h"
 	"../gui/gui_manager.h"
@@ -2469,7 +2469,7 @@
 	"../utility/configuration.h"
 	<SDL.h>
 
-1434399093 d:\github\shape\client\includes\main_logic\main_menu_mode.h
+1436534344 d:\github\shape\client\includes\main_logic\main_menu_mode.h
 	"program_mode.h"
 	"../gui/text_button.h"
 	"../gui/gui_manager.h"
@@ -2477,7 +2477,7 @@
 	"../gui/button.h"
 	"../audio/music.h"
 
-1434394684 source:d:\github\shape\client\includes\main_logic\game_logic.cpp
+1436534206 source:d:\github\shape\client\includes\main_logic\game_logic.cpp
 	<SDL.h>
 	<stdio.h>
 	"game_logic.h"
@@ -2488,7 +2488,7 @@
 	"../utility/configuration.h"
 	<cstdlib>
 
-1434399154 source:d:\github\shape\client\includes\main_logic\main_menu_mode.cpp
+1436534449 source:d:\github\shape\client\includes\main_logic\main_menu_mode.cpp
 	<cstdio>
 	<cmath>
 	"main_menu_mode.h"
@@ -2497,7 +2497,7 @@
 	"../gui/click.h"
 	"../gui/button.h "
 
-1434398984 source:d:\github\shape\client\includes\utility\configuration.cpp
+1436634211 source:d:\github\shape\client\includes\utility\configuration.cpp
 	"configuration.h"
 	<fstream>
 	<string>
@@ -2508,37 +2508,37 @@
 	<vector>
 	<cstdio>
 
-1426674102 source:d:\github\shape\client\includes\utility\stopwatch.cpp
+1436634268 source:d:\github\shape\client\includes\utility\stopwatch.cpp
 	"stopwatch.h"
 	<SDL.h>
 
-1427715638 source:d:\github\shape\client\includes\utility\timer.cpp
+1436634315 source:d:\github\shape\client\includes\utility\timer.cpp
 	"timer.h"
 	<cstdio>
 
-1434285513 d:\github\shape\client\includes\utility\timer.h
+1436634152 d:\github\shape\client\includes\utility\timer.h
 	<functional>
 	"stopwatch.h"
 
-1419571578 source:d:\github\shape\client\includes\video\camera.cpp
+1436634434 source:d:\github\shape\client\includes\video\camera.cpp
 	<SDL.h>
 	<stdio.h>
 	"camera.h"
 	"window.h"
 
-1432146695 source:d:\github\shape\client\includes\video\texture.cpp
+1436635119 source:d:\github\shape\client\includes\video\texture.cpp
 	<cassert>
 	"texture.h"
 	"window.h"
 	<assert.h>
 	<cstdio>
 
-1434282842 source:d:\github\shape\client\includes\video\window.cpp
+1436634648 source:d:\github\shape\client\includes\video\window.cpp
 	<SDL.h>
 	<stdio.h>
 	"window.h"
 
-1434314574 source:d:\github\shape\client\includes\main_logic\gaming_mode.cpp
+1436534316 source:d:\github\shape\client\includes\main_logic\gaming_mode.cpp
 	"gaming_mode.h"
 	"main_menu_mode.h"
 	"game_logic.h"
@@ -8330,33 +8330,33 @@
 	<SDL.h>
 	<vector>
 
-1435425193 source:d:\github\shape\client\includes\game\tile.cpp
+1436532531 source:d:\github\shape\client\includes\game\tile.cpp
 	"tile.h"
 	"../main_logic/game_logic.h"
 
-1435425141 d:\github\shape\client\includes\game\tile.h
+1436532426 d:\github\shape\client\includes\game\tile.h
 	"static_object.h"
 	"tile_type.h"
 
-1435425132 d:\github\shape\client\includes\game\static_object.h
+1436532417 d:\github\shape\client\includes\game\static_object.h
 	<SDL.h>
 	"../physics/polygon.h"
 
-1434400201 source:d:\github\shape\client\includes\game\tile_type.cpp
+1436532574 source:d:\github\shape\client\includes\game\tile_type.cpp
 	"tile_type.h"
 	"../video/camera.h"
 
-1434721444 d:\github\shape\client\includes\game\tile_type.h
+1436532441 d:\github\shape\client\includes\game\tile_type.h
 	<string>
 	<SDL.h>
 	"../video/texture.h"
 
-1435577410 source:d:\github\shape\client\includes\physics\physics_engine.cpp
+1436633903 source:d:\github\shape\client\includes\physics\physics_engine.cpp
 	"physics_engine.h"
 	"../utility/stopwatch.h"
 	<chrono>
 
-1436291176 d:\github\shape\client\includes\physics\physics_engine.h
+1436633462 d:\github\shape\client\includes\physics\physics_engine.h
 	"polygon.h"
 	"physics_component.h"
 	<vector>
@@ -8365,17 +8365,14 @@
 	<thread>
 	<atomic>
 
-1436294509 d:\github\shape\client\includes\game\moving_object.h
+1436532085 d:\github\shape\client\includes\game\moving_object.h
 	"object_command.h"
 	"object_state.h"
 	"../physics/physics_component.h"
-	"../video/render_component.h"
-	"../physics/movement_command.h"
 
-1436294667 d:\github\shape\client\includes\game\object_command.h
-	"moving_object.h"
+1436532321 d:\github\shape\client\includes\game\object_command.h
 
-1436290432 d:\github\shape\client\includes\physics\physics_component.h
+1436633472 d:\github\shape\client\includes\physics\physics_component.h
 	<memory>
 	<SDL.h>
 	"polygon.h"
@@ -8389,13 +8386,13 @@
 1434314711 source:d:\github\shape\client\includes\game\moving_object.cpp
 	"moving_object.h"
 
-1434722917 source:d:\github\shape\client\includes\game\map.cpp
+1436532286 source:d:\github\shape\client\includes\game\map.cpp
 	"map.h"
 	<fstream>
 	<map>
 	<vector>
 
-1434400063 d:\github\shape\client\includes\game\map.h
+1436532235 d:\github\shape\client\includes\game\map.h
 	<string>
 	<vector>
 	"tile.h"
@@ -8403,33 +8400,44 @@
 	"../gui/background.h"
 	"../audio/music.h"
 
-1435422650 source:d:\github\shape\client\includes\video\animation.cpp
+1436634370 source:d:\github\shape\client\includes\video\animation.cpp
 	"animation.h"
 
-1435422569 d:\github\shape\client\includes\video\animation.h
+1436634152 d:\github\shape\client\includes\video\animation.h
 	<string>
 	<vector>
 	"texture.h"
 	"../utility/stopwatch.h"
 
-1436291676 d:\github\shape\client\includes\physics\polygon.h
+1436633934 d:\github\shape\client\includes\physics\polygon.h
 	<SDL.h>
 	<vector>
 
-1436291730 source:d:\github\shape\client\includes\physics\polygon.cpp
+1436634035 source:d:\github\shape\client\includes\physics\polygon.cpp
 	"polygon.h"
 
 1436293043 d:\github\shape\client\includes\ai\object_state.h
 
-1436291186 source:d:\github\shape\client\includes\physics\falling_object_physics.cpp
+1436633656 source:d:\github\shape\client\includes\physics\falling_object_physics.cpp
 	"falling_object_physics.h"
 
-1435429187 d:\github\shape\client\includes\physics\falling_object_physics.h
+1436534555 d:\github\shape\client\includes\physics\falling_object_physics.h
 	"physics_component.h"
 	<SDL.h>
 
 1436294164 d:\github\shape\client\includes\game\object_state.h
 
-1436294584 d:\github\shape\client\includes\physics\movement_command.h
+1436458086 d:\github\shape\client\includes\physics\movement_command.h
 	"../game/object_command.h"
+	"../game/moving_object.h"
+
+1436457714 source:d:\github\shape\client\includes\physics\movement_command.cpp
+	"movement_command.h"
+
+1436532394 source:d:\github\shape\client\includes\game\player.cpp
+	"player.h"
+
+1436532364 d:\github\shape\client\includes\game\player.h
+	<mutex>
+	"moving_object.h"
 

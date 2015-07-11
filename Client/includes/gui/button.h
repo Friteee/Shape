@@ -27,9 +27,9 @@ public:
     video::Texture & get_texture();
 private:
     // function, which is being called every time user clicks a button
-    std::function<void()> on_click;
+    std::function<void()> on_click_;
     // is the button clicked
-    bool is_clicked = false;
+    bool is_clicked_ = false;
 };
 
 } // end of gui namespace

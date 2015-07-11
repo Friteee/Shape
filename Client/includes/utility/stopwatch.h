@@ -29,11 +29,11 @@ public:
 private:
 
     // integer to hold current ticks since the start/reload
-    unsigned int started_ticks;
+    unsigned int started_ticks_;
     // in case timer is pausekd
-    unsigned int paused_ticks;
+    unsigned int paused_ticks_;
     // boolean to know if timer is paused and started
-    bool paused,started;
+    bool paused_,started_;
 };
 
 }// end of utility namespace

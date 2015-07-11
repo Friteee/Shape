@@ -12,38 +12,38 @@ void Sound::init(std::string init_sound)
     {
         printf( "Failed to load a sound effect from %s! SDL_mixer Error: %s\n", init_sound.c_str() , Mix_GetError() );
     }
-    sound = std::make_shared<Mix_Chunk*>( buffer );
+    sound_ = std::make_shared<Mix_Chunk*>( buffer );
 }
 
 void Sound::play()
 {
-    Mix_PlayChannel( 1, *sound.get(), 0 );
+    Mix_PlayChannel( 1, *sound_.get(), 0 );
 }
 
 Sound::~Sound()
 {
-    Mix_FreeChunk( *sound.get() );
+    Mix_FreeChunk( *sound_.get() );
 }
 
 void Sound::change_volume(int amount)
 {
 
-    if(volume + amount> 128 && amount > 0)
-        volume = 128;
-    else if (volume + amount > 128 && amount < 0)
-        volume = 0;
+    if(volume_ + amount> 128 && amount > 0)
+        volume_ = 128;
+    else if (volume_ + amount > 128 && amount < 0)
+        volume_ = 0;
     else
-        volume += amount;
+        volume_ += amount;
 
-    Mix_Volume(1,volume);
+    Mix_Volume(1,volume_);
 }
 
 void Sound::set_volume(unsigned int init_volume)
 {
-    volume = init_volume;
-    Mix_Volume(1,volume);
+    volume_ = init_volume;
+    Mix_Volume(1,volume_);
 }
 
-unsigned int Sound::volume = 128;
+unsigned int Sound::volume_ = 128;
 
 }

@@ -26,10 +26,10 @@ public:
     void set_y(int y);
     inline Tile_type * get_tile_type()
     {
-        return type;
+        return type_;
     }
 private:
-    Tile_type * type;
+    Tile_type * type_;
 };
 
 }

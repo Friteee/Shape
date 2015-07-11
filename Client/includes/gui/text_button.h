@@ -30,16 +30,17 @@ public:
 private:
 
     // function, which is being called every time user clicks a button
-    std::function<void()> on_click;
+    std::function<void()> on_click_;
     // boolean to know if the button is being clicked
-    bool                  is_clicked;
+    bool                  is_clicked_;
     // text to be blended
-    std::string           text;
+    std::string           text_;
     // font
-    std::string           font_file;
+    std::string           font_file_;
     // text color
-    SDL_Color             color;
-    unsigned int          size;
+    SDL_Color             color_;
+    // font size
+    unsigned int          size_;
 
 
 };

@@ -10,7 +10,7 @@ namespace video
 
 
 // memory allocation for an instance of video_subsytem
-Video_subsystem *Video_subsystem::instance = nullptr;
+Video_subsystem *Video_subsystem::instance_ = nullptr;
 
 /**
  * Function to get video_subsystem
@@ -18,7 +18,7 @@ Video_subsystem *Video_subsystem::instance = nullptr;
  */
 Video_subsystem& Video_subsystem::get_instance()
 {
-    return *Video_subsystem::instance;
+    return *Video_subsystem::instance_;
 }
 
 /**
@@ -28,12 +28,12 @@ Video_subsystem& Video_subsystem::get_instance()
 bool Video_subsystem::initialize_subsystem(int width, int height , bool fullscreen)
 {
 
-    if(Video_subsystem::instance!=nullptr)
+    if(Video_subsystem::instance_!=nullptr)
     {
         return true;
     }
-    Video_subsystem::instance = new Video_subsystem (width , height , fullscreen);
-    return Video_subsystem::instance->is_created ;
+    Video_subsystem::instance_ = new Video_subsystem (width , height , fullscreen);
+    return Video_subsystem::instance_->is_created_ ;
 }
 
 /**
@@ -41,7 +41,7 @@ bool Video_subsystem::initialize_subsystem(int width, int height , bool fullscre
  */
 SDL_Window* Video_subsystem::get_window()
 {
-    return main_window;
+    return main_window_;
 }
 
 /**
@@ -49,7 +49,7 @@ SDL_Window* Video_subsystem::get_window()
  */
 SDL_Renderer* Video_subsystem::get_renderer()
 {
-    return main_renderer;
+    return main_renderer_;
 }
 
 /**
@@ -59,18 +59,18 @@ Video_subsystem::Video_subsystem(int width , int height , bool fullscreen)
 {
     int alright;
     if(fullscreen)
-        alright = SDL_CreateWindowAndRenderer(width , height , SDL_WINDOW_FULLSCREEN_DESKTOP , &main_window , &main_renderer);
+        alright = SDL_CreateWindowAndRenderer(width , height , SDL_WINDOW_FULLSCREEN_DESKTOP , &main_window_ , &main_renderer_);
     else
-        alright = SDL_CreateWindowAndRenderer(width , height , 0 , &main_window , &main_renderer);
+        alright = SDL_CreateWindowAndRenderer(width , height , 0 , &main_window_ , &main_renderer_);
     if(alright == -1)
     {
         printf("Couldn't initialize video subsystem. \n");
         printf("Error = %s\n",SDL_GetError());
-        is_created=false;
+        is_created_=false;
     }
     else
     {
-        is_created=true;
+        is_created_=true;
     }
 }
 /**
@@ -80,7 +80,7 @@ Video_subsystem::Video_subsystem(int width , int height , bool fullscreen)
  */
 bool Video_subsystem::blit(SDL_Texture* texture , SDL_Rect* source , SDL_Rect* destination)
 {
-    int error_check = SDL_RenderCopy(Video_subsystem::instance->main_renderer , texture, source, destination);
+    int error_check = SDL_RenderCopy(Video_subsystem::instance_->main_renderer_ , texture, source, destination);
     if(error_check<0)
     {
         printf("Error blitting on screen.\nError = %s \n" , SDL_GetError());
@@ -95,7 +95,7 @@ bool Video_subsystem::blit(SDL_Texture* texture , SDL_Rect* source , SDL_Rect* d
  */
 bool Video_subsystem::reload()
 {
-    int error_check = SDL_RenderClear(Video_subsystem::instance->main_renderer);
+    int error_check = SDL_RenderClear(Video_subsystem::instance_->main_renderer_);
     if(error_check<0)
     {
         printf("Error clearing the renderer.\nError = %s \n" , SDL_GetError());
@@ -109,7 +109,7 @@ bool Video_subsystem::reload()
  */
 void Video_subsystem::update_screen()
 {
-    SDL_RenderPresent(Video_subsystem::instance->main_renderer);
+    SDL_RenderPresent(Video_subsystem::instance_->main_renderer_);
     return ;
 }
 
@@ -120,7 +120,7 @@ void Video_subsystem::update_screen()
 
 void Video_subsystem::minimize()
 {
-    SDL_MinimizeWindow(Video_subsystem::instance->main_window);
+    SDL_MinimizeWindow(Video_subsystem::instance_->main_window_);
     return;
 }
 
@@ -129,7 +129,7 @@ void Video_subsystem::minimize()
  */
 void Video_subsystem::set_programs_name(const char * name)
 {
-    SDL_SetWindowTitle(Video_subsystem::instance->main_window,name);
+    SDL_SetWindowTitle(Video_subsystem::instance_->main_window_,name);
 }
 
 /**
@@ -137,7 +137,7 @@ void Video_subsystem::set_programs_name(const char * name)
  */
 SDL_Texture* Video_subsystem::create_texture(SDL_Surface * surface)
 {
-    SDL_Texture * returned = SDL_CreateTextureFromSurface(Video_subsystem::instance->main_renderer,surface);
+    SDL_Texture * returned = SDL_CreateTextureFromSurface(Video_subsystem::instance_->main_renderer_,surface);
     return returned;
 }
 
@@ -146,7 +146,7 @@ SDL_Texture* Video_subsystem::create_texture(SDL_Surface * surface)
  */
 bool Video_subsystem::blit(SDL_Texture* texture , SDL_Rect* source , SDL_Rect* destination, const double angle, const SDL_Point * center , const SDL_RendererFlip flip)
 {
-    int error_check = SDL_RenderCopyEx(Video_subsystem::instance->main_renderer, texture, source, destination, angle, center, flip);
+    int error_check = SDL_RenderCopyEx(Video_subsystem::instance_->main_renderer_, texture, source, destination, angle, center, flip);
     if(error_check<0)
     {
         printf("Error blitting on screen.\nError = %s \n" , SDL_GetError());
@@ -162,11 +162,11 @@ bool Video_subsystem::blit(SDL_Texture* texture , SDL_Rect* source , SDL_Rect* d
 void Video_subsystem::draw_line(int x_1 , int y_1 , int x_2 , int y_2,
                                 uint8_t r , uint8_t g, uint8_t b )
 {
-    SDL_SetRenderDrawColor(instance->main_renderer , r , g , b , 255);
+    SDL_SetRenderDrawColor(instance_->main_renderer_ , r , g , b , 255);
 
-    SDL_RenderDrawLine(instance->main_renderer, x_1 , y_1 , x_2, y_2);
+    SDL_RenderDrawLine(instance_->main_renderer_, x_1 , y_1 , x_2, y_2);
 
-    SDL_SetRenderDrawColor(instance->main_renderer , 0 , 0 , 0 , 255);
+    SDL_SetRenderDrawColor(instance_->main_renderer_ , 0 , 0 , 0 , 255);
     return;
 }
 
@@ -176,7 +176,7 @@ void Video_subsystem::draw_line(int x_1 , int y_1 , int x_2 , int y_2,
 int Video_subsystem::get_height()
 {
     int height,width;
-    SDL_GetWindowSize(instance->main_window , &width, &height);
+    SDL_GetWindowSize(instance_->main_window_ , &width, &height);
     return height;
 }
 
@@ -186,7 +186,7 @@ int Video_subsystem::get_height()
 int Video_subsystem::get_width()
 {
     int height,width;
-    SDL_GetWindowSize(instance->main_window , &width, &height);
+    SDL_GetWindowSize(instance_->main_window_ , &width, &height);
     return width;
 }
 
@@ -197,11 +197,11 @@ int Video_subsystem::get_width()
  */
 void Video_subsystem::fill_rect(SDL_Rect filling, uint8_t r , uint8_t g, uint8_t b)
 {
-    SDL_SetRenderDrawColor(instance->main_renderer , r , g , b , 255);
+    SDL_SetRenderDrawColor(instance_->main_renderer_ , r , g , b , 255);
 
-    SDL_RenderFillRect(instance->main_renderer, &filling);
+    SDL_RenderFillRect(instance_->main_renderer_, &filling);
 
-    SDL_SetRenderDrawColor(instance->main_renderer , 0 , 0 , 0 , 255);
+    SDL_SetRenderDrawColor(instance_->main_renderer_ , 0 , 0 , 0 , 255);
     return;
 }
 

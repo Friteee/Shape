@@ -30,17 +30,15 @@ public :
 private:
 
     // main configuration
-    utility::Configuration * main_config;
+    utility::Configuration * main_config_;
     // event
-    SDL_Event                event;
+    SDL_Event                event_;
     // gui manager
-    gui::Gui_manager         main_gui;
+    gui::Gui_manager         main_gui_;
     //background
-    gui::Background          background;
-    //music
-    audio::Music             music;
+    gui::Background          background_;
     // quit
-    bool                     quit;
+    bool                     quit_;
 };
 
 } // end of main_logic namespace

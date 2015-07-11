@@ -41,30 +41,28 @@ public:
 
 private:
     // configuration
-    utility::Configuration main_config;
+    utility::Configuration main_config_;
     //width and height
-    int                    width,
-                           height;
+    int                    width_,
+                           height_;
     //is it full-screen?
-    bool                   fullscreen;
+    bool                   fullscreen_;
     // constructor
     Game_logic();
     // remove all other means to create video_subsystem
     Game_logic( Game_logic const& x)= delete;
     // instance for maintaining singleton
-    static Game_logic* instance;
+    static Game_logic* instance_;
     // bool to know if the instance was created without errors
-    bool           is_created;
+    bool           is_created_;
     // event handler
-    SDL_Event      event;
-    // bool to quit out of main loop
-    bool           quit_program;
+    SDL_Event      event_;
     // current mode
-    Program_mode * current;
+    Program_mode * current_;
     // program mode marked for deletion
-    Program_mode * previous;
+    Program_mode * previous_;
     // physics engine
-    physics::Physics_engine engine;
+    physics::Physics_engine engine_;
 
 };
 

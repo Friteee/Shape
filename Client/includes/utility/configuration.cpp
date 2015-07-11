@@ -13,7 +13,7 @@ namespace utility
  */
 Configuration::Configuration(std::string filename)
 {
-    file = filename;
+    file_ = filename;
     std::string buffer;
     std::pair<std::string,std::string> string_pair;
     std::ifstream cfg;
@@ -49,7 +49,7 @@ Configuration::Configuration(std::string filename)
         last_word_letter = string_pair.second.find_last_not_of(' ' );
         string_pair.second = string_pair.second.substr(0 , last_word_letter+1);
         // push the pair into vector
-        config.push_back(string_pair);
+        config_.push_back(string_pair);
 
     }
 }
@@ -61,7 +61,7 @@ Configuration::Configuration(std::string filename)
  */
 std::string Configuration::find_string(std::string searched)
 {
-    for(auto & found : config)
+    for(auto & found : config_)
     {
         if(found.first == searched)
         {
@@ -79,7 +79,7 @@ std::string Configuration::find_string(std::string searched)
 std::vector<std::string> Configuration::find_strings(std::string searched)
 {
     std::vector<std::string> returned_values;
-    for(auto & found : config)
+    for(auto & found : config_)
     {
         if(found.first == searched)
         {
@@ -91,8 +91,8 @@ std::vector<std::string> Configuration::find_strings(std::string searched)
 
 void Configuration::save()
 {
-    std::ofstream out(file);
-    for(auto value : config)
+    std::ofstream out(file_);
+    for(auto value : config_)
     {
         out<<value.first<<" = "<<value.second<<std::endl<<std::endl;
     }
@@ -101,7 +101,7 @@ void Configuration::save()
 
 void Configuration::change_value(std::string searched, std::string changed)
 {
-    for(auto & found : config)
+    for(auto & found : config_)
     {
         if(found.first == searched)
         {
@@ -115,7 +115,7 @@ void Configuration::save_value(std::string first, std::string second)
     std::pair<std::string,std::string> buffer;
     buffer.first = first;
     buffer.second = second;
-    config.push_back(buffer);
+    config_.push_back(buffer);
 }
 
 }//end of utility namespace

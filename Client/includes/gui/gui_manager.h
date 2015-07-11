@@ -34,8 +34,7 @@ public:
 
 private:
 
-    std::vector< Gui_element * > elements;
-    bool visible = true;
+    std::vector< Gui_element * > elements_;
 };
 
 }

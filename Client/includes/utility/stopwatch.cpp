@@ -9,10 +9,10 @@ namespace utility
  */
 Stopwatch::Stopwatch()
 {
-    started_ticks=SDL_GetTicks();
-    paused_ticks=0;
-    paused=false;
-    started=false;
+    started_ticks_=SDL_GetTicks();
+    paused_ticks_=0;
+    paused_=false;
+    started_=false;
 }
 
 /**
@@ -21,17 +21,17 @@ Stopwatch::Stopwatch()
  */
 unsigned int Stopwatch::get_ticks()
 {
-    if(!started)
+    if(!started_)
     {
         return 0;
     }
-    else if(paused)
+    else if(paused_)
     {
-        return paused_ticks-started_ticks;
+        return paused_ticks_-started_ticks_;
     }
     else
     {
-        return SDL_GetTicks()-started_ticks;
+        return SDL_GetTicks()-started_ticks_;
     }
 }
 
@@ -40,15 +40,15 @@ unsigned int Stopwatch::get_ticks()
  */
 void Stopwatch::start()
 {
-    if(paused==false)
+    if(paused_==false)
     {
-        started_ticks=SDL_GetTicks();
-        started=true;
+        started_ticks_=SDL_GetTicks();
+        started_=true;
     }
     else
     {
-        paused=false;
-        started_ticks=SDL_GetTicks()-paused_ticks+started_ticks;
+        paused_=false;
+        started_ticks_=SDL_GetTicks()-paused_ticks_+started_ticks_;
     }
 }
 
@@ -57,7 +57,7 @@ void Stopwatch::start()
  */
 void Stopwatch::stop()
 {
-    started=false;
+    started_=false;
 }
 
 /**
@@ -66,7 +66,7 @@ void Stopwatch::stop()
  */
 void Stopwatch::pause()
 {
-    paused=true;
+    paused_=true;
 }
 
 /**
@@ -74,7 +74,7 @@ void Stopwatch::pause()
  */
 void Stopwatch::reload()
 {
-    started_ticks=SDL_GetTicks();
+    started_ticks_=SDL_GetTicks();
 }
 
 }// end of utility namespace

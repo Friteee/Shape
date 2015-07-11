@@ -5,12 +5,12 @@
 
 namespace audio {
 
-Audio_subsystem* Audio_subsystem::instance = nullptr;
+Audio_subsystem* Audio_subsystem::instance_ = nullptr;
 
 bool Audio_subsystem::initialize_subsystem()
 {
-    if(Audio_subsystem::instance == nullptr)
-        Audio_subsystem::instance = new Audio_subsystem();
+    if(Audio_subsystem::instance_ == nullptr)
+        Audio_subsystem::instance_ = new Audio_subsystem();
     else return true;
     //Initialize SDL_mixer
     if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )

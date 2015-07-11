@@ -20,19 +20,19 @@ namespace main_logic
 bool Main_menu_mode::run()
 {
 
-    if(handle_input()==false || quit==true)
+    if(handle_input()==false || quit_==true)
     {
         return false;
     }
     video::Video_subsystem::reload();
 
     //update
-    main_gui.update();
+    main_gui_.update();
 
 
     //show
-    background.show();
-    main_gui.show();
+    background_.show();
+    main_gui_.show();
 
     video::Video_subsystem::update_screen();
 
@@ -49,30 +49,29 @@ bool Main_menu_mode::handle_input()
 {
     gui::Click click;
     click.set_clicked(false);
-    while(SDL_PollEvent(&event))
+    while(SDL_PollEvent(&event_))
     {
-        switch(event.type)
+        switch(event_.type)
         {
         case SDL_QUIT:
             return false;
-            music.stop();
             break;
         case SDL_MOUSEBUTTONDOWN:
             click.set_clicked(false);
-            if(event.button.button == SDL_BUTTON_LEFT)
+            if(event_.button.button == SDL_BUTTON_LEFT)
             {
-                click.set_location(event.button.x,event.button.y);
+                click.set_location(event_.button.x,event_.button.y);
             }
             break;
         case SDL_MOUSEBUTTONUP:
             click.set_clicked(true);
-            if(event.button.button == SDL_BUTTON_LEFT)
+            if(event_.button.button == SDL_BUTTON_LEFT)
             {
-                click.set_location(event.button.x,event.button.y);
+                click.set_location(event_.button.x,event_.button.y);
             }
             break;
         case SDL_KEYDOWN:
-            switch(event.key.keysym.sym)
+            switch(event_.key.keysym.sym)
             {
             case SDLK_r:
                 break;
@@ -105,9 +104,9 @@ bool Main_menu_mode::handle_input()
  */
 
 Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
-    main_config(init_config)
+    main_config_(init_config)
 {
-    quit = false;
+    quit_ = false;
     //add play button
     gui::Text_button * play_button = new gui::Text_button(init_config,"Play",800,400);
     auto play_func = []()
@@ -130,17 +129,17 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     gui::Text_button * exit_button = new gui::Text_button(init_config,"Exit",800,600);
     auto exit_func = [this]()
     {
-        quit = true;
+        quit_ = true;
     };
     exit_button->init_function(exit_func);
     exit_button->change_size(80);
     exit_button->change_position(video::Video_subsystem::get_width()/2-exit_button->get_width()/2,600);
-    // background
-    background.change_image(main_config->find_string("main_background").c_str());
+    // initialize background image
+    background_.change_image(main_config_->find_string("main_background").c_str());
 
-    main_gui.add_element(play_button);
-    main_gui.add_element(options_button);
-    main_gui.add_element(exit_button);
+    main_gui_.add_element(play_button);
+    main_gui_.add_element(options_button);
+    main_gui_.add_element(exit_button);
 
 }
 

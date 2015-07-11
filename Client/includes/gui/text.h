@@ -29,10 +29,10 @@ public:
 
 private:
 
-    std::string text;
-    int         text_size;
-    TTF_Font *  font;
-    SDL_Color   color_key;
+    std::string text_;
+    int         text_size_;
+    TTF_Font *  font_;
+    SDL_Color   color_key_;
 
 };
 

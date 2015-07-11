@@ -25,13 +25,13 @@ public:
 
 private:
     // for handling ticks
-    Stopwatch stopwatch;
+    Stopwatch stopwatch_;
     // time until next function
-    unsigned int time = 0;
+    unsigned int time_ = 0;
     // bool if started
-    bool started = false;
+    bool started_ = false;
     // function
-    std::function<void()> script;
+    std::function<void()> script_;
 };
 
 }//end of utility namespace

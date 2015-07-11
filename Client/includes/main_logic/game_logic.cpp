@@ -19,7 +19,7 @@ namespace main_logic
 #define FPS 1000
 #define FPS_CAP false
 
-Game_logic *Game_logic::instance = nullptr;
+Game_logic *Game_logic::instance_ = nullptr;
 
 /**
  * Function to get game_logic
@@ -27,7 +27,7 @@ Game_logic *Game_logic::instance = nullptr;
  */
 Game_logic& Game_logic::get_instance()
 {
-    return *Game_logic::instance;
+    return *Game_logic::instance_;
 }
 
 /**
@@ -37,7 +37,7 @@ Game_logic& Game_logic::get_instance()
 bool Game_logic::initialize(const char* filename)
 {
 
-    if(instance!=nullptr)
+    if(instance_!=nullptr)
     {
         return true;
     }
@@ -52,31 +52,30 @@ bool Game_logic::initialize(const char* filename)
         printf("Couldn't initialize SDL true type font library\n");
         printf("Error = %s\n", TTF_GetError());
     }
-    instance = new Game_logic ;
-    return instance->is_created ;
+    instance_ = new Game_logic ;
+    return instance_->is_created_ ;
 }
 
 /**
  * subsystems constructor
  */
 Game_logic::Game_logic():
-    main_config  ("./config/main_config.cfg") ,
-    width        (atoi(main_config.find_string("width").c_str())!=0?atoi(main_config.find_string("width").c_str()):WIDTH),
-    height       (atoi(main_config.find_string("height").c_str())!=0?atoi(main_config.find_string("height").c_str()):HEIGHT),
-    fullscreen   (main_config.find_string("fullscreen") == string("true") ),
-    is_created   (video::Video_subsystem::initialize_subsystem(width , height , fullscreen)),
-    quit_program (false)
+    main_config_  ("./config/main_config.cfg") ,
+    width_        (atoi(main_config_.find_string("width").c_str())!=0?atoi(main_config_.find_string("width").c_str()):WIDTH),
+    height_       (atoi(main_config_.find_string("height").c_str())!=0?atoi(main_config_.find_string("height").c_str()):HEIGHT),
+    fullscreen_   (main_config_.find_string("fullscreen") == string("true") ),
+    is_created_   (video::Video_subsystem::initialize_subsystem(width_ , height_ , fullscreen_))
 {
-    video::Video_subsystem::set_programs_name(main_config.find_string("programs_name").c_str());
+    video::Video_subsystem::set_programs_name(main_config_.find_string("programs_name").c_str());
 
     if(!audio::Audio_subsystem::initialize_subsystem())
     {
         printf("Warning : audio subsystem is not initialized");
     }
 
-    current = new Main_menu_mode (&main_config);
+    current_ = new Main_menu_mode (&main_config_);
     // if we have full screen resize camera appropriately
-    if(fullscreen)
+    if(fullscreen_)
     {
         SDL_Rect location;
         location.x=0;
@@ -91,8 +90,8 @@ Game_logic::Game_logic():
 
 void Game_logic::run()
 {
-    unsigned int fps_cap = atoi(instance->main_config.find_string("fps_cap").c_str());
-    bool fps_cap_enabled = instance->main_config.find_string("fps_cap_enabled").c_str()==string("true");
+    unsigned int fps_cap = atoi(instance_->main_config_.find_string("fps_cap").c_str());
+    bool fps_cap_enabled = instance_->main_config_.find_string("fps_cap_enabled").c_str()==string("true");
 
     // timers to enable sleeping and count of fps
     utility::Stopwatch sleep_timer;
@@ -102,9 +101,9 @@ void Game_logic::run()
     // integer for fps, overflow is unlikely :)
     unsigned int fps=0;
 
-    instance->engine.run(atoi(instance->main_config.find_string("physics_update_rate").c_str()));
+    instance_->engine_.run(atoi(instance_->main_config_.find_string("physics_update_rate").c_str()));
 
-    while(instance->current->run())
+    while(instance_->current_->run())
     {
         fps++;
         if(fps_timer.get_ticks()>1000)
@@ -137,16 +136,16 @@ Game_logic::~Game_logic()
 void Game_logic::set_current_mode(Program_mode * init_mode)
 {
     // delete previous instance
-    delete instance->previous;
+    delete instance_->previous_;
     // current program mode instance is now previous instance
-    instance->previous = instance->current;
+    instance_->previous_ = instance_->current_;
     // current instance is now user's assigned
-    instance->current = init_mode;
+    instance_->current_ = init_mode;
 }
 
 physics::Physics_engine & Game_logic::get_engine()
 {
-    return instance->engine;
+    return instance_->engine_;
 }
 
 }// end of namespace main_logic

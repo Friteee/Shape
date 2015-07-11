@@ -7,43 +7,43 @@ namespace video
 
 void Animation::reset()
 {
-    current = 0;
-    frame_stopwatch.stop();
+    current_ = 0;
+    frame_stopwatch_.stop();
 }
 
 void Animation::start()
 {
-    current = 0;
-    frame_stopwatch.start();
+    current_ = 0;
+    frame_stopwatch_.start();
 }
 
 void Animation::add_frame(std::string filename , int time)
 {
     Texture buffer;
     buffer.init(filename);
-    frames.push_back(buffer);
-    ms_per_frame.push_back(time);
+    frames_.push_back(buffer);
+    ms_per_frame_.push_back(time);
 }
 
 void Animation::add_frame(Texture & added , int time)
 {
-    frames.push_back(added);
-    ms_per_frame.push_back(time);
+    frames_.push_back(added);
+    ms_per_frame_.push_back(time);
 }
 
 void Animation::delete_current()
 {
-    frames.erase(frames.begin() + current);
+    frames_.erase(frames_.begin() + current_);
 }
 
 Texture & Animation::get_current()
 {
-    if(frame_stopwatch.get_ticks() > ms_per_frame[current] ) // new frame ?
+    if(frame_stopwatch_.get_ticks() > ms_per_frame_[current_] ) // new frame ?
     {
-        frame_stopwatch.reload();
-        current != (frames.size()-1) ? current++ : current = 0; // loop around
+        frame_stopwatch_.reload();
+        current_ != (frames_.size()-1) ? current_++ : current_ = 0; // loop around
     }
-    return frames[current];
+    return frames_[current_];
 }
 
 } // end of video namespace

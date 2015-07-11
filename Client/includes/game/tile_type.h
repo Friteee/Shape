@@ -25,12 +25,12 @@ public:
     void set_id           ( unsigned int init_id);
     unsigned int get_id ()
     {
-        return id;
+        return id_;
     }
 private:
-    video::Texture texture;
-    bool           invincible;
-    unsigned int   id;
+    video::Texture texture_;
+    bool           invincible_;
+    unsigned int   id_;
 };
 
 }

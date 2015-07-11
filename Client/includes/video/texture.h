@@ -40,9 +40,9 @@ private:
     void create_surface(std::string filename);
     void create_texture(std::string filename);
     void reset();
-    std::shared_ptr<SDL_Surface*> surface;
-    std::shared_ptr<SDL_Texture*> texture;
-    int angle;
+    std::shared_ptr<SDL_Surface*> surface_;
+    std::shared_ptr<SDL_Texture*> texture_;
+    int angle_;
 };
 
 }// end of video namespace

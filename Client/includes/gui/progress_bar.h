@@ -32,13 +32,13 @@ public:
 
 private:
     //number of ticks, when some action happen
-    unsigned int overall_ticks;
+    unsigned int overall_ticks_;
     // number of ticks from 0 to current position
-    utility::Stopwatch current_ticks;
+    utility::Stopwatch current_ticks_;
     // function which happens when current_ticks == overall_ticks
-    std::function<void()> timer_function;
+    std::function<void()> timer_function_;
     // Rectangle for holding bar_coordinates
-    SDL_Rect bar_location;
+    SDL_Rect bar_location_;
 };
 
 }//end of gui namespace

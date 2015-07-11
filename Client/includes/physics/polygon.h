@@ -23,10 +23,10 @@ public:
     void                          get       (int * get_x , int * get_y);
     const std::vector<SDL_Point>& get_points() const;
 private:
-    int x,y;
     SDL_Point    get_next_point(unsigned int iterator) const;
-    std::vector<SDL_Point> points;
-    std::vector<SDL_Point> starting_points;
+    int x_ , y_;
+    std::vector<SDL_Point> points_;
+    std::vector<SDL_Point> starting_points_;
 
 };
 

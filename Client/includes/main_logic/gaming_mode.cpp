@@ -21,15 +21,15 @@ bool Gaming_mode::handle_input()
 {
     gui::Click click;
     click.set_clicked(false);
-    while(SDL_PollEvent(&event))
+    while(SDL_PollEvent(&event_))
     {
-        switch(event.type)
+        switch(event_.type)
         {
         case SDL_QUIT:
             return false;
             break;
         case SDL_KEYDOWN:
-            switch(event.key.keysym.sym)
+            switch(event_.key.keysym.sym)
             {
             case SDLK_q:
                 break;
@@ -50,26 +50,26 @@ bool Gaming_mode::handle_input()
             case SDLK_BACKSPACE:
                 break;
             case SDLK_ESCAPE:
-                main_logic::Game_logic::set_current_mode( new Main_menu_mode (main_config) );
+                main_logic::Game_logic::set_current_mode( new Main_menu_mode (main_config_) );
                 break;
             }
             break;
         case SDL_MOUSEBUTTONDOWN:
             click.set_clicked(false);
-            if(event.button.button == SDL_BUTTON_LEFT)
+            if(event_.button.button == SDL_BUTTON_LEFT)
             {
-                click.set_location(event.button.x,event.button.y);
+                click.set_location(event_.button.x,event_.button.y);
             }
             break;
         case SDL_MOUSEBUTTONUP:
             click.set_clicked(true);
-            if(event.button.button == SDL_BUTTON_LEFT)
+            if(event_.button.button == SDL_BUTTON_LEFT)
             {
-                click.set_location(event.button.x,event.button.y);
+                click.set_location(event_.button.x,event_.button.y);
             }
             break;
         case SDL_WINDOWEVENT:
-            switch(event.window.event)
+            switch(event_.window.event)
             {
             case SDL_WINDOWEVENT_EXPOSED:
                 break;
@@ -113,12 +113,12 @@ bool Gaming_mode::run()
     // reload video subsystem
     video::Video_subsystem::reload();
 
-    gui_manager.update();
+    gui_manager_.update();
 
     // main logic here
-    main_background.show();
+    main_background_.show();
 
-    gui_manager.show();
+    gui_manager_.show();
 
     video::Video_subsystem::update_screen();
 
@@ -130,10 +130,10 @@ bool Gaming_mode::run()
  */
 
 Gaming_mode::Gaming_mode(utility::Configuration * init_config ):
-    main_config(init_config)
+    main_config_(init_config)
 {
     // background
-    main_background.change_image(main_config->find_string("main_background").c_str());
+    main_background_.change_image(main_config_->find_string("main_background").c_str());
 }
 
 

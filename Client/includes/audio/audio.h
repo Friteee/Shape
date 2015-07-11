@@ -27,7 +27,7 @@ private:
     Audio_subsystem( Audio_subsystem && x) = delete;
     Audio_subsystem &operator=( Audio_subsystem && x) = delete;
     // instance of audio_subsystem
-    static Audio_subsystem* instance;
+    static Audio_subsystem* instance_;
 };
 
 }

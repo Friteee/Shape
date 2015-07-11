@@ -27,13 +27,13 @@ public :
     bool       handle_input()override;
 
 private:
-    gui::Background          main_background;
+    gui::Background          main_background_;
     // event
-    SDL_Event                event;
+    SDL_Event                event_;
     // configuration
-    utility::Configuration * main_config;
+    utility::Configuration * main_config_;
     // gui elements manager
-    gui::Gui_manager         gui_manager;
+    gui::Gui_manager         gui_manager_;
 
 
 };

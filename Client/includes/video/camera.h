@@ -42,9 +42,9 @@ class Camera
     Camera(Camera&& x) = delete;
     Camera& operator=(Camera&& x) = delete;
     // x and y of camera position, in pixels
-    SDL_Rect location;
+    SDL_Rect location_;
     // instance of the camera
-    static Camera* instance;
+    static Camera* instance_;
 };
 
 }// end of video namespace

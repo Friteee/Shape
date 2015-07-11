@@ -24,8 +24,8 @@ void Map::init_map(std::string init_filename)
         bool         invincibility;
     };
 
-    filename = init_filename;
-    std::ifstream in(filename , std::ios_base::in);
+    filename_ = init_filename;
+    std::ifstream in(filename_ , std::ios_base::in);
     std::vector<Tile_type_info>                buffer_type;   // buffer for information about types of tiles
     std::vector<Tile_info>                     tiles_buffer;  // buffer for information about tiles
     Map_Chunk_Id                               chunk;         // type of the info chunk
@@ -59,13 +59,13 @@ void Map::init_map(std::string init_filename)
         buffer.set_id           (a.id);
         buffer.init_texture     (a.filename);
         buffer.set_invincibility(a.invincibility);
-        types.push_back(buffer);
+        types_.push_back(buffer);
     }
     for(auto & a : tiles_buffer)
     {
         Tile buffer;
         buffer.init_geometry(physics::get_rectangle(a.x, a.y, a.width, a.height));
-        for (auto & b : types)
+        for (auto & b : types_)
         {
             if(a.id == b.get_id())
             {
@@ -78,12 +78,12 @@ void Map::init_map(std::string init_filename)
 
 void Map::init_background(std::string init_filename)
 {
-    background = new gui::Background(init_filename.c_str());
+    background_ = new gui::Background(init_filename.c_str());
 }
 
 void Map::init_music(std::string init_filename)
 {
-
+    music_.init(init_filename);
 }
 
 }

@@ -49,7 +49,7 @@ private:
         Polygon * get();
         void set(Polygon * added);
     private:
-        Polygon * object;
+        Polygon * object_;
     };
 
     class Moving_command
@@ -58,19 +58,19 @@ private:
         Physics_component * get();
         void set(Physics_component * added);
     private:
-        Physics_component * object;
+        Physics_component * object_;
     };
 
-    std::vector<Polygon *>           static_objects;
-    std::vector<Physics_component *> moving_objects;
-    std::mutex                       objects_change;
-    std::list <Static_command>       static_addition;
-    std::list <Moving_command>       moving_addition;
-    std::list <Static_command>       static_deletion;
-    std::list <Moving_command>       moving_deletion;
-    std::thread                    * engine;
-    std::atomic_bool                 stop ;
-    unsigned int                     ticks_per_second;
+    std::vector<Polygon *>           static_objects_;
+    std::vector<Physics_component *> moving_objects_;
+    std::mutex                       objects_change_;
+    std::list <Static_command>       static_addition_;
+    std::list <Moving_command>       moving_addition_;
+    std::list <Static_command>       static_deletion_;
+    std::list <Moving_command>       moving_deletion_;
+    std::thread                    * engine_;
+    std::atomic_bool                 stop_;
+    unsigned int                     ticks_per_second_;
 
 
 

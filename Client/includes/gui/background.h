@@ -49,9 +49,9 @@ public:
 
 private:
 
-    video::Texture texture;
+    video::Texture texture_;
     // rectangle to hold location of background
-    SDL_Rect location;
+    SDL_Rect location_;
 
 };
 

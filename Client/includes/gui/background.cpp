@@ -14,10 +14,10 @@ namespace gui
  */
 Background::Background()
 {
-    location.x=0;
-    location.y=0;
-    location.w=0;
-    location.h=0;
+    location_.x=0;
+    location_.y=0;
+    location_.w=0;
+    location_.h=0;
 }
 
 /**
@@ -26,11 +26,11 @@ Background::Background()
  */
 Background::Background(const char* image_location)
 {
-    texture.init(image_location);
-    location.x=0;
-    location.y=0;
-    location.w=texture.get_width();
-    location.h=texture.get_height();
+    texture_.init(image_location);
+    location_.x=0;
+    location_.y=0;
+    location_.w=texture_.get_width();
+    location_.h=texture_.get_height();
 }
 
 /**
@@ -39,11 +39,11 @@ Background::Background(const char* image_location)
  */
 Background::Background(shared_ptr<SDL_Surface*>copied_surface)
 {
-    texture.init(*copied_surface);
-    location.x=0;
-    location.y=0;
-    location.w=texture.get_width();
-    location.h=texture.get_height();
+    texture_.init(*copied_surface);
+    location_.x = 0;
+    location_.y = 0;
+    location_.w = texture_.get_width();
+    location_.h = texture_.get_height();
 }
 
 /**
@@ -51,8 +51,8 @@ Background::Background(shared_ptr<SDL_Surface*>copied_surface)
  */
 Background::Background(const Background &copied_object)
 {
-    texture=copied_object.texture;
-    location=copied_object.location;
+    texture_ = copied_object.texture_;
+    location_ = copied_object.location_;
 }
 
 /**
@@ -62,8 +62,8 @@ Background& Background::operator=(const Background &copied_object)
 {
     if(this!=&copied_object)
     {
-        this->texture=copied_object.texture;
-        this->location=copied_object.location;
+        this->texture_ = copied_object.texture_;
+        this->location_ = copied_object.location_;
     }
     return *this;
 }
@@ -73,8 +73,8 @@ Background& Background::operator=(const Background &copied_object)
  */
 Background::Background(Background && moved_object)
 {
-    texture=moved_object.texture;
-    location=moved_object.location;
+    texture_ = moved_object.texture_;
+    location_ = moved_object.location_;
 }
 
 /**
@@ -82,8 +82,8 @@ Background::Background(Background && moved_object)
  */
 Background & Background::operator=(Background && moved_object)
 {
-    texture=moved_object.texture;
-    location=moved_object.location;
+    texture_ = moved_object.texture_;
+    location_ = moved_object.location_;
     return *this;
 }
 
@@ -102,7 +102,7 @@ Background::~Background()
  */
 void Background::show()
 {
-    video::Video_subsystem::blit(texture.get_texture() , &location , NULL);
+    video::Video_subsystem::blit(texture_.get_texture() , &location_ , NULL);
 }
 
 /**
@@ -111,9 +111,9 @@ void Background::show()
  */
 void Background::change_image(const char * image_location)
 {
-    texture.init(image_location);
-    location.w = texture.get_width();
-    location.h = texture.get_height();
+    texture_.init(image_location);
+    location_.w = texture_.get_width();
+    location_.h = texture_.get_height();
 }
 
 /**
@@ -122,9 +122,9 @@ void Background::change_image(const char * image_location)
  */
 void Background::change_image(shared_ptr<SDL_Surface*>copied_surface)
 {
-    texture.init(*copied_surface);
-    location.w = texture.get_width();
-    location.h = texture.get_height();
+    texture_.init(*copied_surface);
+    location_.w = texture_.get_width();
+    location_.h = texture_.get_height();
 }
 
 

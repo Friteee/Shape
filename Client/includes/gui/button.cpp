@@ -7,39 +7,39 @@ namespace gui {
 
 Button::Button(int x , int y)
 {
-    visible = true;
+    visible_ = true;
 
-    location.x = x;
-    location.y = y;
+    location_.x = x;
+    location_.y = y;
 
 }
 
 void Button::init_image(std::string image)
 {
-    texture.init(image , SDL_Color{255,0,255,255});
-    location.w = texture.get_width();
-    location.h = texture.get_height();
+    texture_.init(image , SDL_Color{255,0,255,255});
+    location_.w = texture_.get_width();
+    location_.h = texture_.get_height();
 }
 
 void Button::init_image(video::Texture init_texture)
 {
-    texture = init_texture;
-    location.w = texture.get_width();
-    location.h = texture.get_height();
+    texture_ = init_texture;
+    location_.w = texture_.get_width();
+    location_.h = texture_.get_height();
 }
 
 video::Texture & Button::get_texture()
 {
-    return texture;
+    return texture_;
 }
 
 void Button::show()
 {
-    if(!visible)
+    if(!visible_)
     {
         return;
     }
-    video::Video_subsystem::blit(texture.get_texture(), nullptr, &location , texture.get_angle() , nullptr , SDL_FLIP_NONE);
+    video::Video_subsystem::blit(texture_.get_texture(), nullptr, &location_ , texture_.get_angle() , nullptr , SDL_FLIP_NONE);
 }
 
 void Button::update()
@@ -49,16 +49,16 @@ void Button::update()
 
 void Button::init_function(std::function<void()> init_on_click)
 {
-    on_click = init_on_click;
+    on_click_ = init_on_click;
 }
 
 void Button::handle_click(int x, int y)
 {
-    if(visible && x > location.x && x < location.x + location.w && y > location.y && y < location.y + location.h)
+    if(visible_&& x > location_.x && x < location_.x + location_.w && y > location_.y && y < location_.y + location_.h)
     {
-        if(on_click)
+        if(on_click_)
         {
-            on_click();
+            on_click_();
         }
         else
             printf("Warning : no function specified for a button\n");

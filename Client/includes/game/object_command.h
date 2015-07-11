@@ -1,10 +1,10 @@
 #ifndef OBJECT_COMMAND_H_INCLUDED
 #define OBJECT_COMMAND_H_INCLUDED
 
-#include "moving_object.h"
-
 namespace game
 {
+
+class Moving_object;
 
 /** \brief Base class for command, executed on object
  *
@@ -18,26 +18,26 @@ class Object_command
 public:
     virtual void execute(Moving_object * object) = 0;
     virtual void redo   (Moving_object * object) = 0;
-    Object_command * get_next()
+    Object_command *& get_next()
     {
-        return next;
+        return next_;
     }
-    Object_command * get_previous()
+    Object_command *& get_previous()
     {
-        return next;
+        return previous_;
     }
     unsigned int get_time()
     {
-        return timestamp;
+        return timestamp_;
     }
     void set_timestamp( unsigned int set_time)
     {
-        timestamp = set_time;
+        timestamp_ = set_time;
     }
-private:
-    unsigned int timestamp;
-    Object_command * next;
-    Object_command * previous;
+protected:
+    unsigned int timestamp_;
+    Object_command * next_;
+    Object_command * previous_;
 };
 
 }

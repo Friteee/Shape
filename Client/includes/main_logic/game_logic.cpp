@@ -128,6 +128,7 @@ void Game_logic::run()
 Game_logic::~Game_logic()
 {
     // quit the program
+    video::Video_subsystem::free_subsystem();
     SDL_QuitSubSystem(SDL_INIT_VIDEO|SDL_INIT_TIMER|SDL_INIT_EVENTS);
     SDL_Quit();
     return;
@@ -146,6 +147,15 @@ void Game_logic::set_current_mode(Program_mode * init_mode)
 physics::Physics_engine & Game_logic::get_engine()
 {
     return instance_->engine_;
+}
+
+void Game_logic::free()
+{
+    if(Game_logic::instance_ != nullptr)
+    {
+        delete Game_logic::instance_;
+    }
+    Game_logic::instance_ = nullptr;
 }
 
 }// end of namespace main_logic

@@ -131,8 +131,8 @@
 		<Unit filename="includes/video/camera.h" />
 		<Unit filename="includes/video/texture.cpp" />
 		<Unit filename="includes/video/texture.h" />
-		<Unit filename="includes/video/window.cpp" />
-		<Unit filename="includes/video/window.h" />
+		<Unit filename="includes/video/video_subsystem.cpp" />
+		<Unit filename="includes/video/video_subsystem.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

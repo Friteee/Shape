@@ -28,6 +28,8 @@ public:
 
     // initialization of game_logic
     static bool initialize(const char *);
+    // clean up after game_logic
+    static void free();
     // main loop
     static void run();
     // getter of instance of game_logic

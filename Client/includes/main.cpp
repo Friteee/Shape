@@ -1,6 +1,5 @@
 
 #include <SDL.h>
-#include "video/video_subsystem.h"
 #include "main_logic/game_logic.h"
 #include <stdio.h>
 
@@ -28,6 +27,7 @@ try
         printf("Game is initialized\n");
     }
     main_logic::Game_logic::run();
+    main_logic::Game_logic::free();
     return 0;
 }
 catch (exception e)

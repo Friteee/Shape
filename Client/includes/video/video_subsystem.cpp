@@ -73,6 +73,14 @@ Video_subsystem::Video_subsystem(int width , int height , bool fullscreen)
         is_created_=true;
     }
 }
+
+Video_subsystem::~Video_subsystem()
+{
+    printf("asd");
+    SDL_DestroyRenderer(main_renderer_);
+    SDL_DestroyWindow(main_window_);
+}
+
 /**
  * Function to blit texture straight into screen
  * Use it ONLY for GUI and background
@@ -203,6 +211,19 @@ void Video_subsystem::fill_rect(SDL_Rect filling, uint8_t r , uint8_t g, uint8_t
 
     SDL_SetRenderDrawColor(instance_->main_renderer_ , 0 , 0 , 0 , 255);
     return;
+}
+
+/**
+ * \brief Clean after the subsystem
+ *
+ */
+void Video_subsystem::free_subsystem()
+{
+    if(Video_subsystem::instance_ != nullptr)
+    {
+        delete Video_subsystem::instance_;
+    }
+    Video_subsystem::instance_ = nullptr;
 }
 
 }// end of namespace

@@ -2385,7 +2385,7 @@
 	"gui_element.h"
 	<vector>
 
-1436636267 source:d:\github\shape\client\includes\gui\progress_bar.cpp
+1436636476 source:d:\github\shape\client\includes\gui\progress_bar.cpp
 	<cassert>
 	"progress_bar.h"
 	"../video/video_subsystem.h"
@@ -2397,10 +2397,9 @@
 	"../utility/stopwatch.h"
 	"gui_element.h"
 
-1436636313 source:d:\github\shape\client\includes\gui\text.cpp
+1436636460 source:d:\github\shape\client\includes\gui\text.cpp
 	"text.h"
 	"../utility/functions.h"
-	"../video/video_subsystem.h"
 	<cstdio>
 
 1436533747 d:\github\shape\client\includes\gui\text.h
@@ -2419,10 +2418,9 @@
 	<vector>
 	<string>
 
-1436636335 source:d:\github\shape\client\includes\gui\text_button.cpp
+1436636470 source:d:\github\shape\client\includes\gui\text_button.cpp
 	"text_button.h"
 	<functional>
-	"../video/video_subsystem.h"
 	"../utility/configuration.h"
 	"../utility/functions.h"
 	"../utility/stopwatch.h"
@@ -2434,13 +2432,12 @@
 	<functional>
 	"../utility/configuration.h"
 
-1436635541 source:d:\github\shape\client\includes\main.cpp
+1436637326 source:d:\github\shape\client\includes\main.cpp
 	<SDL.h>
-	"video/video_subsystem.h"
 	"main_logic/game_logic.h"
 	<stdio.h>
 
-1436635503 d:\github\shape\client\includes\main_logic\game_logic.h
+1436637245 d:\github\shape\client\includes\main_logic\game_logic.h
 	"../video/video_subsystem.h"
 	"../gui/background.h"
 	"../video/camera.h"
@@ -2474,7 +2471,7 @@
 	"../gui/button.h"
 	"../audio/music.h"
 
-1436635547 source:d:\github\shape\client\includes\main_logic\game_logic.cpp
+1436637303 source:d:\github\shape\client\includes\main_logic\game_logic.cpp
 	<SDL.h>
 	<stdio.h>
 	"game_logic.h"
@@ -8439,11 +8436,11 @@
 	<mutex>
 	"moving_object.h"
 
-1436635427 source:d:\github\shape\client\includes\video\video_subsystem.cpp
+1436637128 source:d:\github\shape\client\includes\video\video_subsystem.cpp
 	<SDL.h>
 	<stdio.h>
 	"video_subsystem.h"
 
-1436635446 d:\github\shape\client\includes\video\video_subsystem.h
+1436637041 d:\github\shape\client\includes\video\video_subsystem.h
 	<SDL.h>
 

@@ -19,6 +19,8 @@ public:
 
     // function to initialize video_subsystem
     static bool initialize_subsystem(int width, int height , bool fullscreen);
+    // function to delete the pointer to subsystem
+    static void free_subsystem();
     // getter to access window
     SDL_Window* get_window();
     // getter to access renderer
@@ -52,6 +54,8 @@ private:
 
     // constructor
     Video_subsystem(int width, int height , bool fullscreen) ;
+    //destructor
+    ~Video_subsystem();
     // remove all other means to create video_subsystem
     Video_subsystem( Video_subsystem const& x) = delete;
     Video_subsystem &operator=( Video_subsystem const& x) = delete;

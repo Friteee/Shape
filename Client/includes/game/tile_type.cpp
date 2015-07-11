@@ -32,7 +32,7 @@ void Tile_type::blit             ( SDL_Point location  )
     dest.y = location.y;
     dest.w = texture_.get_width();
     dest.h = texture_.get_height();
-    video::Camera::blit(texture_.get_texture() , &src , &dest);
+    texture_.blit_on_camera(&src , &dest);
 }
 
 void Tile_type::set_id(unsigned int init_id)

@@ -1,6 +1,6 @@
 
 #include <SDL.h>
-#include "video/window.h"
+#include "video/video_subsystem.h"
 #include "main_logic/game_logic.h"
 #include <stdio.h>
 

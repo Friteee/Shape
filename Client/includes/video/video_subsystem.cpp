@@ -3,7 +3,7 @@
 
 #include <SDL.h>
 #include <stdio.h>
-#include "window.h"
+#include "video_subsystem.h"
 
 namespace video
 {

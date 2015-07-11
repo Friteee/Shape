@@ -3,7 +3,7 @@
 // *** END ***
 
 #include "progress_bar.h"
-#include "../video/window.h"
+#include "../video/video_subsystem.h"
 #include<cstdio>
 #include<assert.h>
 
@@ -17,7 +17,7 @@ void Progress_bar::handle_click(int x, int y)
 
 void Progress_bar::show()
 {
-    video::Video_subsystem::blit(texture_.get_texture() , nullptr, &location_);
+    texture_.blit_on_window(nullptr , &location_);
     unsigned int red = current_ticks_.get_ticks() * 255 / overall_ticks_;
     unsigned int green = 255 - red;
     video::Video_subsystem::fill_rect(bar_location_,red,green,0);

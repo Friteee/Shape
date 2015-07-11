@@ -3,7 +3,6 @@
 
 #include <stdio.h>
 #include <SDL.h>
-#include "../video/window.h"
 #include "../video/texture.h"
 #include <string>
 #include <memory>

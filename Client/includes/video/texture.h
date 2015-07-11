@@ -27,6 +27,8 @@ public:
     void         init(SDL_Surface * init_surface);
     void         init(std::string text, SDL_Color text_color , TTF_Font * font);
     void         set_alpha(unsigned int alpha);
+    void         blit_on_camera(SDL_Rect * source, SDL_Rect * destination);
+    void         blit_on_window(SDL_Rect * source, SDL_Rect * destination);
     SDL_Texture* get_texture();
     SDL_Surface* get_surface();
     unsigned int get_width();

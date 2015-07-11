@@ -2,7 +2,7 @@
 #include <SDL.h>
 #include <stdio.h>
 #include "game_logic.h"
-#include "../video/window.h"
+#include "../video/video_subsystem.h"
 #include "../video/camera.h"
 #include "../utility/stopwatch.h"
 #include "../utility/functions.h"

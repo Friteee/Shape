@@ -3,7 +3,8 @@
 // *** END ***
 
 #include "texture.h"
-#include "window.h"
+#include "video_subsystem.h"
+#include "camera.h"
 #include <assert.h>
 #include <cstdio>
 
@@ -207,6 +208,16 @@ void Texture::reset()
     }
     surface_.reset();
     texture_.reset();
+}
+
+void Texture::blit_on_camera(SDL_Rect * source, SDL_Rect * destination)
+{
+    video::Camera::blit(*texture_ , source , destination);
+}
+
+void Texture::blit_on_window(SDL_Rect * source, SDL_Rect * destination)
+{
+    video::Video_subsystem::blit(*texture_, source, destination , angle_ , nullptr , SDL_FLIP_NONE);
 }
 
 }// end of video namespace

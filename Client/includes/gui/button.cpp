@@ -1,6 +1,5 @@
 
 #include "button.h"
-#include "../video/window.h"
 #include <cstdio>
 
 namespace gui {
@@ -39,7 +38,7 @@ void Button::show()
     {
         return;
     }
-    video::Video_subsystem::blit(texture_.get_texture(), nullptr, &location_ , texture_.get_angle() , nullptr , SDL_FLIP_NONE);
+    texture_.blit_on_window(nullptr , &location_);
 }
 
 void Button::update()

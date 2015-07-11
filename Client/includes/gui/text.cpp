@@ -2,7 +2,6 @@
 
 #include "text.h"
 #include "../utility/functions.h"
-#include "../video/window.h"
 #include <cstdio>
 
 namespace gui
@@ -41,7 +40,7 @@ void Text::show()
     {
         return;
     }
-    video::Video_subsystem::blit(texture_.get_texture(),nullptr,&location_);
+    texture_.blit_on_window(nullptr , &location_);
 }
 
 void Text::update()

@@ -1,6 +1,5 @@
 #include "text_button.h"
 #include <functional>
-#include "../video/window.h"
 #include "../utility/configuration.h"
 #include "../utility/functions.h"
 #include "../utility/stopwatch.h"
@@ -66,7 +65,7 @@ void Text_button::show()
     {
         return;
     }
-    video::Video_subsystem::blit(texture_.get_texture(),nullptr,&location_);
+    texture_.blit_on_window(nullptr , &location_);
 }
 
 /**

@@ -1,7 +1,7 @@
 #ifndef GAME_LOGIC_H_INCLUDED
 #define GAME_LOGIC_H_INCLUDED
 
-#include "../video/window.h"
+#include "../video/video_subsystem.h"
 #include "../gui/background.h"
 #include "../video/camera.h"
 #include "../utility/configuration.h"

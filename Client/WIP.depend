@@ -2115,10 +2115,9 @@
 
 1436634152 d:\github\shape\client\includes\utility\stopwatch.h
 
-1436635082 source:d:\github\shape\client\includes\gui\background.cpp
+1436636447 source:d:\github\shape\client\includes\gui\background.cpp
 	<stdio.h>
 	<SDL.h>
-	"../video/window.h"
 	<string>
 	<memory>
 	"background.h"
@@ -2340,16 +2339,15 @@
 	<SDL.h>
 	"window.h"
 
-1436532881 d:\github\shape\client\includes\gui\background.h
+1436636410 d:\github\shape\client\includes\gui\background.h
 	<stdio.h>
 	<SDL.h>
-	"../video/window.h"
 	"../video/texture.h"
 	<string>
 	<memory>
 	<deque>
 
-1436635119 d:\github\shape\client\includes\video\texture.h
+1436636353 d:\github\shape\client\includes\video\texture.h
 	<string>
 	<memory>
 	<SDL.h>
@@ -2360,9 +2358,8 @@
 	"begin_code.h"
 	"close_code.h"
 
-1436533208 source:d:\github\shape\client\includes\gui\button.cpp
+1436636447 source:d:\github\shape\client\includes\gui\button.cpp
 	"button.h"
-	"../video/window.h"
 	<cstdio>
 
 1436532973 d:\github\shape\client\includes\gui\button.h
@@ -2388,10 +2385,10 @@
 	"gui_element.h"
 	<vector>
 
-1436635119 source:d:\github\shape\client\includes\gui\progress_bar.cpp
+1436636267 source:d:\github\shape\client\includes\gui\progress_bar.cpp
 	<cassert>
 	"progress_bar.h"
-	"../video/window.h"
+	"../video/video_subsystem.h"
 	<cstdio>
 	<assert.h>
 
@@ -2400,10 +2397,10 @@
 	"../utility/stopwatch.h"
 	"gui_element.h"
 
-1436533828 source:d:\github\shape\client\includes\gui\text.cpp
+1436636313 source:d:\github\shape\client\includes\gui\text.cpp
 	"text.h"
 	"../utility/functions.h"
-	"../video/window.h"
+	"../video/video_subsystem.h"
 	<cstdio>
 
 1436533747 d:\github\shape\client\includes\gui\text.h
@@ -2422,10 +2419,10 @@
 	<vector>
 	<string>
 
-1436533906 source:d:\github\shape\client\includes\gui\text_button.cpp
+1436636335 source:d:\github\shape\client\includes\gui\text_button.cpp
 	"text_button.h"
 	<functional>
-	"../video/window.h"
+	"../video/video_subsystem.h"
 	"../utility/configuration.h"
 	"../utility/functions.h"
 	"../utility/stopwatch.h"
@@ -2437,14 +2434,14 @@
 	<functional>
 	"../utility/configuration.h"
 
-1433338293 source:d:\github\shape\client\includes\main.cpp
+1436635541 source:d:\github\shape\client\includes\main.cpp
 	<SDL.h>
-	"video/window.h"
+	"video/video_subsystem.h"
 	"main_logic/game_logic.h"
 	<stdio.h>
 
-1436534142 d:\github\shape\client\includes\main_logic\game_logic.h
-	"../video/window.h"
+1436635503 d:\github\shape\client\includes\main_logic\game_logic.h
+	"../video/video_subsystem.h"
 	"../gui/background.h"
 	"../video/camera.h"
 	"../utility/configuration.h"
@@ -2477,11 +2474,11 @@
 	"../gui/button.h"
 	"../audio/music.h"
 
-1436534206 source:d:\github\shape\client\includes\main_logic\game_logic.cpp
+1436635547 source:d:\github\shape\client\includes\main_logic\game_logic.cpp
 	<SDL.h>
 	<stdio.h>
 	"game_logic.h"
-	"../video/window.h"
+	"../video/video_subsystem.h"
 	"../video/camera.h"
 	"../utility/stopwatch.h"
 	"../utility/functions.h"
@@ -2520,16 +2517,17 @@
 	<functional>
 	"stopwatch.h"
 
-1436634434 source:d:\github\shape\client\includes\video\camera.cpp
+1436635558 source:d:\github\shape\client\includes\video\camera.cpp
 	<SDL.h>
 	<stdio.h>
 	"camera.h"
-	"window.h"
+	"video_subsystem.h"
 
-1436635119 source:d:\github\shape\client\includes\video\texture.cpp
+1436636388 source:d:\github\shape\client\includes\video\texture.cpp
 	<cassert>
 	"texture.h"
-	"window.h"
+	"video_subsystem.h"
+	"camera.h"
 	<assert.h>
 	<cstdio>
 
@@ -8342,7 +8340,7 @@
 	<SDL.h>
 	"../physics/polygon.h"
 
-1436532574 source:d:\github\shape\client\includes\game\tile_type.cpp
+1436635980 source:d:\github\shape\client\includes\game\tile_type.cpp
 	"tile_type.h"
 	"../video/camera.h"
 
@@ -8440,4 +8438,12 @@
 1436532364 d:\github\shape\client\includes\game\player.h
 	<mutex>
 	"moving_object.h"
+
+1436635427 source:d:\github\shape\client\includes\video\video_subsystem.cpp
+	<SDL.h>
+	<stdio.h>
+	"video_subsystem.h"
+
+1436635446 d:\github\shape\client\includes\video\video_subsystem.h
+	<SDL.h>
 

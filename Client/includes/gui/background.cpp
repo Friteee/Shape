@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <SDL.h>
-#include "../video/window.h"
 #include <string>
 #include <memory>
 #include "background.h"
@@ -102,7 +101,7 @@ Background::~Background()
  */
 void Background::show()
 {
-    video::Video_subsystem::blit(texture_.get_texture() , &location_ , NULL);
+    texture_.blit_on_window(&location_ , static_cast<SDL_Rect *> (nullptr));
 }
 
 /**

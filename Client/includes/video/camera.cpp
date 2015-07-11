@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 #include "camera.h"
-#include "window.h"
+#include "video_subsystem.h"
 
 namespace video
 {

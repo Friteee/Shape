@@ -7,11 +7,13 @@ namespace game
 class Object_state
 {
 public:
-    virtual void update();
-    virtual void show();
+    virtual void update() = 0;
+    virtual void show(int x, int y) = 0;
+    virtual void get_in() = 0;
+    virtual void get_out() = 0;
     virtual ~Object_state(){}
 private:
-    Moving_object * object;
+    Moving_object * object_;
 };
 
 }

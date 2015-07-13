@@ -3,6 +3,16 @@
 namespace game
 {
 
+Player::Player()
+{
+    type_          = PLAYER;
+    newest_        = nullptr;
+    oldest_        = nullptr;
+    current_state_ = nullptr;
+    x_             = 0;
+    y_             = 0;
+}
+
 void Player::notify(Object_command * command)
 {
     command_mutex_.lock();
@@ -11,8 +21,8 @@ void Player::notify(Object_command * command)
     // no commands found, create one
     if(iterator == nullptr)
     {
-        newest_ = command;
-        oldest_ = command;
+        newest_  = command;
+        oldest_  = command;
         finished = true;
     }
     // append list of sorted commands
@@ -24,7 +34,7 @@ void Player::notify(Object_command * command)
             //if iterator is the newest one
             if(iterator->get_next() == nullptr)
             {
-                iterator->get_next() = command;
+                iterator->get_next()    = command;
                 command->get_previous() = iterator;
                 if(iterator->get_previous() == nullptr)
                 {
@@ -36,9 +46,9 @@ void Player::notify(Object_command * command)
             else
             {
                 iterator->get_next()->get_previous() = command;
-                command->get_next() = iterator->get_next();
-                command->get_previous() = iterator;
-                iterator->get_next() = command;
+                command->get_next()                  = iterator->get_next();
+                command->get_previous()              = iterator;
+                iterator->get_next()                 = command;
                 if(iterator->get_previous() == nullptr)
                 {
                     oldest_ = iterator;
@@ -53,9 +63,9 @@ void Player::notify(Object_command * command)
             if(iterator->get_previous() == nullptr)
             {
                 iterator->get_previous() = command;
-                command->get_next() = iterator;
-                oldest_ = command;
-                finished = true;
+                command->get_next()      = iterator;
+                oldest_                  = command;
+                finished                 = true;
             }
             //move on
             else
@@ -102,6 +112,16 @@ void Player::set_position(int set_x, int set_y)
 {
     x_ = set_x;
     y_ = set_y;
+}
+
+void Player::notify_collision(Moving_object * other)
+{
+    // TODO Collision with moving objects handling
+}
+
+void Player::show()
+{
+    current_state_->show(x_,y_);
 }
 
 }

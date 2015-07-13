@@ -2438,7 +2438,7 @@
 	"main_logic/game_logic.h"
 	<stdio.h>
 
-1436637245 d:\github\shape\client\includes\main_logic\game_logic.h
+1436797594 d:\github\shape\client\includes\main_logic\game_logic.h
 	"../video/video_subsystem.h"
 	"../gui/background.h"
 	"../video/camera.h"
@@ -2472,7 +2472,7 @@
 	"../gui/button.h"
 	"../audio/music.h"
 
-1436637493 source:d:\github\shape\client\includes\main_logic\game_logic.cpp
+1436797650 source:d:\github\shape\client\includes\main_logic\game_logic.cpp
 	<SDL.h>
 	<stdio.h>
 	"game_logic.h"
@@ -2483,7 +2483,7 @@
 	"../utility/configuration.h"
 	<cstdlib>
 
-1436534449 source:d:\github\shape\client\includes\main_logic\main_menu_mode.cpp
+1436798330 source:d:\github\shape\client\includes\main_logic\main_menu_mode.cpp
 	<cstdio>
 	<cmath>
 	"main_menu_mode.h"
@@ -2534,7 +2534,7 @@
 	<stdio.h>
 	"window.h"
 
-1436534316 source:d:\github\shape\client\includes\main_logic\gaming_mode.cpp
+1436799299 source:d:\github\shape\client\includes\main_logic\gaming_mode.cpp
 	"gaming_mode.h"
 	"main_menu_mode.h"
 	"game_logic.h"
@@ -8361,7 +8361,7 @@
 	<thread>
 	<atomic>
 
-1436727740 d:\github\shape\client\includes\game\moving_object.h
+1436799405 d:\github\shape\client\includes\game\moving_object.h
 	"object_command.h"
 	"object_state.h"
 	"../physics/physics_component.h"
@@ -8421,7 +8421,7 @@
 	"physics_component.h"
 	<SDL.h>
 
-1436727605 d:\github\shape\client\includes\game\object_state.h
+1436798929 d:\github\shape\client\includes\game\object_state.h
 
 1436458086 d:\github\shape\client\includes\physics\movement_command.h
 	"../game/object_command.h"
@@ -8430,10 +8430,10 @@
 1436457714 source:d:\github\shape\client\includes\physics\movement_command.cpp
 	"movement_command.h"
 
-1436639552 source:d:\github\shape\client\includes\game\player.cpp
+1436798063 source:d:\github\shape\client\includes\game\player.cpp
 	"player.h"
 
-1436532364 d:\github\shape\client\includes\game\player.h
+1436797432 d:\github\shape\client\includes\game\player.h
 	<mutex>
 	"moving_object.h"
 

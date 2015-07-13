@@ -133,7 +133,7 @@ Gaming_mode::Gaming_mode(utility::Configuration * init_config ):
     main_config_(init_config)
 {
     // background
-    main_background_.change_image(main_config_->find_string("main_background").c_str());
+    main_background_.change_image(main_config_->find_string("game_background").c_str());
 }
 
 

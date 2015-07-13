@@ -43,6 +43,10 @@ public:
     virtual void           set_position(int set_x, int set_y)      = 0;
     // notify object about collision with another object
     virtual void           notify_collision(Moving_object * other) = 0;
+    //show function
+    virtual void           show() = 0;
+
+    virtual void           change_state(Object_state & init_state) = 0;
 
     virtual ~Moving_object(){}
 

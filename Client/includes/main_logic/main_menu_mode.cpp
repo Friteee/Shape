@@ -109,9 +109,9 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     quit_ = false;
     //add play button
     gui::Text_button * play_button = new gui::Text_button(init_config,"Play",800,400);
-    auto play_func = []()
+    auto play_func = [this]()
     {
-
+        Game_logic::set_current_mode(new Gaming_mode(main_config_));
     };
     play_button->init_function(play_func);
     play_button->change_size(80);
@@ -124,7 +124,7 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     };
     options_button->init_function(options_func);
     options_button->change_size(80);
-    options_button->change_position(video::Video_subsystem::get_width()/2-options_button->get_width()/2,500);
+    options_button->change_position(video::Video_subsystem::get_width()/2-options_button->get_width()/2, 550);
     //add exit
     gui::Text_button * exit_button = new gui::Text_button(init_config,"Exit",800,600);
     auto exit_func = [this]()
@@ -133,7 +133,7 @@ Main_menu_mode::Main_menu_mode(utility::Configuration * init_config) :
     };
     exit_button->init_function(exit_func);
     exit_button->change_size(80);
-    exit_button->change_position(video::Video_subsystem::get_width()/2-exit_button->get_width()/2,600);
+    exit_button->change_position(video::Video_subsystem::get_width()/2-exit_button->get_width()/2,700);
     // initialize background image
     background_.change_image(main_config_->find_string("main_background").c_str());
 

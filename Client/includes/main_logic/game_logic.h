@@ -27,17 +27,19 @@ class Game_logic
 public:
 
     // initialization of game_logic
-    static bool initialize(const char *);
+    static bool                      initialize(const char *);
     // clean up after game_logic
-    static void free();
+    static void                      free();
     // main loop
-    static void run();
+    static void                      run();
     // getter of instance of game_logic
-    static Game_logic& get_instance();
+    static Game_logic&               get_instance();
     // set the current mode
-    static void set_current_mode(Program_mode * init_mode);
+    static void                      set_current_mode(Program_mode * init_mode);
     // get physics engine
     static physics::Physics_engine & get_engine();
+    // config getter
+    static utility::Configuration &  get_config();
     // destructor
     ~Game_logic();
 

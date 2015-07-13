@@ -158,5 +158,10 @@ void Game_logic::free()
     Game_logic::instance_ = nullptr;
 }
 
+utility::Configuration & Game_logic::get_config()
+{
+    return Game_logic::instance_->main_config_;
+}
+
 }// end of namespace main_logic
 

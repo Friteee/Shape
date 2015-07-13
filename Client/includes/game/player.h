@@ -12,6 +12,8 @@ class Player : public Moving_object
 {
 public:
 
+    Player();
+
     void           notify(Object_command * command)override;
 
     void           update()override;
@@ -23,6 +25,10 @@ public:
     int            get_y()override;
 
     void           set_position(int set_x, int set_y)override;
+
+    void           notify_collision(Moving_object * other)override;
+
+    void           show();
 
 protected:
     int        x_ , y_;

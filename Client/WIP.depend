@@ -2397,16 +2397,17 @@
 	"../utility/stopwatch.h"
 	"gui_element.h"
 
-1436636460 source:d:\github\shape\client\includes\gui\text.cpp
+1436727581 source:d:\github\shape\client\includes\gui\text.cpp
 	"text.h"
 	"../utility/functions.h"
 	<cstdio>
 
-1436533747 d:\github\shape\client\includes\gui\text.h
+1436727520 d:\github\shape\client\includes\gui\text.h
 	"text.h"
 	"gui_element.h"
 	"../utility/configuration.h"
 	<string>
+	<memory>
 
 1436634111 d:\github\shape\client\includes\utility\configuration.h
 	<string>
@@ -2471,7 +2472,7 @@
 	"../gui/button.h"
 	"../audio/music.h"
 
-1436637303 source:d:\github\shape\client\includes\main_logic\game_logic.cpp
+1436637493 source:d:\github\shape\client\includes\main_logic\game_logic.cpp
 	<SDL.h>
 	<stdio.h>
 	"game_logic.h"
@@ -8333,7 +8334,7 @@
 	"static_object.h"
 	"tile_type.h"
 
-1436532417 d:\github\shape\client\includes\game\static_object.h
+1436727279 d:\github\shape\client\includes\game\static_object.h
 	<SDL.h>
 	"../physics/polygon.h"
 
@@ -8360,14 +8361,14 @@
 	<thread>
 	<atomic>
 
-1436532085 d:\github\shape\client\includes\game\moving_object.h
+1436727740 d:\github\shape\client\includes\game\moving_object.h
 	"object_command.h"
 	"object_state.h"
 	"../physics/physics_component.h"
 
-1436532321 d:\github\shape\client\includes\game\object_command.h
+1436727399 d:\github\shape\client\includes\game\object_command.h
 
-1436633472 d:\github\shape\client\includes\physics\physics_component.h
+1436727697 d:\github\shape\client\includes\physics\physics_component.h
 	<memory>
 	<SDL.h>
 	"polygon.h"
@@ -8420,7 +8421,7 @@
 	"physics_component.h"
 	<SDL.h>
 
-1436294164 d:\github\shape\client\includes\game\object_state.h
+1436727605 d:\github\shape\client\includes\game\object_state.h
 
 1436458086 d:\github\shape\client\includes\physics\movement_command.h
 	"../game/object_command.h"
@@ -8429,14 +8430,14 @@
 1436457714 source:d:\github\shape\client\includes\physics\movement_command.cpp
 	"movement_command.h"
 
-1436532394 source:d:\github\shape\client\includes\game\player.cpp
+1436639552 source:d:\github\shape\client\includes\game\player.cpp
 	"player.h"
 
 1436532364 d:\github\shape\client\includes\game\player.h
 	<mutex>
 	"moving_object.h"
 
-1436637128 source:d:\github\shape\client\includes\video\video_subsystem.cpp
+1436638034 source:d:\github\shape\client\includes\video\video_subsystem.cpp
 	<SDL.h>
 	<stdio.h>
 	"video_subsystem.h"

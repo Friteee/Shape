@@ -5,6 +5,7 @@
 #include "gui_element.h"
 #include "../utility/configuration.h"
 #include <string>
+#include <memory>
 
 namespace gui
 {
@@ -29,10 +30,10 @@ public:
 
 private:
 
-    std::string text_;
-    int         text_size_;
-    TTF_Font *  font_;
-    SDL_Color   color_key_;
+    std::string                  text_;
+    int                          text_size_;
+    std::shared_ptr<TTF_Font *>  font_;
+    SDL_Color                    color_key_;
 
 };
 

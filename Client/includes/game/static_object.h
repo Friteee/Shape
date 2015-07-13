@@ -17,7 +17,8 @@ namespace game
 class Static_object
 {
 public:
-    virtual void show(){};
+    virtual void show() = 0;
+    virtual ~Static_object(){}
 protected:
     SDL_Point        location_;
     physics::Polygon polygon_;

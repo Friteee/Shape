@@ -39,10 +39,12 @@ public:
     virtual int            get_x()                                 = 0;
 
     virtual int            get_y()                                 = 0;
-
+    // set position of moving object (the top right corner of it)
     virtual void           set_position(int set_x, int set_y)      = 0;
     // notify object about collision with another object
     virtual void           notify_collision(Moving_object * other) = 0;
+
+    virtual ~Moving_object(){}
 
     inline Object_type     get_type()
     {

@@ -76,7 +76,6 @@ Video_subsystem::Video_subsystem(int width , int height , bool fullscreen)
 
 Video_subsystem::~Video_subsystem()
 {
-    printf("asd");
     SDL_DestroyRenderer(main_renderer_);
     SDL_DestroyWindow(main_window_);
 }

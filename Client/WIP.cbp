@@ -45,6 +45,7 @@
 		<Compiler>
 			<Add option="-std=c++11" />
 			<Add option="-Wall" />
+			<Add option="-g" />
 			<Add directory="SDL2" />
 			<Add directory="boost_1_58_0" />
 		</Compiler>

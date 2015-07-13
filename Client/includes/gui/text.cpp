@@ -16,11 +16,11 @@ Text::Text(utility::Configuration * config, std::string init_text, int x , int y
     color_key_=init_color_key;
     color_key_.a=255;
 
-    font_ = TTF_OpenFont(config->find_string("font").c_str(),text_size_);
+    font_ = std::make_shared<TTF_Font*>(TTF_OpenFont(config->find_string("font").c_str(),text_size_));
 
     if(!text_.empty())
     {
-        texture_.init(text_,color_key_,font_);
+        texture_.init(text_,color_key_,*font_);
 
         location_.w = texture_.get_width();
         location_.h = texture_.get_height();
@@ -50,7 +50,8 @@ void Text::update()
 
 Text::~Text()
 {
-    TTF_CloseFont(font_);
+    if(font_.unique())
+        TTF_CloseFont(*font_);
 }
 
 void Text::change_text(std::string init_text)
@@ -60,7 +61,7 @@ void Text::change_text(std::string init_text)
     text_ = init_text;
     if(text_.length()!=0)
     {
-        texture_.init(init_text,color_key_,font_);
+        texture_.init(init_text,color_key_,*font_);
         location_.w = texture_.get_width();
         location_.h = texture_.get_height();
     }

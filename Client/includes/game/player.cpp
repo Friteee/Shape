@@ -8,13 +8,14 @@ void Player::notify(Object_command * command)
     command_mutex_.lock();
     bool finished = false;
     Object_command * iterator = newest_;
+    // no commands found, create one
     if(iterator == nullptr)
     {
         newest_ = command;
         oldest_ = command;
         finished = true;
     }
-
+    // append list of sorted commands
     while(!finished)
     {
         //if iterator's issue time is older than commands'

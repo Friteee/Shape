@@ -18,6 +18,7 @@ class Object_command
 public:
     virtual void execute(Moving_object * object) = 0;
     virtual void redo   (Moving_object * object) = 0;
+    virtual ~Object_command(){}
     Object_command *& get_next()
     {
         return next_;

@@ -33,6 +33,8 @@ public:
 
     virtual SDL_Point get_interpolated_location(unsigned int time) = 0;
 
+    virtual ~Physics_component(){}
+
     void init(game::Moving_object * init_object , std::shared_ptr<Polygon> init_polygon)
     {
         object_ = init_object;

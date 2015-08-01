@@ -25,8 +25,13 @@ void Falling_object_physics::update(unsigned int time)
     y_speed_ += gravity_ * seconds;
 }
 
-void Falling_object_physics::notify_static(unsigned int collided_point)
+void Falling_object_physics::notify_static(unsigned int collided_point , game::Static_object * object)
 {
+    if(object->get_tile_type()->get_invincibility())
+    {
+        return;
+    }
+
     auto points = polygon_->get_points();
 
     int leftmost = points[0].x;

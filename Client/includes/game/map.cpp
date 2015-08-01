@@ -55,7 +55,7 @@ void Map::init_map(std::string init_filename)
 
     for(auto & a : buffer_type)
     {
-        Tile_type buffer;
+        Object_type buffer;
         buffer.set_id           (a.id);
         buffer.init_texture     (a.filename);
         buffer.set_invincibility(a.invincibility);
@@ -63,7 +63,7 @@ void Map::init_map(std::string init_filename)
     }
     for(auto & a : tiles_buffer)
     {
-        Tile buffer;
+        Static_object buffer;
         buffer.init_geometry(physics::get_rectangle(a.x, a.y, a.width, a.height));
         for (auto & b : types_)
         {

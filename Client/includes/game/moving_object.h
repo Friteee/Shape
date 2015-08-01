@@ -1,23 +1,23 @@
 #ifndef MOVING_OBJECT_H_INCLUDE
 #define MOVING_OBJECT_H_INCLUDE
 
-
-enum Object_type
-{
-    PLAYER, BULLET
-};
-
 namespace physics
 {
     class Physics_component;
 }
 
 #include "object_command.h"
+#include "static_object.h"
 #include "object_state.h"
 #include "../physics/physics_component.h"
 
 namespace game
 {
+
+enum Moving_object_type
+{
+    PLAYER, BULLET
+};
 
 /** \brief Base class for moving objects
  *
@@ -41,8 +41,10 @@ public:
     virtual int            get_y()                                 = 0;
     // set position of moving object (the top right corner of it)
     virtual void           set_position(int set_x, int set_y)      = 0;
-    // notify object about collision with another object
+    // notify object about collision with another moving object
     virtual void           notify_collision(Moving_object * other) = 0;
+    // notify object about collision with another static object
+    virtual void           notify_collision(Static_object * other) = 0;
     //show function
     virtual void           show() = 0;
 
@@ -50,16 +52,21 @@ public:
 
     virtual ~Moving_object(){}
 
-    inline Object_type     get_type()
+    inline Moving_object_type get_type()
     {
         return type_;
+    }
+
+    inline physics::Physics_component * get_physics_component()
+    {
+        return physics_component_.get();
     }
 
 protected:
     // the physics part of the moving_object
     std::shared_ptr<physics::Physics_component> physics_component_;
     // type of the moving object
-    Object_type                                 type_;
+    Moving_object_type                          type_;
     // newest command to the object
     Object_command                            * oldest_;
     Object_command                            * newest_;

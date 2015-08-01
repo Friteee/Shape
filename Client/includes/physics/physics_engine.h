@@ -3,6 +3,7 @@
 
 #include "polygon.h"
 #include "physics_component.h"
+#include "../game/static_object.h"
 #include <vector>
 #include <mutex>
 #include <list>
@@ -30,10 +31,10 @@ class Physics_engine
 
 public:
 
-    void add_static_object(Polygon * added);
-    void add_moving_object(Physics_component * added);
-    void delete_static_object(Polygon * deleted);
-    void delete_moving_object(Physics_component * deleted);
+    void add_static_object(game::Static_object * added);
+    void add_moving_object(game::Moving_object * added);
+    void delete_static_object(game::Static_object * deleted);
+    void delete_moving_object(game::Moving_object * deleted);
     void run(unsigned int ticks_per_s);
     void reset();
 
@@ -46,31 +47,31 @@ private:
     class Static_command
     {
     public:
-        Polygon * get();
-        void set(Polygon * added);
+        game::Static_object * get();
+        void set(game::Static_object * added);
     private:
-        Polygon * object_;
+        game::Static_object * object_;
     };
 
     class Moving_command
     {
     public:
-        Physics_component * get();
-        void set(Physics_component * added);
+        game::Moving_object * get();
+        void set(game::Moving_object * added);
     private:
-        Physics_component * object_;
+        game::Moving_object * object_;
     };
 
-    std::vector<Polygon *>           static_objects_;
-    std::vector<Physics_component *> moving_objects_;
-    std::mutex                       objects_change_;
-    std::list <Static_command>       static_addition_;
-    std::list <Moving_command>       moving_addition_;
-    std::list <Static_command>       static_deletion_;
-    std::list <Moving_command>       moving_deletion_;
-    std::thread                    * engine_;
-    std::atomic_bool                 stop_;
-    unsigned int                     ticks_per_second_;
+    std::vector<game::Static_object *> static_objects_;
+    std::vector<game::Moving_object *> moving_objects_;
+    std::mutex                         objects_change_;
+    std::list <Static_command>         static_addition_;
+    std::list <Moving_command>         moving_addition_;
+    std::list <Static_command>         static_deletion_;
+    std::list <Moving_command>         moving_deletion_;
+    std::thread                      * engine_;
+    std::atomic_bool                   stop_;
+    unsigned int                       ticks_per_second_;
 
 
 

@@ -3,6 +3,7 @@
 
 #include <SDL.h>
 #include "../physics/polygon.h"
+#include "object_type.h"
 
 namespace game
 {
@@ -17,9 +18,23 @@ namespace game
 class Static_object
 {
 public:
-    virtual void show() = 0;
-    virtual ~Static_object(){}
+    Static_object();
+    ~Static_object();
+    void show();
+    void init_geometry(physics::Polygon init_polygon);
+    void init_tile_type(Object_type * init_type);
+    void set_x(int x);
+    void set_y(int y);
+    inline Object_type * get_tile_type()
+    {
+        return type_;
+    }
+    inline physics::Polygon & get_polygon()
+    {
+        return polygon_;
+    }
 protected:
+    Object_type * type_;
     SDL_Point        location_;
     physics::Polygon polygon_;
 };

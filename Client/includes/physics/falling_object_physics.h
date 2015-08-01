@@ -14,7 +14,7 @@ public:
 
     virtual void update(unsigned int time) override;
 
-    virtual void notify_static(unsigned int point)override;
+    virtual void notify_static(unsigned int point , game::Static_object * object)override;
 
     virtual void notify_moving(Physics_component* moving) override;
 

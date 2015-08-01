@@ -3,8 +3,7 @@
 
 #include <string>
 #include <vector>
-#include "tile.h"
-#include "tile_type.h"
+#include "static_object.h"
 #include "../gui/background.h"
 #include "../audio/music.h"
 
@@ -30,11 +29,11 @@ public:
     void                      init_map(std::string init_filename);
     ~Map();
 
-    inline std::vector <Tile> &      get_tiles()
+    inline std::vector <Static_object> &      get_tiles()
     {
         return tiles_;
     }
-    inline std::vector <Tile_type> & get_tile_types()
+    inline std::vector <Object_type> & get_tile_types()
     {
         return types_;
     }
@@ -47,8 +46,8 @@ public:
         return music_;
     }
 private:
-    std::vector<Tile>      tiles_;
-    std::vector<Tile_type> types_;
+    std::vector<Static_object>      tiles_;
+    std::vector<Object_type> types_;
     gui::Background     *  background_;
     audio::Music           music_;
     std::string            filename_;

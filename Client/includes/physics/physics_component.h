@@ -5,6 +5,7 @@
 #include <SDL.h>
 #include "polygon.h"
 #include "../game/moving_object.h"
+#include "../game/static_object.h"
 
 namespace game
 {
@@ -27,7 +28,7 @@ public:
 
     virtual void update(unsigned int time) = 0;
     // number of the point, collided with static object
-    virtual void notify_static(unsigned int point) = 0;
+    virtual void notify_static(unsigned int point , game::Static_object * object) = 0;
     //notify about collision with moving object
     virtual void notify_moving(Physics_component* moving) = 0;
 

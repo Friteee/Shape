@@ -119,6 +119,11 @@ void Player::notify_collision(Moving_object * other)
     // TODO Collision with moving objects handling
 }
 
+void Player::notify_collision(Static_object * other)
+{
+    // TODO Collision with static objects handling
+}
+
 void Player::show()
 {
     current_state_->show(x_,y_);

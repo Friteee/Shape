@@ -28,11 +28,14 @@ public:
 
     void           notify_collision(Moving_object * other)override;
 
+    void           notify_collision(Static_object * other)override;
+
     void           show();
 
 protected:
-    int        x_ , y_;
-    std::mutex command_mutex_;
+    int              x_ , y_;
+    physics::Polygon player_polygon_;
+    std::mutex       command_mutex_;
 
 
 };

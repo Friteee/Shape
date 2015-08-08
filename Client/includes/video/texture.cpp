@@ -55,6 +55,14 @@ void Texture::init(SDL_Surface * init_surface)
     create_texture(std::string("(Surface has no filename)"));
 }
 
+void Texture::init(std::string filename, SDL_Rect boundaries)
+{
+    reset();
+    create_surface(filename , boundaries);
+    create_texture(filename);
+
+}
+
 /**
  * Initialize texture with a surface
  */
@@ -171,6 +179,21 @@ void Texture::create_surface(std::string filename)
     SDL_Surface * init_surface = SDL_LoadBMP(filename.c_str());
     surface_ = std::make_shared<SDL_Surface*>(init_surface);
     if(!init_surface)
+    {
+        printf("Error : Error creating surface from %s \n", filename.c_str());
+        printf("Error code : %s\n",SDL_GetError());
+        assert(0);
+    }
+}
+
+void Texture::create_surface(std::string filename , SDL_Rect boundaries)
+{
+    SDL_Surface * init_surface = SDL_LoadBMP(filename.c_str());
+    SDL_Surface * cropped_surface = SDL_CreateRGBSurface(init_surface->flags, boundaries.w, boundaries.h, init_surface->format->BitsPerPixel, init_surface->format->Rmask, init_surface->format->Gmask, init_surface->format->Bmask, init_surface->format->Amask);
+    SDL_BlitSurface(init_surface, &boundaries, cropped_surface, 0);
+    SDL_FreeSurface(init_surface);
+    surface_ = std::make_shared<SDL_Surface*>(cropped_surface);
+    if(!cropped_surface)
     {
         printf("Error : Error creating surface from %s \n", filename.c_str());
         printf("Error code : %s\n",SDL_GetError());

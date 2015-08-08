@@ -25,6 +25,9 @@ public:
     void init_tile_type(Object_type * init_type);
     void set_x(int x);
     void set_y(int y);
+    void set_w(int w);
+    void set_h(int h);
+    void set_location(SDL_Rect location);
     inline Object_type * get_tile_type()
     {
         return type_;
@@ -34,8 +37,8 @@ public:
         return polygon_;
     }
 protected:
-    Object_type * type_;
-    SDL_Point        location_;
+    Object_type    * type_;
+    SDL_Rect         location_;
     physics::Polygon polygon_;
 };
 

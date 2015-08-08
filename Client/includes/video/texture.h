@@ -24,6 +24,7 @@ public:
     Texture& operator=(Texture && moved);
     void         init(std::string filename);
     void         init(std::string filename, SDL_Color color_key);
+    void         init(std::string filename, SDL_Rect boundaries);
     void         init(SDL_Surface * init_surface);
     void         init(std::string text, SDL_Color text_color , TTF_Font * font);
     void         set_alpha(unsigned int alpha);
@@ -40,6 +41,7 @@ public:
 private:
 
     void create_surface(std::string filename);
+    void create_surface(std::string filename , SDL_Rect boundaries);
     void create_texture(std::string filename);
     void reset();
     std::shared_ptr<SDL_Surface*> surface_;

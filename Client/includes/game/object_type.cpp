@@ -17,11 +17,11 @@ void Object_type::set_invincibility( bool set_invincible )
 {
     invincible_ = set_invincible;
 }
-void Object_type::init_texture     ( std::string filename)
+void Object_type::init_texture     ( std::string filename , SDL_Rect boundaries)
 {
-    texture_.init(filename);
+    texture_.init(filename , boundaries);
 }
-void Object_type::blit             ( SDL_Point location  )
+void Object_type::blit             ( SDL_Rect location )
 {
     SDL_Rect dest,src;
     src.x = 0;
@@ -30,8 +30,8 @@ void Object_type::blit             ( SDL_Point location  )
     src.h = texture_.get_height();
     dest.x = location.x;
     dest.y = location.y;
-    dest.w = texture_.get_width();
-    dest.h = texture_.get_height();
+    dest.w = location.w;
+    dest.h = location.h;
     texture_.blit_on_camera(&src , &dest);
 }
 

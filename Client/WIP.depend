@@ -2347,7 +2347,7 @@
 	<memory>
 	<deque>
 
-1436636353 d:\github\shape\client\includes\video\texture.h
+1438533288 d:\github\shape\client\includes\video\texture.h
 	<string>
 	<memory>
 	<SDL.h>
@@ -2521,7 +2521,7 @@
 	"camera.h"
 	"video_subsystem.h"
 
-1436636388 source:d:\github\shape\client\includes\video\texture.cpp
+1438533583 source:d:\github\shape\client\includes\video\texture.cpp
 	<cassert>
 	"texture.h"
 	"video_subsystem.h"
@@ -8330,7 +8330,7 @@
 
 1438451607 d:\github\shape\client\includes\game\tile.h
 
-1438451793 d:\github\shape\client\includes\game\static_object.h
+1438533609 d:\github\shape\client\includes\game\static_object.h
 	<SDL.h>
 	"../physics/polygon.h"
 	"object_type.h"
@@ -8344,7 +8344,7 @@
 	<SDL.h>
 	"../video/texture.h"
 
-1438450924 source:d:\github\shape\client\includes\physics\physics_engine.cpp
+1438453122 source:d:\github\shape\client\includes\physics\physics_engine.cpp
 	"physics_engine.h"
 	"../utility/stopwatch.h"
 	<chrono>
@@ -8382,13 +8382,13 @@
 1434314711 source:d:\github\shape\client\includes\game\moving_object.cpp
 	"moving_object.h"
 
-1438452003 source:d:\github\shape\client\includes\game\map.cpp
+1438532840 source:d:\github\shape\client\includes\game\map.cpp
 	"map.h"
 	<fstream>
 	<map>
 	<vector>
 
-1438451807 d:\github\shape\client\includes\game\map.h
+1438453274 d:\github\shape\client\includes\game\map.h
 	<string>
 	<vector>
 	"static_object.h"
@@ -8436,24 +8436,24 @@
 	<mutex>
 	"moving_object.h"
 
-1436638034 source:d:\github\shape\client\includes\video\video_subsystem.cpp
+1438533213 source:d:\github\shape\client\includes\video\video_subsystem.cpp
 	<SDL.h>
 	<stdio.h>
 	"video_subsystem.h"
 
-1436637041 d:\github\shape\client\includes\video\video_subsystem.h
+1438533240 d:\github\shape\client\includes\video\video_subsystem.h
 	<SDL.h>
 
-1438451987 d:\github\shape\client\includes\game\object_type.h
+1438532777 d:\github\shape\client\includes\game\object_type.h
 	<string>
 	<SDL.h>
 	"../video/texture.h"
 
-1438452017 source:d:\github\shape\client\includes\game\object_type.cpp
+1438533554 source:d:\github\shape\client\includes\game\object_type.cpp
 	"object_type.h"
 	"../video/camera.h"
 
-1438452182 source:d:\github\shape\client\includes\game\static_object.cpp
+1438532617 source:d:\github\shape\client\includes\game\static_object.cpp
 	"static_object.h"
 	"../main_logic/game_logic.h"
 

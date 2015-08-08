@@ -7,6 +7,10 @@ namespace game
 Static_object::Static_object()
 {
     type_ = nullptr;
+    location_.w = 0;
+    location_.h = 0;
+    location_.x = 0;
+    location_.y = 0;
 }
 
 Static_object::~Static_object()
@@ -42,6 +46,21 @@ void Static_object::set_x(int x)
 void Static_object::set_y(int y)
 {
     location_.y = y;
+}
+
+void Static_object::set_w(int w)
+{
+    location_.w = w;
+}
+
+void Static_object::set_h(int h)
+{
+    location_.h = h;
+}
+
+void Static_object::set_location(SDL_Rect location)
+{
+    location_ = location;
 }
 
 }

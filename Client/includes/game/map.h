@@ -18,7 +18,7 @@ namespace game
 
 enum Map_Chunk_Id
 {
-    TILE,TILE_TYPE
+    TILE,TILE_TYPE,BACKGROUND
 };
 
 class Map
@@ -46,11 +46,11 @@ public:
         return music_;
     }
 private:
-    std::vector<Static_object>      tiles_;
-    std::vector<Object_type> types_;
-    gui::Background     *  background_;
-    audio::Music           music_;
-    std::string            filename_;
+    std::vector<Static_object> tiles_;
+    std::vector<Object_type>   types_;
+    gui::Background          * background_;
+    audio::Music               music_;
+    std::string                filename_;
 };
 
 }

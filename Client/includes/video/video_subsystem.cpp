@@ -148,6 +148,7 @@ SDL_Texture* Video_subsystem::create_texture(SDL_Surface * surface)
     return returned;
 }
 
+
 /**
  * Blit function with angle and flipping
  */

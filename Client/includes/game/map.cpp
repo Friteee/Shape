@@ -21,13 +21,14 @@ void Map::init_map(std::string init_filename)
     {
         unsigned int id;
         std::string  filename;
+        SDL_Rect     boundaries;
         bool         invincibility;
     };
 
     filename_ = init_filename;
     std::ifstream in(filename_ , std::ios_base::in);
-    std::vector<Tile_type_info>                buffer_type;   // buffer for information about types of tiles
-    std::vector<Tile_info>                     tiles_buffer;  // buffer for information about tiles
+    std::vector<Tile_type_info>                tile_type_information;   // buffer for information about types of tiles
+    std::vector<Tile_info>                     tile_information;  // buffer for information about tiles
     Map_Chunk_Id                               chunk;         // type of the info chunk
     unsigned int                               type_id;       // id of the tile_type and buffer for map chunk id
     std::string                                buffer_string; // string as a buffer for filename
@@ -40,31 +41,38 @@ void Map::init_map(std::string init_filename)
             Tile_type_info buffer;
             in>>buffer.id;
             in>>buffer.filename;
+            in>>buffer.boundaries.x;
+            in>>buffer.boundaries.y;
+            in>>buffer.boundaries.w;
+            in>>buffer.boundaries.h;
             in>>buffer.invincibility;
-            buffer_type.push_back(buffer);
+            tile_type_information.push_back(buffer);
         }
         else if (chunk == TILE)
         {
             Tile_info info;
             in>>info.id;
              in>>info.x>>info.y>>info.width>>info.height;
-            tiles_buffer.push_back(info);
-            //TODO
+            tile_information.push_back(info);
         }
     }
 
-    for(auto & a : buffer_type)
+    for(auto & a : tile_type_information)
     {
         Object_type buffer;
         buffer.set_id           (a.id);
-        buffer.init_texture     (a.filename);
+        buffer.init_texture     (a.filename , a.boundaries);
         buffer.set_invincibility(a.invincibility);
         types_.push_back(buffer);
     }
-    for(auto & a : tiles_buffer)
+    for(auto & a : tile_information)
     {
         Static_object buffer;
         buffer.init_geometry(physics::get_rectangle(a.x, a.y, a.width, a.height));
+        buffer.set_x(a.x);
+        buffer.set_y(a.y);
+        buffer.set_w(a.width);
+        buffer.set_h(a.height);
         for (auto & b : types_)
         {
             if(a.id == b.get_id())
@@ -72,6 +80,7 @@ void Map::init_map(std::string init_filename)
                 buffer.init_tile_type(&b);
             }
         }
+        tiles_.push_back(buffer);
     }
 
 }

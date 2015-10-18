@@ -8330,7 +8330,7 @@
 
 1438451607 d:\github\shape\client\includes\game\tile.h
 
-1438533609 d:\github\shape\client\includes\game\static_object.h
+1440179576 d:\github\shape\client\includes\game\static_object.h
 	<SDL.h>
 	"../physics/polygon.h"
 	"object_type.h"

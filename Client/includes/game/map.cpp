@@ -10,16 +10,17 @@ void Map::init_map(std::string init_filename)
 {
     struct Tile_info
     {
-        unsigned int id,
-                     width,
-                     height;
+        unsigned int id;
         int          x,
                      y;
+
     };
 
     struct Tile_type_info
     {
-        unsigned int id;
+        unsigned int id,
+                     width,
+                     height;
         std::string  filename;
         SDL_Rect     boundaries;
         bool         invincibility;
@@ -46,6 +47,8 @@ void Map::init_map(std::string init_filename)
             in>>buffer.boundaries.w;
             in>>buffer.boundaries.h;
             in>>buffer.invincibility;
+            in>>buffer.width;
+            in>>buffer.height;
             tile_type_information.push_back(buffer);
         }
         else if (chunk == TILE)

@@ -40,4 +40,24 @@ void Object_type::set_id(unsigned int init_id)
     id_ = init_id;
 }
 
+void Object_type::set_width( unsigned int width)
+{
+    width_ = width;
+}
+
+void Object_type::set_height( unsigned int height)
+{
+    height_ = height;
+}
+
+unsigned int Object_type::width()
+{
+    return width_;
+}
+
+unsigned int Object_type::height()
+{
+    return height_;
+}
+
 }

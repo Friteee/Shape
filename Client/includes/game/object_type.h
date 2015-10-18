@@ -23,6 +23,10 @@ public:
     void init_texture     ( std::string filename , SDL_Rect boundaries);
     void blit             ( SDL_Rect location   );
     void set_id           ( unsigned int init_id);
+    void set_width        ( unsigned int width);
+    void set_height       ( unsigned int height);
+    unsigned int width();
+    unsigned int height();
     virtual void update() {}
     unsigned int get_id ()
     {
@@ -32,6 +36,7 @@ private:
     video::Texture texture_;
     bool           invincible_;
     unsigned int   id_;
+    unsigned int   width_, height_;
 };
 
 }

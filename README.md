@@ -1,6 +1,6 @@
 S.H.A.P.E.
 =======
-S.H.A.P.E.(name is not set in stone) - would-be fast-paced 2D platformer with ~~blackjack and hookers~~ multiplayer and double jumps.
+S.H.A.P.E.(name is not set in stone) - would-be fast-paced 2D platformer with multiplayer and double jumps.
 
 This *game* is built in Code::Blocks, using C++ and SDL2 library.
 
